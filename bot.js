@@ -84,11 +84,11 @@ bot.on('message', msg => {
             break;
 //------------------------------			
 			case 'dat107':
-            msg.channel.send({files: ['./assets/Fundamentals_of_Database_Systems_7th.pdf']})
+            msg.channel.send({files: ['https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FFundamentals_of_Database_Systems_7th.pdf?v=1589659519073']})
             break;
 //------------------------------	
 			case 'dat102':
-            msg.channel.send({files: ['./assets/JavaSoftwareStructures3rdEdition.pdf']})
+            msg.channel.send({files: ['https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FJavaSoftwareStructures3rdEdition.pdf?v=1589659515651']})
             break;
 //------------------------------	TTS		------------------------------------------------------------------------------------------
 			case 'båt':		           
@@ -163,7 +163,7 @@ bot.on('message', msg => {
 			case 'frukt':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play( __dirname + '/assets/kurvfrukt.mp3');
+			const dispatcher = connection.play('https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fkurvfrukt.mp3?v=1589659578065');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -171,7 +171,7 @@ bot.on('message', msg => {
 			case 'georg':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play( __dirname + '/assets/GEORG.mp3');
+			const dispatcher = connection.play('https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FGEORG.mp3?v=1589659576813');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -179,7 +179,7 @@ bot.on('message', msg => {
 			case 'narko':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play( __dirname + '/assets/naarkotika.mp3');
+			const dispatcher = connection.play('https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fnaarkotika.mp3?v=1589662311887');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -187,7 +187,7 @@ bot.on('message', msg => {
 			case 'narko2':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play( __dirname + '/assets/narkotika.mp3');
+			const dispatcher = connection.play('https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fdowns.mp3?v=1589659578314');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -195,7 +195,7 @@ bot.on('message', msg => {
 			case 'downs':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play( __dirname +'/assets/downs.mp3');
+			const dispatcher = connection.play('https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fdowns.mp3?v=1589659578314');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -203,7 +203,7 @@ bot.on('message', msg => {
 			case 'herren':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play( __dirname +'/assets/priseherren.mp3');
+			const dispatcher = connection.play('https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fpriseherren.mp3?v=1589659577913');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -211,7 +211,7 @@ bot.on('message', msg => {
 			case 'pul':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play( __dirname +'/assets/patpul.mp3');
+			const dispatcher = connection.play('https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fpatpul.mp3?v=1589659578203');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -219,7 +219,7 @@ bot.on('message', msg => {
 			case 'kattepusen':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play( __dirname +'/assets/kattepusen.mp3');
+			const dispatcher = connection.play('https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fkattepusen.mp3?v=1589659577337');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -227,7 +227,7 @@ bot.on('message', msg => {
 			case 'nakokia':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play( __dirname +'/assets/narkotika.mp3');
+			const dispatcher = connection.play( 'https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fnarkotika.mp3?v=1589662459656');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -235,7 +235,7 @@ bot.on('message', msg => {
 			case 'ban':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play( __dirname +'/assets/ban.mp3');
+			const dispatcher = connection.play('https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FBan.mp3?v=1589662459737');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -243,7 +243,7 @@ bot.on('message', msg => {
 			case 'flue':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play( __dirname +'/assets/flue.mp3');
+			const dispatcher = connection.play('https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fflue.mp3?v=1589662459879');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -251,7 +251,7 @@ bot.on('message', msg => {
 			case 'holy':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play( __dirname +'/assets/holy_shit.mp3');
+			const dispatcher = connection.play('https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fholy_shit.mp3?v=1589662459678');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;			
@@ -259,7 +259,7 @@ bot.on('message', msg => {
 			case 'labruzzo':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play( __dirname +'/assets/labruzzo.mp3');
+			const dispatcher = connection.play('https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Flabruzzo.mp3?v=1589662459238');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;	
@@ -267,7 +267,7 @@ bot.on('message', msg => {
 			case 'pubg':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play( __dirname +'/assets/pubg.mp3');
+			const dispatcher = connection.play('https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FPUBG.mp3?v=1589662459634');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;		
@@ -275,7 +275,7 @@ bot.on('message', msg => {
 			case 'skammekrok':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play( __dirname +'/assets/skammekrok.mp3');
+			const dispatcher = connection.play( 'https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fskammekrok.mp3?v=1589662459498');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -283,7 +283,7 @@ bot.on('message', msg => {
 			case 'uskyldig':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play( __dirname +'/assets/uskyldig.mp3');
+			const dispatcher = connection.play('https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fuskyldig.mp3?v=1589662459594');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -291,7 +291,7 @@ bot.on('message', msg => {
 			case 'ps1':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play( __dirname +'/assets/test.mp3');
+			const dispatcher = connection.play('https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Ftest.mp3?v=1589659578379');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -374,7 +374,7 @@ bot.on('message', msg => {
 			case 'null':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play( __dirname +'/assets/ninjashit.mp3');
+			const dispatcher = connection.play( 'https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fninjashit.mp3?v=1589662555361');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -382,7 +382,7 @@ bot.on('message', msg => {
 			case 'wrong':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play( __dirname +'/assets/wrong.mp3');
+			const dispatcher = connection.play('https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fwrong.mp3?v=1589662557794');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
