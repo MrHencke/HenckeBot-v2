@@ -7,7 +7,6 @@ const bot = new Discord.Client();
 bot.once('ready', () => {
 	console.log(`Logged in as ${bot.user.tag}!`);
 	console.log(`Ready to fuck shit up`);
-	console.log("Online in: " + bot.guilds.cache.get('612947002853949458').name + ", " + bot.guilds.cache.get('409479895907958794').name + ", " + bot.guilds.cache.get('710258665138946160').name);
     bot.user.setActivity("my pp", { type: "STREAMING", url: "https://www.twitch.tv/mrhencke" })
 });
 
