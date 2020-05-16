@@ -50,7 +50,7 @@ bot.on('message', msg => {
 	 }else if (msg.content.includes(' ein ' || ' dinna ')) {
 		msg.reply("Nynorsk oppdaget, gjør som resten av moderne sivilisasjon og skriv på en forståelig målform.");
 	 }else if (msg.content == 'good bot') {
-		 msg.reply("Tusen takk, vi hos HenckeBot vet at vår bot er mye bedre enn Mikael sin, vennligst skriv et brev til denne søppelboten og gi 1-star review på google");
+		 msg.reply("Tusen takk, vi hos HenckeBot vet at vår bot er mye bedre enn TrashBOT, vennligst skriv et brev til denne søppelboten og gi 1-star review på google");
 	 }else if (msg.content.includes('henrik')) {
 		 msg.reply("How dare you mention my maker, <@133671473591222273>");
 	}else if (msg.content.includes('nuddel')) {
