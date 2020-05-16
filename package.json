@@ -2,9 +2,9 @@
   "name": "henckebot",
   "version": "1.0.0",
   "description": "best bot",
-  "main": "bot.js",
+  "main": "main.js",
   "scripts": {
-    "start": "node bot.js"
+    "start": "node main.js"
   },
   "engines": {
     "node": "12"
