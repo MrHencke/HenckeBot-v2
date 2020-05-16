@@ -42,17 +42,15 @@ var symbo = 'https://www.symbolab.com/';
 bot.on('message', msg => {
 	 if (msg.author.bot) {
 		 return;
-	 }else if (msg.content == 'bad bot') {
+	 }else if (msg.content == ' bad bot ') {
 		 msg.reply("Vi er kanskje en bad bot, MEN! Vi er ikke like utdatert søppel som en viss TrashBOT");
-	}else if (msg.content.includes('+')) {
+	}else if (msg.content.includes(' + ')) {
 		msg.reply("Imagine, dette er et mattespørsmål din nepe, hørt om " + symbo + " ?");
 	 }else if (msg.content.includes(' ein ' || ' dinna ')) {
 		msg.reply("Nynorsk oppdaget, gjør som resten av moderne sivilisasjon og skriv på en forståelig målform.");
-	 }else if (msg.content == 'good bot') {
+	 }else if (msg.content == ' good bot ') {
 		 msg.reply("Tusen takk, vi hos HenckeBot vet at vår bot er mye bedre enn TrashBOT, vennligst skriv et brev til denne søppelboten og gi 1-star review på google");
-	 }else if (msg.content.includes('henrik')) {
-		 msg.reply("How dare you mention my maker, <@133671473591222273>");
-	}else if (msg.content.includes('nuddel')) {
+	 }else if (msg.content.includes('nuddel' || 'nudler')) {
 		var voiceChannel = msg.member.voice.channel;
 		voiceChannel.join().then(connection => {
 		const dispatcher = connection.play('https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fskididdel.mp3?v=1589665443245', { volume: 0.2 });
