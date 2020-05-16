@@ -2,7 +2,9 @@ const Discord = require('discord.js');
 const config = require('./auth.json')
 const fs = require('fs');
 const ytdl = require('ytdl-core');
-const say = require('say');
+const http = require('http');
+const express = require('express');
+const app = express();
 const bot = new Discord.Client();
 
 bot.once('ready', () => {
@@ -11,6 +13,16 @@ bot.once('ready', () => {
 	console.log("Online in: " + bot.guilds.cache.get('612947002853949458').name + ", " + bot.guilds.cache.get('409479895907958794').name + ", " + bot.guilds.cache.get('710258665138946160').name);
     bot.user.setActivity("my pp", { type: "STREAMING", url: "https://www.twitch.tv/mrhencke" })
 });
+
+
+app.get("/", (request, response) => {
+  console.log(Date.now() + " Ping Received");
+  response.sendStatus(200);
+});
+app.listen(process.env.PORT);
+setInterval(() => {
+  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+}, 280000);
 
 bot.on('voiceStateUpdate', (oldState, newState)=> { 
 
