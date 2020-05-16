@@ -2,9 +2,6 @@ const Discord = require('discord.js');
 const config = require('./auth.json')
 const fs = require('fs');
 const ytdl = require('ytdl-core');
-const http = require('http');
-const express = require('express');
-const app = express();
 const bot = new Discord.Client();
 
 bot.once('ready', () => {
@@ -13,16 +10,6 @@ bot.once('ready', () => {
 	console.log("Online in: " + bot.guilds.cache.get('612947002853949458').name + ", " + bot.guilds.cache.get('409479895907958794').name + ", " + bot.guilds.cache.get('710258665138946160').name);
     bot.user.setActivity("my pp", { type: "STREAMING", url: "https://www.twitch.tv/mrhencke" })
 });
-
-
-app.get("/", (request, response) => {
-  console.log(Date.now() + " Ping Received");
-  response.sendStatus(200);
-});
-app.listen(process.env.PORT);
-setInterval(() => {
-  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
-}, 280000);
 
 bot.on('voiceStateUpdate', (oldState, newState)=> { 
 
@@ -61,7 +48,7 @@ bot.on('message', msg => {
 		 msg.reply("Vi er kanskje en bad bot, MEN! Vi er ikke like utdatert søppel som en viss TrashBOT");
 	}else if (msg.content.includes('+')) {
 		msg.reply("Imagine, dette er et mattespørsmål din nepe, hørt om " + symbo + " ?");
-	 }else if (msg.content.includes('ein' || 'dinna')) {
+	 }else if (msg.content.includes(' ein ' || ' dinna ')) {
 		msg.reply("Nynorsk oppdaget, gjør som resten av moderne sivilisasjon og skriv på en forståelig målform.");
 	 }else if (msg.content == 'good bot') {
 		 msg.reply("Tusen takk, vi hos HenckeBot vet at vår bot er mye bedre enn Mikael sin, vennligst skriv et brev til denne søppelboten og gi 1-star review på google");

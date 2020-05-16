@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "best bot",
   "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "8.4.0"
+  },
   "dependencies": {
     "@discordjs/opus": "^0.3.2",
     "discord.js": "^12.2.0",
@@ -11,9 +17,6 @@
     "ytdl-core": "^2.1.2"
   },
   "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Hencke",
-  "license": "ISC"
+  "license": "MIT"
 }
