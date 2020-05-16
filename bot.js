@@ -163,7 +163,7 @@ bot.on('message', msg => {
 			case 'frukt':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play('./assets/kurvfrukt.mp3');
+			const dispatcher = connection.play( __dirname + '/assets/kurvfrukt.mp3');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -171,7 +171,7 @@ bot.on('message', msg => {
 			case 'georg':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play('./assets/GEORG.mp3');
+			const dispatcher = connection.play( __dirname + '/assets/GEORG.mp3');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -179,7 +179,7 @@ bot.on('message', msg => {
 			case 'narko':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play('./assets/naarkotika.mp3');
+			const dispatcher = connection.play( __dirname + '/assets/naarkotika.mp3');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -187,7 +187,7 @@ bot.on('message', msg => {
 			case 'narko2':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play('./assets/narkotika.mp3');
+			const dispatcher = connection.play( __dirname + '/assets/narkotika.mp3');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -195,7 +195,7 @@ bot.on('message', msg => {
 			case 'downs':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play('./assets/downs.mp3');
+			const dispatcher = connection.play( __dirname +'/assets/downs.mp3');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -203,7 +203,7 @@ bot.on('message', msg => {
 			case 'herren':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play('./assets/priseherren.mp3');
+			const dispatcher = connection.play( __dirname +'/assets/priseherren.mp3');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -211,7 +211,7 @@ bot.on('message', msg => {
 			case 'pul':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play('./assets/patpul.mp3');
+			const dispatcher = connection.play( __dirname +'/assets/patpul.mp3');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -219,7 +219,7 @@ bot.on('message', msg => {
 			case 'kattepusen':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play('./assets/kattepusen.mp3');
+			const dispatcher = connection.play( __dirname +'/assets/kattepusen.mp3');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -227,7 +227,7 @@ bot.on('message', msg => {
 			case 'nakokia':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play('./assets/narkotika.mp3');
+			const dispatcher = connection.play( __dirname +'/assets/narkotika.mp3');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -235,7 +235,7 @@ bot.on('message', msg => {
 			case 'ban':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play('./assets/ban.mp3');
+			const dispatcher = connection.play( __dirname +'/assets/ban.mp3');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -243,7 +243,7 @@ bot.on('message', msg => {
 			case 'flue':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play('./assets/flue.mp3');
+			const dispatcher = connection.play( __dirname +'/assets/flue.mp3');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -251,7 +251,7 @@ bot.on('message', msg => {
 			case 'holy':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play('./assets/holy_shit.mp3');
+			const dispatcher = connection.play( __dirname +'/assets/holy_shit.mp3');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;			
@@ -259,7 +259,7 @@ bot.on('message', msg => {
 			case 'labruzzo':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play('./assets/labruzzo.mp3');
+			const dispatcher = connection.play( __dirname +'/assets/labruzzo.mp3');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;	
@@ -267,7 +267,7 @@ bot.on('message', msg => {
 			case 'pubg':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play('./assets/pubg.mp3');
+			const dispatcher = connection.play( __dirname +'/assets/pubg.mp3');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;		
@@ -275,7 +275,7 @@ bot.on('message', msg => {
 			case 'skammekrok':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play('./assets/skammekrok.mp3');
+			const dispatcher = connection.play( __dirname +'/assets/skammekrok.mp3');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -283,7 +283,7 @@ bot.on('message', msg => {
 			case 'uskyldig':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play('./assets/uskyldig.mp3');
+			const dispatcher = connection.play( __dirname +'/assets/uskyldig.mp3');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -291,7 +291,7 @@ bot.on('message', msg => {
 			case 'ps1':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play('./assets/test.mp3');
+			const dispatcher = connection.play( __dirname +'/assets/test.mp3');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -374,7 +374,7 @@ bot.on('message', msg => {
 			case 'null':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play('./assets/ninjashit.mp3');
+			const dispatcher = connection.play( __dirname +'/assets/ninjashit.mp3');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
@@ -382,7 +382,7 @@ bot.on('message', msg => {
 			case 'wrong':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play('./assets/wrong.mp3');
+			const dispatcher = connection.play( __dirname +'/assets/wrong.mp3');
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
