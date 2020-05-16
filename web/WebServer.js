@@ -7,5 +7,5 @@ const server = http.createServer((req, res) => {
 console.log("WebServer is online!");
 
 setInterval(() => {
-  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+  http.get(`http://34f4f34f545f43f43henckebot34f4f34f545f43f4354ytytr.glitch.me/`);
 }, 280000);
