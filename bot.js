@@ -57,7 +57,7 @@ bot.on('message', msg => {
 	}else if (msg.content.includes('nuddel')) {
 		var voiceChannel = msg.member.voice.channel;
 		voiceChannel.join().then(connection => {
-		const dispatcher = connection.play('./assets/skididdel.mp3', { volume: 0.2 });
+		const dispatcher = connection.play('https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fskididdel.mp3?v=1589665443245', { volume: 0.2 });
 		dispatcher.on("finish", end => msg.member.voice.channel.leave());
 		}).catch(err => console.log(err));
 	 }else if (msg.content.substring(0, 1) == '!') {
