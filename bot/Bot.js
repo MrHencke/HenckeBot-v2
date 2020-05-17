@@ -10,6 +10,8 @@ bot.once('ready', () => {
     bot.user.setActivity("bits and bobs", { type: "STREAMING", url: "https://www.twitch.tv/mrhencke" })
 });
 
+//HUSK Å LEGGE TIL LEAVE COND HVIS BOTEN ER ALENE, OG EN EGEN ENTRY SOUND FOR MEG SELV. https://www.myinstants.com/media/sounds/aplausos_2.mp3
+
 bot.on('voiceStateUpdate', (oldState, newState)=> { 
 
 	try{
@@ -314,7 +316,7 @@ bot.on('message', msg => {
       yt.searchOne(search, { type: 'video' }).then(results => {
      // console.log(results);
       link = results.link;
-      msg.reply("Now playing: " + results.title);
+      msg.channel.send("Now playing: " + results.title);
         console.log(results.title);
         console.log(link);
        
@@ -388,18 +390,18 @@ bot.on('message', msg => {
 			case 'hjelp':
 			var linje = "--------------------------------------------";
 			var bruker = (" Look what i can do: \n");
+      var youtube = (linje+"YOUTUBE"+linje+ " \n !p ----> Kan ta i mot søkeord og linker, \n"); //youtube only
 			var tekst = (linje+"TEKST"+linje+"\n !i, \n !alle,\n !status, \n !say, \n !slett \n"); //TEKST
 			var tts = (linje+"TTS"+linje+ "\n !båt, \n !sprinkler,\n !meow, \n !mehe, \n !saytts \n !nevergonna \n !giveyouup \n"); //TTS
 			var pat = (linje+"Postmann Pat"+linje+ " \n !frukt, \n !georg,\n !downs, \n !narko, \n !narko2, \n !herren, \n !pul, \n !kattepusen, \n"); //PAT
 			var kai = (linje+"Kai"+linje+ " \n !uskyldig, \n !nakokia,\n !ban, \n !flue, \n !labruzzo, \n !pubg, \n !skammekrok, \n !holy, \n"); //KAI
 			var music = (linje+"MUSIC STREAMS"+linje+ " \n !lofi, \n !teatime,\n !jazz, \n !pop, \n !pissepop, \n !trap, \n !indie, \n !mix, \n"); //MUSIC
-			var youtube = (linje+"YOUTUBE"+linje+ " \n !p + youtube-link, \n"); //youtube only
 			var randvoice = (linje+"RANDOM VOICELINES"+linje+ "\n !null, \n !wrong,\n !ph, \n !mgs, \n !coffin, \n !ps1, \n !hypo, \n "); //RANDOM
 			var hjelp = (linje+"HJELPEMETODER"+linje+ "\n !pingu, \n !version,\n !hencke, \n !komher, \n !stikk, \n !alle, \n"); //HJELP
 			var wip= ("-------------------------------------------------------------------------------------------- \n"); 
 			var sendmld= ("Send gjerne en melding med forslag for nye funksjoner til <@133671473591222273> \n"); //MUSIC
 
-			msg.author.send(bruker + tekst + tts + pat + kai + music + youtube + randvoice + hjelp);
+			msg.author.send(bruker + youtube + tekst + tts + pat + kai + music + randvoice + hjelp);
 			msg.author.send(wip + sendmld + wip);
 			
 //utdatert2	msg.author.send(" Kjære bruker, her er mine primærfunksjoner\n TEXT COMMANDS \n  hei \n  grete \n  i \n  alle \n  status \n  heisann \n  heidu \n  hjelp \n  meow \n  ttsbåt \n  mehe \n  nevergonna \n  giveyouup \n  say \n  slett \n  georg \n  music \n  frukt \n  narko \n  narko \n  jesus \n  her \n VOICE COMMANDS \n  fruktv \n  steviev \n  georgv \n  narkov \n  narkov \n  nakokia \n  ban \n  flue \n  holy \n  labruzzo \n  pubg \n  skammekrok \n  uskyldig \n  uskyldig \n  p Brukes slik !p + youtube-link  \n HJELPEMETODER \n  stikk \n  komher \n  hencke \n  hjelp \n MUSIKKSTREAMS \n  lofi \n  indie \n  trap \n  pissepop \n  jazz \n  pop \n  teatime \n  mix");
