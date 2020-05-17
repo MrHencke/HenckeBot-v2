@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const fs = require('fs');
 const ytdl = require('ytdl-core');
+const yt = require('scrape-youtube').default;
 const bot = new Discord.Client();
 
 bot.once('ready', () => {
@@ -42,7 +43,7 @@ var symbo = 'https://www.symbolab.com/';
 bot.on('message', msg => {
 	 if (msg.author.bot) {
 		 return;
-	 }else if (msg.content.includes('bad bot')) {
+	 }else if (msg.content.includes('bæd bot')) {
 		 msg.reply("Vi er kanskje en bad bot, MEN! Vi er ikke like utdatert søppel som en viss TrashBOT");
 	}else if (msg.content.includes(' + ')) {
 		msg.reply("Imagine, dette er et mattespørsmål din nepe, hørt om " + symbo + " ?");
@@ -130,7 +131,7 @@ bot.on('message', msg => {
 			msg.delete().catch(O_o=>{}); 
 			msg.channel.send(sayMsg, { tts: true });
 			} else {return;}
-            break;
+            break;3
 //------------------------------
 			case 'slett':
 			var henckeID = '133671473591222273';
