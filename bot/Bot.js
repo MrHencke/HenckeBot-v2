@@ -393,6 +393,22 @@ bot.on('message', msg => {
 			}).catch(err => console.log(err));
 			break;
 //------------------------------
+			case 'offer':
+			var voiceChannel = msg.member.voice.channel;
+			voiceChannel.join().then(connection => {
+			const dispatcher = connection.play('https://www.myinstants.com/media/sounds/godfather-5.mp3');
+			dispatcher.on("finish", end => msg.member.voice.channel.leave());
+			}).catch(err => console.log(err));
+			break;
+//------------------------------
+			case 'bestaround':
+			var voiceChannel = msg.member.voice.channel;
+			voiceChannel.join().then(connection => {
+			const dispatcher = connection.play('https://www.myinstants.com/media/sounds/youre-the-best-around-by-joe-esposito-mp3cut.mp3', {volume: "0.3"});
+			dispatcher.on("finish", end => msg.member.voice.channel.leave());
+			}).catch(err => console.log(err));
+			break;
+//------------------------------
 			case 'wrong':
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
