@@ -14,6 +14,7 @@ bot.on('voiceStateUpdate', (oldState, newState)=> {
 
 	try{
 	var server = newState.guild.id;
+  var person = newState.member.id.toString();
 	if(server == "612947002853949458"){
 		
 	var maxbot = 1;
@@ -321,11 +322,12 @@ bot.on('message', msg => {
 			var search = args.join(' ');
 //      console.log(search);
       yt.searchOne('pride and joy', { type: 'video' }).then(results => {
-      console.log(results);
-      link = results;
+     // console.log(results);
+      link = results.link;
+        console.log(link);
 });
     
-     //   console.log(link); 
+      
         /*
 			const stream = ytdl(link, { filter: 'audioonly' });
 			var voiceChannel = msg.member.voice.channel;
