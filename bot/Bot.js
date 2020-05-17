@@ -304,28 +304,18 @@ bot.on('message', msg => {
 			break;       
 //------------------------------
 			case 'p':
-			try {
-			const link = args.join(' ');
-			const stream = ytdl(link, { filter: 'audioonly' });
-			var voiceChannel = msg.member.voice.channel;
-			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play(stream);
-			dispatcher.on("finish", end => msg.member.voice.channel.leave());
-			}).catch(err => console.log(err));
-			}catch(err) {
-			console.log(err);}
-			break;
-//------------------------------
-			case 'p2':
       var link;      
 			try {
-      if(args[0].substring(0, 3) != 'http'){
+      console.log(args[0].substring(0, 4));
+      if(args[0].substring(0, 4) != 'http'){
 			var search = args.join(' ');
       console.log(search);
         console.log(args);
       yt.searchOne(search, { type: 'video' }).then(results => {
      // console.log(results);
       link = results.link;
+      msg.reply("Now playing: " + results.title);
+        console.log(results.title);
         console.log(link);
        
 			const stream = ytdl(link, { filter: 'audioonly' });
@@ -338,7 +328,15 @@ bot.on('message', msg => {
       } else return;
 });			
          } else {
-           var link = args.join(' ');
+          link = args[0];
+           const stream = ytdl(link, { filter: 'audioonly' });
+			var voiceChannel = msg.member.voice.channel;
+        if(voiceChannel != null){
+			voiceChannel.join().then(connection => {
+			const dispatcher = connection.play(stream);
+			dispatcher.on("finish", end => msg.member.voice.channel.leave());
+			}).catch(err => console.log(err));
+      } else return;
          }
     }catch(err) {
 			console.log(err);}        
@@ -356,6 +354,10 @@ bot.on('message', msg => {
 //------------------------------
 			case 'komher':
 			msg.member.voice.channel.join();
+			break;
+//------------------------------
+			case 'stikk':
+			msg.member.voice.channel.leave();
 			break;
 //------------------------------ 
 			case 'hencke':
