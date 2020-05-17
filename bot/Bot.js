@@ -319,26 +319,26 @@ bot.on('message', msg => {
 			case 'p2':
       var link;      
 			try {
+      if(args[0].substring(0, 3) == 'http')
 			var search = args.join(' ');
-//      console.log(search);
-      yt.searchOne('pride and joy', { type: 'video' }).then(results => {
+      console.log(search);
+        console.log(args);
+      yt.searchOne(search, { type: 'video' }).then(results => {
      // console.log(results);
       link = results.link;
         console.log(link);
-});
-    
-      
-        /*
 			const stream = ytdl(link, { filter: 'audioonly' });
 			var voiceChannel = msg.member.voice.channel;
+        if(voiceChannel != null){
 			voiceChannel.join().then(connection => {
 			const dispatcher = connection.play(stream);
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
-       */  
-			}catch(err) {
-			console.log(err);}
-			break;
+      } 
+});			
+    }catch(err) {
+			console.log(err);}        
+            break;
             
          
             
