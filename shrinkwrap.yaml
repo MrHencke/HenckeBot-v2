@@ -2,7 +2,7 @@ dependencies:
   '@discordjs/opus': 0.3.2
   discord.js: 12.2.0
   ffmpeg-static: 4.2.1
-  scrape-youtube: 0.2.0
+  scrape-youtube: 0.1.8
   ytdl-core: 2.1.2
 packages:
   /@derhuerst/http-basic/8.2.0:
@@ -923,13 +923,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==
-  /scrape-youtube/0.2.0:
+  /scrape-youtube/0.1.8:
     dependencies:
       cheerio: 1.0.0-rc.3
       request: 2.88.2
     dev: false
     resolution:
-      integrity: sha512-wd0dZuDWD7LiEVnHyT9S+yH0YLDwuvNrxxKfdOKcc/+E95W+Gv0TyKFX/LBUG01fMjlCPZU3F7B5p1Ael6OpzQ==
+      integrity: sha512-x5+AgPvbF3o7ChvRBEZIi+jmHzaFvNYoj1i6K3LjcPxFMQcJnVEQmrFTSMj+iXIRHY+vEz28c1IC0H9TeIEWFA==
   /semver/7.3.2:
     dev: false
     engines:
@@ -1125,5 +1125,5 @@ specifiers:
   '@discordjs/opus': ^0.3.2
   discord.js: ^12.2.0
   ffmpeg-static: ^4.2.1
-  scrape-youtube: ^0.2.0
+  scrape-youtube: ^0.1.8
   ytdl-core: ^2.1.2

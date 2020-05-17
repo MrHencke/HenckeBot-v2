@@ -416,18 +416,19 @@ bot.on('message', msg => {
 			}).catch(err => console.log(err));
 			break;
 //------------------------------
-			case 'custom1':
-      
+			case 'custom':
+     // if()
+      var custlink = args.join(' ');
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
-			const dispatcher = connection.play('https://www.myinstants.com/media/sounds/cut_y2mate_spFTtWp.mp3', { volume: 0.5 });
+			const dispatcher = connection.play(custlink, { volume: 0.5 });
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
 			break;
 //------------------------------	
 			case 'invite':
-            msg.channel.send("https://discord.com/api/oauth2/authorize?client_id=709760720836755477&permissions=104332353&scope=bot");
-            break;			
+      msg.channel.send("https://discord.com/api/oauth2/authorize?client_id=709760720836755477&permissions=104332353&scope=bot");
+      break;			
 //------------------------------
 			case 'lofi':
 			try {
