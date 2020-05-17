@@ -319,7 +319,7 @@ bot.on('message', msg => {
 			case 'p2':
       var link;      
 			try {
-      if(args[0].substring(0, 3) == 'http')
+      if(args[0].substring(0, 3) != 'http'){
 			var search = args.join(' ');
       console.log(search);
         console.log(args);
@@ -327,6 +327,7 @@ bot.on('message', msg => {
      // console.log(results);
       link = results.link;
         console.log(link);
+       
 			const stream = ytdl(link, { filter: 'audioonly' });
 			var voiceChannel = msg.member.voice.channel;
         if(voiceChannel != null){
@@ -334,8 +335,11 @@ bot.on('message', msg => {
 			const dispatcher = connection.play(stream);
 			dispatcher.on("finish", end => msg.member.voice.channel.leave());
 			}).catch(err => console.log(err));
-      } 
+      } else return;
 });			
+         } else {
+           var link = args.join(' ');
+         }
     }catch(err) {
 			console.log(err);}        
             break;
