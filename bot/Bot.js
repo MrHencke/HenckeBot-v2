@@ -42,13 +42,13 @@ var symbo = 'https://www.symbolab.com/';
 bot.on('message', msg => {
 	 if (msg.author.bot) {
 		 return;
-	 }else if (msg.content == ' bad bot ') {
+	 }else if (msg.content.includes('bad bot')) {
 		 msg.reply("Vi er kanskje en bad bot, MEN! Vi er ikke like utdatert søppel som en viss TrashBOT");
 	}else if (msg.content.includes(' + ')) {
 		msg.reply("Imagine, dette er et mattespørsmål din nepe, hørt om " + symbo + " ?");
 	 }else if (msg.content.includes(' ein ' || ' dinna ')) {
 		msg.reply("Nynorsk oppdaget, gjør som resten av moderne sivilisasjon og skriv på en forståelig målform.");
-	 }else if (msg.content == ' good bot ') {
+	 }else if (msg.content.includes('good båt')) {
 		 msg.reply("Tusen takk, vi hos HenckeBot vet at vår bot er mye bedre enn TrashBOT, vennligst skriv et brev til denne søppelboten og gi 1-star review på google");
 	 }else if (msg.content.includes('nuddel' || 'nudler')) {
 		var voiceChannel = msg.member.voice.channel;
