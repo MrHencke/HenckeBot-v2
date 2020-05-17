@@ -308,7 +308,6 @@ bot.on('message', msg => {
 			case 'p':
       var link;      
 			try {
-      console.log(args[0].substring(0, 4));
       if(args[0].substring(0, 4) != 'http'){
 			var search = args.join(' ');
       console.log(search);
@@ -317,12 +316,12 @@ bot.on('message', msg => {
      // console.log(results);
       link = results.link;
         
-      const playin = new Discord.MessageEmbed()
+  const playin = new Discord.MessageEmbed()
 	.setColor('#0099ff')
   .setTitle("Now Playing:")
 	.setTitle(results.title)
 	.setURL(results.link)
-	.setAuthor('HenckeBot', 'https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FUten%20nsdsdavn.png?v=1589758105374', 'https://github.com/MrHencke')
+	.setAuthor('HenckeBot Music', 'https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FUten%20nsdsdavn.png?v=1589758105374', 'https://github.com/MrHencke')
 	.setDescription(results.description)
 //	.setThumbnail(results.thumbnail)
 	.setImage(results.thumbnail)
