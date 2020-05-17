@@ -314,10 +314,29 @@ bot.on('message', msg => {
 			}catch(err) {
 			console.log(err);}
 			break;
+//------------------------------
+			case 'p2':
+			try {
+			var search = args.join(' ');
+      youtube.search(search, { type: 'videos' }, { limit: 5 }).then(results => {
+      console.log(results);
+});
+			const stream = ytdl('https://www.youtube.com/watch?v=wgIB1OL09H0', { filter: 'audioonly' });
+			var voiceChannel = msg.member.voice.channel;
+			voiceChannel.join().then(connection => {
+			const dispatcher = connection.play(stream);
+			dispatcher.on("finish", end => msg.member.voice.channel.leave());
+			}).catch(err => console.log(err));
+			}catch(err) {
+			console.log(err);}
+			break;
+            
+            
+            
 //------------------------------HJELPEMETODER------------------------------------------------------------
-      case 'stop':
+      case 'restart':
       if (msg.author.id !== '133671473591222273') return;
-      msg.channel.send('Restarted.').then(() => {
+      msg.channel.send('Restarted HenckeBot.').then(() => {
       process.exit(1);
 });
 			break;
