@@ -315,8 +315,11 @@ bot.on('message', msg => {
 			console.log(err);}
 			break;
 //------------------------------HJELPEMETODER------------------------------------------------------------
-			case 'stikk':
-			msg.member.voice.channel.leave();
+      case 'stop':
+      if (msg.author.id !== '133671473591222273') return;
+      msg.channel.send('Restarted.').then(() => {
+      process.exit(1);
+});
 			break;
 //------------------------------
 			case 'komher':
@@ -324,12 +327,17 @@ bot.on('message', msg => {
 			break;
 //------------------------------ 
 			case 'hencke':
-			msg.author.send("Nothing to see");
-			break;
+			      msg.author.send("Nothing to see");
+			      break;
 //------------------------------ 
 			case 'version':
             msg.channel.send("HenckeBot Version: 1.0." + Math.floor(Math.random() * 90 + 10));
-            break;				
+            break;		
+            
+//------------------------------ 
+			case 'stream':
+            msg.channel.send("https://www.twitch.tv/pokemonlegenden");
+            break;		
 //------------------------------
 			case 'pingu':
 			msg.channel.send({embed: {
