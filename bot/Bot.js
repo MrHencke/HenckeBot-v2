@@ -316,7 +316,21 @@ bot.on('message', msg => {
       yt.searchOne(search, { type: 'video' }).then(results => {
      // console.log(results);
       link = results.link;
-      msg.channel.send("Now playing: " + results.title);
+        
+      const playin = new Discord.MessageEmbed()
+	.setColor('#0099ff')
+  .setTitle("Now Playing:")
+	.setTitle(results.title)
+	.setURL(results.link)
+	.setAuthor('HenckeBot', 'https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FUten%20nsdsdavn.png?v=1589758105374', 'https://github.com/MrHencke')
+	.setDescription(results.description)
+//	.setThumbnail(results.thumbnail)
+	.setImage(results.thumbnail)
+	.setTimestamp()
+	.setFooter('HenckeBot', 'https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FUten%20nsdsdavn.png?v=1589758105374');
+
+      msg.channel.send("Now playing: ");
+        msg.channel.send(playin);
         console.log(results.title);
         console.log(link);
        
