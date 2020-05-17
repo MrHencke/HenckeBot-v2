@@ -41,9 +41,8 @@ bot.on('voiceStateUpdate', (oldState, newState)=> {
 });
 var symbo = 'https://www.symbolab.com/';
 bot.on('message', msg => {
-	 if (msg.author.bot) {
-		 return;
-	 }else if (msg.content.includes('bad bot')) {
+  
+    if (msg.content.includes('bad bot')) {
 		 msg.reply("Vi er kanskje en dårlig bot, MEN! Vi er ikke like utdatert søppel som en viss TrashBOT");
 	}else if (msg.content.includes('+')) {
 		msg.reply("Imagine, dette er et mattespørsmål din nepe, hørt om " + symbo + " ?");
@@ -57,7 +56,9 @@ bot.on('message', msg => {
 		const dispatcher = connection.play('https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fskididdel.mp3?v=1589665443245', { volume: 0.2 });
 		dispatcher.on("finish", end => msg.member.voice.channel.leave());
 		}).catch(err => console.log(err));
-	 }else if (msg.content.substring(0, 1) == '!') {
+	 }else if (msg.author.bot) {
+		 return;
+     }else if (msg.content.substring(0, 1) == '!') {
         var args = msg.content.substring(1).split(' ');
         var cmd = args[0];
         args = args.splice(1);
