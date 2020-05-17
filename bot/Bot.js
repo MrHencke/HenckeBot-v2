@@ -316,12 +316,16 @@ bot.on('message', msg => {
 			break;
 //------------------------------
 			case 'p2':
+      var link;      
 			try {
 			var search = args.join(' ');
-      youtube.search(search, { type: 'videos' }, { limit: 5 }).then(results => {
+      console.log(search);
+      yt.search('pride and joy', { type: 'video' }, { limit: 1 }).then(results => {
       console.log(results);
+      link = results[0.link;
 });
-			const stream = ytdl('https://www.youtube.com/watch?v=wgIB1OL09H0', { filter: 'audioonly' });
+      console.log(link); 
+			const stream = ytdl(link, { filter: 'audioonly' });
 			var voiceChannel = msg.member.voice.channel;
 			voiceChannel.join().then(connection => {
 			const dispatcher = connection.play(stream);
