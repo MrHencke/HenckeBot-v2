@@ -293,6 +293,14 @@ bot.on('message', msg => {
 			}).catch(err => console.log(err));
 			break;
 //------------------------------
+			case 'hypo':
+			var voiceChannel = msg.member.voice.channel;
+			voiceChannel.join().then(connection => {
+			const dispatcher = connection.play('https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Falone.mp3?v=1589738328094');
+			dispatcher.on("finish", end => msg.member.voice.channel.leave());
+			}).catch(err => console.log(err));
+			break;       
+//------------------------------
 			case 'p':
 			try {
 			const link = args.join(' ');
@@ -343,7 +351,7 @@ bot.on('message', msg => {
 			var kai = (linje+"Kai"+linje+ " \n !uskyldig, \n !nakokia,\n !ban, \n !flue, \n !labruzzo, \n !pubg, \n !skammekrok, \n !holy, \n"); //KAI
 			var music = (linje+"MUSIC STREAMS"+linje+ " \n !lofi, \n !teatime,\n !jazz, \n !pop, \n !pissepop, \n !trap, \n !indie, \n !mix, \n"); //MUSIC
 			var youtube = (linje+"YOUTUBE"+linje+ " \n !p + youtube-link, \n"); //youtube only
-			var randvoice = (linje+"RANDOM VOICELINES"+linje+ "\n !null, \n !wrong,\n !ph, \n !mgs, \n !coffin, \n !ps1, \n"); //RANDOM
+			var randvoice = (linje+"RANDOM VOICELINES"+linje+ "\n !null, \n !wrong,\n !ph, \n !mgs, \n !coffin, \n !ps1, \n !hypo, \n "); //RANDOM
 			var hjelp = (linje+"HJELPEMETODER"+linje+ "\n !pingu, \n !version,\n !hencke, \n !komher, \n !stikk, \n !alle, \n"); //HJELP
 			var wip= ("-------------------------------------------------------------------------------------------- \n"); 
 			var sendmld= ("Send gjerne en melding med forslag for nye funksjoner til <@133671473591222273> \n"); //MUSIC
