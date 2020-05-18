@@ -64,20 +64,9 @@ bot.on("message", msg => {
             "Tusen takk, vi hos HenckeBot Inc Ltd. vet at vår bot er mye bedre enn TrashBOT, vennligst skriv et brev til denne søppelboten og gi 1-star review på google"
         );
     } else if (msg.content.includes("nuddel")) {
-        var voiceChannel = msg.member.voice.channel;
-        voiceChannel
-            .join()
-            .then(connection => {
-                const dispatcher = connection.play(
-                    "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fskididdel.mp3?v=1589665443245",
-                    { volume: 0.2 }
-                );
-                dispatcher.on("finish", end => msg.member.voice.channel.leave());
-            })
-            .catch(err => console.log(err));
-    } else if (msg.author.bot) {
-        return;
-    } else if (msg.content.substring(0, 1) == "!") {
+                url =    "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fskididdel.mp3?v=1589665443245",
+         sound(url, voiceChannel);
+    } else if (msg.content.substring(0, 1) == "!" && !msg.author.bot){
         var args = msg.content.substring(1).split(" ");
         var cmd = args[0];
         args = args.splice(1);
@@ -362,11 +351,13 @@ bot.on("message", msg => {
             //------------------------------
             case "insult":
                 var mentioned = args[0];
+                msg.delete().catch(O_o => { });
                 msg.channel.send(mentioned + " " + roast[Math.floor(Math.random() * roast.length)])
                 break;
             //------------------------------
             case "compliment":
                 var mentioned = args[0];
+                msg.delete().catch(O_o => { });
                 msg.channel.send(mentioned + " " + comp[Math.floor(Math.random() * roast.length)])
                 break;
             //------------------------------
