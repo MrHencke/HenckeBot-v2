@@ -639,7 +639,7 @@ bot.on("message", msg => {
         var linje = "--------------------------------------------";
 
         var nytt =
-          linje + "NYE FUNKSJONER" + linje + "\n !pingu, \n !version,\n"; //HJELP
+         linje + "NYE FUNKSJONER" + linje + "\n !pingu, \n !version,\n"; //HJELP
         var sendmld =
           "Send gjerne en melding med forslag for nye funksjoner til <@133671473591222273> \n"; //MUSIC
 
