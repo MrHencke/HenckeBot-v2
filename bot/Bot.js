@@ -4,7 +4,8 @@ const ytdl = require("ytdl-core");
 const roast = require("../res/roast.json");
 const comp = require("../res/compliments.json");
 const quote = require("../res/quote.json");
-const mem = require("memejs")
+const land = require("../res/countries.json");
+const mem = require("memejs") //https://www.npmjs.com/package/memejs
 const teet = require("reddittits")
 const fourk = require("reddit4k")
 const yt = require("scrape-youtube").default;
@@ -373,14 +374,21 @@ bot.on("message", msg => {
                 msg.delete().catch(O_o => { });
                 msg.channel.send(mentioned + " " + comp[Math.floor(Math.random() * comp.length)])
                 break;
+             //------------------------------
+            case "ferie":
+                var mentioned = args[0];
+                msg.delete().catch(O_o => { });
+                msg.channel.send(mentioned + " ditt neste feriemål skal bli: " + land[Math.floor(Math.random() * land.length)])
+                break;
             //------------------------------
             case "quote":
                 var mentioned = args[0];
                 var index = Math.floor(Math.random() * quote.length);
+               var kvote = ('"' + quote[index].quoteText + '"');
                 const mbed = new Discord.MessageEmbed()
                 .setColor('#0099ff')
                 .setDescription(quote[index].quoteText)   
-                .addField("av", quote[index].quoteAuthor, true)
+                .addField("av", quote[index].quoteAuthor , true)
                 .setFooter("HenckeBot™  ©2020", "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FUten%20nsdsdavn.png?v=1589758105374");
                 msg.channel.send(mbed)
                 break;
