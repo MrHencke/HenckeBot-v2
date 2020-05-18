@@ -18,8 +18,9 @@ var dispatcher;
 bot.on("voiceStateUpdate", (oldState, newState) => {
   try {
     var server = newState.guild.id;
+    var henckeID = "133671473591222273";
     var person = newState.member.id.toString();
-    if (server == "612947002853949458") {
+    if (server == "612947002853949458" || person == henckeID) {
       var maxbot = 1;
       if (newState.channel != null) {
         var bots = newState.channel.members.filter(x => x.user.bot).size;
@@ -29,7 +30,7 @@ bot.on("voiceStateUpdate", (oldState, newState) => {
           var voiceChannel = newState.channel;
           if (oldState.channel != newState.channel) {
             if (newChannel != "undefined" || newChannel != null) {
-              if (person != "133671473591222273") {
+              if (person != henckeID) {
                 voiceChannel
                   .join()
                   .then(connection => {
