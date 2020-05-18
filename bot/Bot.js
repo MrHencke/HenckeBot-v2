@@ -7,13 +7,13 @@ const bot = new Discord.Client();
 bot.once("ready", () => {
   console.log(`Logged in as ${bot.user.tag}!`);
   console.log(`Ready to fuck shit up`);
-  bot.user.setActivity("bits and bobs", {
+  bot.user.setActivity("", {
     type: "STREAMING",
     url: "https://www.twitch.tv/mrhencke"
   });
 });
 
-//HUSK Å LEGGE TIL LEAVE COND HVIS BOTEN ER ALENE, OG EN EGEN ENTRY SOUND FOR MEG SELV. https://www.myinstants.com/media/sounds/aplausos_2.mp3
+var dispatcher;
 
 bot.on("voiceStateUpdate", (oldState, newState) => {
   try {
@@ -29,16 +29,29 @@ bot.on("voiceStateUpdate", (oldState, newState) => {
           var voiceChannel = newState.channel;
           if (oldState.channel != newState.channel) {
             if (newChannel != "undefined" || newChannel != null) {
-              voiceChannel
-                .join()
-                .then(connection => {
-                  const dispatcher = connection.play(
-                    "https://www.myinstants.com/media/sounds/you_were_banned_2.mp3", //"https://www.myinstants.com/media/sounds/metalgearsolid.swf.mp3",
-                    { volume: "1" }
-                  );
-                  dispatcher.on("finish", end => voiceChannel.leave());
-                })
-                .catch(err => console.log(err));
+              if (person != "133671473591222273") {
+                voiceChannel
+                  .join()
+                  .then(connection => {
+                    const dispatcher = connection.play(
+                      "https://www.myinstants.com/media/sounds/you_were_banned_2.mp3", //"https://www.myinstants.com/media/sounds/metalgearsolid.swf.mp3",
+                      { volume: "1" }
+                    );
+                    dispatcher.on("finish", end => voiceChannel.leave());
+                  })
+                  .catch(err => console.log(err));
+              } else {
+                voiceChannel
+                  .join()
+                  .then(connection => {
+                    const dispatcher = connection.play(
+                      "https://www.myinstants.com/media/sounds/aplausos_2.mp3", //"https://www.myinstants.com/media/sounds/metalgearsolid.swf.mp3",
+                      { volume: "1" }
+                    );
+                    dispatcher.on("finish", end => voiceChannel.leave());
+                  })
+                  .catch(err => console.log(err));
+              }
             }
           }
         }
@@ -54,11 +67,7 @@ bot.on("message", msg => {
     msg.reply(
       "Vi er kanskje en dårlig bot, MEN! Vi er ikke like utdatert søppel som en viss TrashBOT"
     );
-  } else if (msg.content.includes("+")) {
-    msg.reply(
-      "Imagine, dette er et mattespørsmål din nepe, hørt om " + symbo + " ?"
-    );
-  } else if (msg.content.includes("ein" || "dinna")) {
+  } else if (msg.content.includes(" ein" || "dinna")) {
     msg.reply(
       "Nynorsk oppdaget, gjør som resten av moderne sivilisasjon og skriv på en forståelig målform."
     );
@@ -932,7 +941,7 @@ bot.on("message", msg => {
           console.log(err);
         }
         break;
-      //------------------------------
+//------------------------------
     }
   }
 });
@@ -945,32 +954,3 @@ function sleep(milliseconds) {
     currentDate = Date.now();
   } while (currentDate - date < milliseconds);
 }
-
-/*
-function tts(voiceChannel, text) {
-    if (!FS.existsSync('./temp')){
-        FS.mkdirSync('./temp');
-    }
-    const timestamp = new Date().getTime();
-    const soundPath = `./temp/${timestamp}.mp3`;
-    say.export(text, null, 1, soundPath, (err) => {
-        if (err) {
-            console.login(err);
-            return;
-        }else{
-            voiceChannel.join().then((connection) => {
-				const dispatcher = connection.play(soundPath).on('end', () => {
-                    msg.member.voice.channel.leave();
-                    FS.unlinkSync(soundPath);
-                }).on('error', (err) => {
-                    console.error(err);
-                    connection.disconnect();
-                    FS.unlinkSync(soundPath);
-                });
-            }).catch((err) => {
-                console.error(err);
-            });
-        }
-    });
-}
-*/
