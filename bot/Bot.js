@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const ytdl = require("ytdl-core");
+const roast = require("../json/insults.json");
 const yt = require("scrape-youtube").default;
 const bot = new Discord.Client();
 
@@ -606,6 +607,15 @@ bot.on("message", msg => {
       //------------------------------
       case "stream":
         msg.channel.send("https://www.twitch.tv/pokemonlegenden");
+        break;
+       //------------------------------
+      case "insult":
+        var mentioned = args[0];
+        msg.channel.send(mentioned + " " + roast[Math.floor(Math.random() * roast.length)])
+        break;
+      //------------------------------
+      case "kill":
+        msg.channel.send("pew");
         break;
       //------------------------------
       case "pingu":
