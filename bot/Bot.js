@@ -432,6 +432,32 @@ bot.on("message", msg => {
           .catch(err => console.log(err));
         break;
       //------------------------------ RANDOM ------------------------------------------------------------
+        case "ps1":
+        var voiceChannel = msg.member.voice.channel;
+        voiceChannel
+          .join()
+          .then(connection => {
+            const dispatcher = connection.play(
+              "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Ftest.mp3?v=1589659578379"
+            );
+            dispatcher.on("finish", end => msg.member.voice.channel.leave());
+          })
+          .catch(err => console.log(err));
+        break;
+      //------------------------------
+        case "virgin":
+        var voiceChannel = msg.member.voice.channel;
+        voiceChannel
+          .join()
+          .then(connection => {
+            const dispatcher = connection.play(
+              " https://www.myinstants.com/media/sounds/no-dont-do-it-im-a-virgin.mp3"
+            );
+            dispatcher.on("finish", end => msg.member.voice.channel.leave());
+          })
+          .catch(err => console.log(err));
+        break;
+      //------------------------------  https://www.myinstants.com/media/sounds/ultimate-respect-button_MdJiOOn.mp3
       case "ps1":
         var voiceChannel = msg.member.voice.channel;
         voiceChannel
