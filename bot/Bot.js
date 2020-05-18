@@ -33,7 +33,7 @@ bot.on("voiceStateUpdate", (oldState, newState) => {
                 .join()
                 .then(connection => {
                   const dispatcher = connection.play(
-                    "https://www.myinstants.com/media/sounds/metalgearsolid.swf.mp3",
+                    "https://www.myinstants.com/media/sounds/you_were_banned_2.mp3", //"https://www.myinstants.com/media/sounds/metalgearsolid.swf.mp3",
                     { volume: "1" }
                   );
                   dispatcher.on("finish", end => voiceChannel.leave());
