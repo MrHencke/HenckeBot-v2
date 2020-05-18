@@ -108,6 +108,14 @@ bot.on("message", msg => {
         }
         break;
       //------------------------------
+      case "at":
+        var p;
+        var mentioned = args[0];
+        for (p = 0; p < 5; p++) {
+          msg.channel.send(mentioned);
+        }
+        break;
+      //------------------------------
       case "status":
         msg.channel.send("Måløy Regionale Datatjenester er: OFFLINE");
         break;
