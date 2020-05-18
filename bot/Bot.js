@@ -15,47 +15,30 @@ bot.once("ready", () => {
 });
 
 var stream;
-var dispatcher
+var dispatcher;
 
 bot.on("voiceStateUpdate", (oldState, newState) => {
     try {
         var server = newState.guild.id;
-        var henckeID = "133671473591222273";
         var person = newState.member.id.toString();
-        if (server == "612947002853949458" || person == henckeID) {
-            var maxbot = 1;
+        if (server == "612947002853949458" || person == "133671473591222273") {
             if (newState.channel != null) {
                 var bots = newState.channel.members.filter(x => x.user.bot).size;
-                if (maxbot > bots && newState.channelID != "undefined") {
+                if (1 > bots) {
                     var oldChannel = oldState.channelID;
                     var newChannel = newState.channelID;
                     var voiceChannel = newState.channel;
                     if (oldState.channel != newState.channel) {
-                        if (newChannel != "undefined" || newChannel != null) {
-                            if (person != henckeID) {
-                                voiceChannel
-                                    .join()
-                                    .then(connection => {
-                                        const dispatcher = connection.play(
-                                            "https://www.myinstants.com/media/sounds/you_were_banned_2.mp3", //"https://www.myinstants.com/media/sounds/metalgearsolid.swf.mp3",
-                                            { volume: "1" }
-                                        );
-                                        dispatcher.on("finish", end => voiceChannel.leave());
-                                    })
-                                    .catch(err => console.log(err));
+                        if (newState.channelID != "undefined") {
+                            if (person != "133671473591222273") {
+                                          var url =  "https://www.myinstants.com/media/sounds/you_were_banned_2.mp3" //"https://www.myinstants.com/media/sounds/metalgearsolid.swf.mp3",
+                                        sound(url, voiceChannel);
                             } else {
-                                voiceChannel
-                                    .join()
-                                    .then(connection => {
-                                        const dispatcher = connection.play(
-                                            "https://www.myinstants.com/media/sounds/aplausos_2.mp3", //"https://www.myinstants.com/media/sounds/metalgearsolid.swf.mp3",
-                                            { volume: "1" }
-                                        );
-                                        dispatcher.on("finish", end => voiceChannel.leave());
-                                    })
-                                    .catch(err => console.log(err));
+                               
+                                          var url = "https://www.myinstants.com/media/sounds/aplausos_2.mp3" //"https://www.myinstants.com/media/sounds/metalgearsolid.swf.mp3",
+                                          sound(url, voiceChannel);
                             }
-                        }
+                        } else return;
                     }
                 }
             }
