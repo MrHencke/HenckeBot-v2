@@ -7,7 +7,7 @@ const bot = new Discord.Client();
 bot.once("ready", () => {
   console.log(`Logged in as ${bot.user.tag}!`);
   console.log(`Ready to fuck shit up`);
-  bot.user.setActivity("", {
+  bot.user.setActivity("Cyberpunk 2077", {
     type: "STREAMING",
     url: "https://www.twitch.tv/mrhencke"
   });
