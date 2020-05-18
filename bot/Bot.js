@@ -557,7 +557,12 @@ bot.on("message", msg => {
           "HenckeBot Version: 1.0." + Math.floor(Math.random() * 90 + 10)
         );
         break;
-
+      //------------------------------
+      case "stats":
+        msg.channel.send(
+          "HenckeBot er online \nPå: " + bot.guilds.cache.size + " servere." + "\nFor: " + bot.channels.cache.size + " kanaler." + "\nMed: " + bot.users.cache.size + " brukere."
+        );
+        break;
       //------------------------------
       case "stream":
         msg.channel.send("https://www.twitch.tv/pokemonlegenden");
