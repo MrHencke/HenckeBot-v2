@@ -14,8 +14,6 @@ bot.once("ready", () => {
   });
 });
 
-var dispatcher;
-
 bot.on("voiceStateUpdate", (oldState, newState) => {
   try {
     var server = newState.guild.id;
@@ -119,10 +117,6 @@ bot.on("message", msg => {
         msg.channel.send("Måløy Regionale Datatjenester er: OFFLINE");
         break;
       //------------------------------
-      case "erd":
-        msg.channel.send("https://erdplus.com/standalone");
-        break;
-      //------------------------------
       case "dat107":
         msg.channel.send({
           files: [
@@ -158,16 +152,6 @@ bot.on("message", msg => {
           "Don't you just hate it when your cat wakes you up like this? Meow. Meow. Meow. Meow. Meow. Meow. Meow. Meow. Meow. Meow. Meow. Meow. Meow. Meow. Meow. Meow. Meow. Meow. Meow. Meow.",
           { tts: true }
         );
-        break;
-      //------------------------------
-      case "mehe":
-        var i;
-        for (i = 0; i < 5; i++) {
-          msg.channel.send(
-            "mehehehehehehehehehehehehhmehehehehehehehehehehehehhmehehehehehehehehehehehehh",
-            { tts: true }
-          );
-        }
         break;
       //------------------------------
       case "nevergonna":
@@ -646,11 +630,7 @@ bot.on("message", msg => {
               {
                 name: "Pongu",
                 value:
-                  "Pingen til Henckebot er: " + Math.round(bot.ws.ping) + " ms"
-              }
-            ]
-          }
-        });
+                  "Pingen til Henckebot er: " + Math.round(bot.ws.ping) + " ms" }]}});
         break;
       //------------------------------
       case "hjelp":
@@ -705,22 +685,16 @@ bot.on("message", msg => {
           bruker + youtube + tekst + tts + pat + kai + music + randvoice + hjelp
         );
         msg.author.send(wip + sendmld + wip);
-
-        //utdatert2	msg.author.send(" Kjære bruker, her er mine primærfunksjoner\n TEXT COMMANDS \n  hei \n  grete \n  i \n  alle \n  status \n  heisann \n  heidu \n  hjelp \n  meow \n  ttsbåt \n  mehe \n  nevergonna \n  giveyouup \n  say \n  slett \n  georg \n  music \n  frukt \n  narko \n  narko \n  jesus \n  her \n VOICE COMMANDS \n  fruktv \n  steviev \n  georgv \n  narkov \n  narkov \n  nakokia \n  ban \n  flue \n  holy \n  labruzzo \n  pubg \n  skammekrok \n  uskyldig \n  uskyldig \n  p Brukes slik !p + youtube-link  \n HJELPEMETODER \n  stikk \n  komher \n  hencke \n  hjelp \n MUSIKKSTREAMS \n  lofi \n  indie \n  trap \n  pissepop \n  jazz \n  pop \n  teatime \n  mix");
-        //utdatert	msg.author.send(" Kjære bruker, her er mine primærfunksjoner:\n TEXT COMMANDS: \n 1: hei \n 2: grete \n 3: i \n 4: alle \n 5: status \n 6: heisann \n 7: heidu \n 8: hjelp \n 9: meow \n 10: ttsbåt \n 11: mehe \n 12: nevergonna \n 13: giveyouup \n 14: say \n 15: slett \n 16: georg \n 17: music \n 18: frukt \n 19: narko \n 20: narko2 \n 21: jesus \n 22: her \n VOICE COMMANDS: \n 23: fruktv \n 24: steviev \n 25: georgv \n 26: narkov \n 27: narko2v \n 28: nakokia \n 29: ban \n 30: flue \n 31: holy \n 32: labruzzo \n 33: pubg \n 34: skammekrok \n 35: uskyldig \n 36: uskyldig \n 37: p Brukes slik: !p + youtube-link  \n HJELPEMETODER: \n 38: stikk \n 39: komher \n 40: hencke \n 41: hjelp \n MUSIKKSTREAMS: \n 42: lofi \n 43: indie \n 44: trap \n 45: pissepop \n 46: jazz \n 47: pop \n 48: teatime \n 49: mix");
         break;
       //------------------------------
       case "nytt":
         var linje = "--------------------------------------------";
-
         var nytt =
          linje + "NYE FUNKSJONER" + linje + "\n !pingu, \n !version,\n"; //HJELP
         var sendmld =
-          "Send gjerne en melding med forslag for nye funksjoner til <@133671473591222273> \n"; //MUSIC
-
+          "Send gjerne en melding med forslag for nye funksjoner til <@133671473591222273> \n"; //MUSI
         msg.author.send(nytt);
         msg.author.send(sendmld);
-
         //utdatert2	msg.author.send(" Kjære bruker, her er mine primærfunksjoner\n TEXT COMMANDS \n  hei \n  grete \n  i \n  alle \n  status \n  heisann \n  heidu \n  hjelp \n  meow \n  ttsbåt \n  mehe \n  nevergonna \n  giveyouup \n  say \n  slett \n  georg \n  music \n  frukt \n  narko \n  narko \n  jesus \n  her \n VOICE COMMANDS \n  fruktv \n  steviev \n  georgv \n  narkov \n  narkov \n  nakokia \n  ban \n  flue \n  holy \n  labruzzo \n  pubg \n  skammekrok \n  uskyldig \n  uskyldig \n  p Brukes slik !p + youtube-link  \n HJELPEMETODER \n  stikk \n  komher \n  hencke \n  hjelp \n MUSIKKSTREAMS \n  lofi \n  indie \n  trap \n  pissepop \n  jazz \n  pop \n  teatime \n  mix");
         //utdatert	msg.author.send(" Kjære bruker, her er mine primærfunksjoner:\n TEXT COMMANDS: \n 1: hei \n 2: grete \n 3: i \n 4: alle \n 5: status \n 6: heisann \n 7: heidu \n 8: hjelp \n 9: meow \n 10: ttsbåt \n 11: mehe \n 12: nevergonna \n 13: giveyouup \n 14: say \n 15: slett \n 16: georg \n 17: music \n 18: frukt \n 19: narko \n 20: narko2 \n 21: jesus \n 22: her \n VOICE COMMANDS: \n 23: fruktv \n 24: steviev \n 25: georgv \n 26: narkov \n 27: narko2v \n 28: nakokia \n 29: ban \n 30: flue \n 31: holy \n 32: labruzzo \n 33: pubg \n 34: skammekrok \n 35: uskyldig \n 36: uskyldig \n 37: p Brukes slik: !p + youtube-link  \n HJELPEMETODER: \n 38: stikk \n 39: komher \n 40: hencke \n 41: hjelp \n MUSIKKSTREAMS: \n 42: lofi \n 43: indie \n 44: trap \n 45: pissepop \n 46: jazz \n 47: pop \n 48: teatime \n 49: mix");
         break;
@@ -818,19 +792,6 @@ bot.on("message", msg => {
           .catch(err => console.log(err));
         break;
       //------------------------------
-      case "custom":
-        // if()
-        var custlink = args.join(" ");
-        var voiceChannel = msg.member.voice.channel;
-        voiceChannel
-          .join()
-          .then(connection => {
-            const dispatcher = connection.play(custlink, { volume: 0.5 });
-            dispatcher.on("finish", end => msg.member.voice.channel.leave());
-          })
-          .catch(err => console.log(err));
-        break;
-      //------------------------------
       case "invite":
         msg.channel.send(
           "https://discord.com/api/oauth2/authorize?client_id=709760720836755477&permissions=104332608&scope=bot"
@@ -858,52 +819,6 @@ bot.on("message", msg => {
           console.log(err);
         }
         break;
-      //------------------------------
-      case "teatime":
-        try {
-          const link = "https://www.youtube.com/watch?v=fs_DhOqo-hw";
-          const stream = ytdl(
-            link,
-            { liveBuffer: "20000" },
-            { filter: "audioonly" },
-            { volume: "0.2" }
-          );
-          var voiceChannel = msg.member.voice.channel;
-          voiceChannel
-            .join()
-            .then(connection => {
-              const dispatcher = connection.play(stream);
-              dispatcher.on("finish", end => msg.member.voice.channel.leave());
-            })
-            .catch(err => console.log(err));
-        } catch (err) {
-          console.log(err);
-        }
-        break;
-
-      //------------------------------
-      case "pop":
-        try {
-          const link = "https://www.youtube.com/watch?v=36YnV9STBqc";
-          const stream = ytdl(
-            link,
-            { liveBuffer: "20000" },
-            { filter: "audioonly" },
-            { volume: "0.2" }
-          );
-          var voiceChannel = msg.member.voice.channel;
-          voiceChannel
-            .join()
-            .then(connection => {
-              const dispatcher = connection.play(stream);
-              dispatcher.on("finish", end => msg.member.voice.channel.leave());
-            })
-            .catch(err => console.log(err));
-        } catch (err) {
-          console.log(err);
-        }
-        break;
-
       //------------------------------
       case "jazz":
         try {
@@ -975,6 +890,7 @@ bot.on("message", msg => {
     }
   }
 });
+
 bot.login(process.env.token);
 
 function sleep(milliseconds) {
