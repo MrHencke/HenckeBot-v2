@@ -454,7 +454,20 @@ bot.on("message", msg => {
           })
           .catch(err => console.log(err));
         break;
-      //------------------------------
+        //------------------------------
+        case "iamtheone":
+        var voiceChannel = msg.member.voice.channel;
+        voiceChannel
+          .join()
+          .then(connection => {
+            const dispatcher = connection.play(
+              "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FThe%20Witcher%20Soundtrack%20-%20Toss%20A%20Coin%20To%20Your%20Witcher%20Lyrics.mp3?v=1589824745592"
+            );
+            dispatcher.on("finish", end => msg.member.voice.channel.leave());
+          })
+          .catch(err => console.log(err));
+        break;
+      //------------------------------ 
         case "iamtheone":
         var voiceChannel = msg.member.voice.channel;
         voiceChannel
