@@ -16,7 +16,8 @@
     "ytdl-core": "^2.1.2",
     "scrape-youtube": "^0.1.8",
     "reddittits": "^1.0.0",
-    "memejs": "^1.2.3"
+    "memejs": "^1.2.3",
+    "reddit4k": "^1.0.1"
   },
   "devDependencies": {},
   "author": "Hencke",

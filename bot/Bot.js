@@ -3,7 +3,10 @@ const fs = require("fs");
 const ytdl = require("ytdl-core");
 const roast = require("../res/roast.json");
 const comp = require("../res/compliments.json");
+const quote = require("../res/quote.json");
+const mem = require("memejs")
 const teet = require("reddittits")
+const fourk = require("reddit4k")
 const yt = require("scrape-youtube").default;
 const bot = new Discord.Client();
 
@@ -352,16 +355,39 @@ bot.on("message", msg => {
                 });
                 break;
             //------------------------------
-            case "insult":
+            case "4k":
+            fourk(function(data, err) {
+            msg.channel.send(`${data.url[0]}`);
+                });
+                break;
+            
+            //------------------------------
+            case "roast":
                 var mentioned = args[0];
                 msg.delete().catch(O_o => { });
                 msg.channel.send(mentioned + " " + roast[Math.floor(Math.random() * roast.length)])
                 break;
             //------------------------------
-            case "compliment":
+            case "comp":
                 var mentioned = args[0];
                 msg.delete().catch(O_o => { });
-                msg.channel.send(mentioned + " " + comp[Math.floor(Math.random() * roast.length)])
+                msg.channel.send(mentioned + " " + comp[Math.floor(Math.random() * comp.length)])
+                break;
+            //------------------------------
+            case "quote":
+                var mentioned = args[0];
+                msg.delete().catch(O_o => { });
+            
+                const exampleEmbed = new Discord.MessageEmbed()
+	.setColor('#0099ff')
+	.setTitle('Some title')
+	.setURL('https://discord.js.org/')
+	.setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
+	.setDescription('Some description here')
+	.setThumbnail('https://i.imgur.com/wSTFkRM.png')
+	.addFields(
+		{ name: 'Regular field title', value: 'Some value here' },
+                msg.channel.send(mentioned + " " + quote[Math.floor(Math.random() * quote.length)])
                 break;
             //------------------------------
             case "kill":
