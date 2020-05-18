@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const ytdl = require("ytdl-core");
-const roast = require("../json/insults.json");
+const roast = require("../res/roast.json");
 const yt = require("scrape-youtube").default;
 const bot = new Discord.Client();
 
@@ -13,6 +13,8 @@ bot.once("ready", () => {
     url: "https://www.twitch.tv/mrhencke"
   });
 });
+
+
 
 bot.on("voiceStateUpdate", (oldState, newState) => {
   try {
@@ -891,6 +893,7 @@ bot.on("message", msg => {
   }
 });
 
+
 bot.login(process.env.token);
 
 function sleep(milliseconds) {
@@ -901,3 +904,6 @@ function sleep(milliseconds) {
   } while (currentDate - date < milliseconds);
 }
 
+function sound(url, msg) {
+
+}

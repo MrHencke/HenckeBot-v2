@@ -1,2 +1,2 @@
-require("./web/WebServer");
 require("./bot/Bot");
+require("./web/WebServer");
