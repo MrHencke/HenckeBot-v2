@@ -14,6 +14,12 @@ bot.once("ready", () => {
     });
 });
 
+function sound(url, voiceChannel) {
+    voiceChannel.join().then(connection => {
+        const dispatcher = connection.play(url);
+        dispatcher.on("finish", end => voiceChannel.leave());
+    }).catch(err => console.log(err));
+}
 var stream;
 var dispatcher;
 
@@ -25,22 +31,17 @@ bot.on("voiceStateUpdate", (oldState, newState) => {
             if (newState.channel != null) {
                 var bots = newState.channel.members.filter(x => x.user.bot).size;
                 if (1 > bots) {
-                    var oldChannel = oldState.channelID;
-                    var newChannel = newState.channelID;
                     var voiceChannel = newState.channel;
-                    if (oldState.channel != newState.channel) {
-                        if (newState.channelID != "undefined") {
+                    if (oldState.channel != newState.channel && newState.channelID != "undefined") {
                             if (person != "133671473591222273") {
                                           var url =  "https://www.myinstants.com/media/sounds/you_were_banned_2.mp3" //"https://www.myinstants.com/media/sounds/metalgearsolid.swf.mp3",
                                         sound(url, voiceChannel);
                             } else {
-                               
                                           var url = "https://www.myinstants.com/media/sounds/aplausos_2.mp3" //"https://www.myinstants.com/media/sounds/metalgearsolid.swf.mp3",
                                           sound(url, voiceChannel);
                             }
                         } else return;
                     }
-                }
             }
         }
     } catch (err) {
@@ -489,9 +490,3 @@ function sleep(milliseconds) {
     } while (currentDate - date < milliseconds);
 }
 
-function sound(url, voiceChannel) {
-    voiceChannel.join().then(connection => {
-        const dispatcher = connection.play(url);
-        dispatcher.on("finish", end => voiceChannel.leave());
-    }).catch(err => console.log(err));
-}
