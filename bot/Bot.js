@@ -5,6 +5,7 @@ const roast = require("../res/roast.json");
 const comp = require("../res/compliments.json");
 const quote = require("../res/quote.json");
 const land = require("../res/countries.json");
+const film = require("../res/movies.json");
 const mem = require("memejs") //https://www.npmjs.com/package/memejs
 const teet = require("reddittits")
 const fourk = require("reddit4k")
@@ -151,7 +152,7 @@ bot.on("message", msg => {
             case "slett":
                 var henckeID = "133671473591222273";
                 if (msg.author.id == henckeID) {
-                    const amount = args.join(" ");
+                    const amount = ((args.join(" "))+1);
                     if (isNaN(amount) == true) {
                         return msg.channel.send("Skriv inn et tall da din fitte.");
                     } else if (!amount) {
@@ -319,6 +320,7 @@ bot.on("message", msg => {
             //------------------------------HJELPEMETODER------------------------------------------------------------
             case "restart":
                 if (msg.author.id !== "133671473591222273") return;
+                msg.delete().catch(O_o => { });
                 msg.channel.send("Restarted HenckeBot.").then(() => {
                     process.exit(1);
                 });
@@ -376,10 +378,15 @@ bot.on("message", msg => {
                 break;
              //------------------------------
             case "ferie":
-                var mentioned = args[0];
-                msg.delete().catch(O_o => { });
-                msg.channel.send(mentioned + " ditt neste feriemål skal bli: " + land[Math.floor(Math.random() * land.length)])
+            var feindex = Math.floor(Math.random() * land.length);
+                msg.reply(" du burde prøve å reise til: " + land[feindex].name + "\n" + "https://en.wikipedia.org/wiki/" + land[feindex].name)
                 break;
+            //------------------------------
+            case "film":
+                var filmdata = film[Math.floor(Math.random() * land.length)]
+                msg.channel.send("Jeg foreslår: "+ filmdata.title + " fra " + filmdata.year)
+                break;
+          
             //------------------------------
             case "quote":
                 var mentioned = args[0];
