@@ -344,6 +344,12 @@ bot.on("message", msg => {
             //------------------------------
             case "stream":
                 msg.channel.send("https://www.twitch.tv/pokemonlegenden");
+                break;        
+            //------------------------------
+            case "tits":
+            teet(function(data, err) {
+            msg.channel.send(`${data.url[0]}`);
+                });
                 break;
             //------------------------------
             case "insult":
