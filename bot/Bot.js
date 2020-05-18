@@ -300,7 +300,7 @@ bot.on("message", msg => {
                                 .setDescription(results.description)
                                 .setImage(results.thumbnail)
                                 .setTimestamp()
-                                .setFooter("HenckeBot", "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FUten%20nsdsdavn.png?v=1589758105374");
+                                .setFooter("HenckeBot™ ©2020", "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FUten%20nsdsdavn.png?v=1589758105374");
                             msg.channel.send("Now playing: ");
                             msg.channel.send(playin);
                             const stream = ytdl(link, { filter: "audioonly" });
@@ -376,18 +376,13 @@ bot.on("message", msg => {
             //------------------------------
             case "quote":
                 var mentioned = args[0];
-                msg.delete().catch(O_o => { });
-            
-                const exampleEmbed = new Discord.MessageEmbed()
-	.setColor('#0099ff')
-	.setTitle('Some title')
-	.setURL('https://discord.js.org/')
-	.setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
-	.setDescription('Some description here')
-	.setThumbnail('https://i.imgur.com/wSTFkRM.png')
-	.addFields(
-		{ name: 'Regular field title', value: 'Some value here' },
-                msg.channel.send(mentioned + " " + quote[Math.floor(Math.random() * quote.length)])
+                var index = Math.floor(Math.random() * quote.length);
+                const mbed = new Discord.MessageEmbed()
+                .setColor('#0099ff')
+                .setDescription(quote[index].quoteText)   
+                .addField("av", quote[index].quoteAuthor, true)
+                .setFooter("HenckeBot™  ©2020", "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FUten%20nsdsdavn.png?v=1589758105374");
+                msg.channel.send(mbed)
                 break;
             //------------------------------
             case "kill":
