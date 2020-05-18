@@ -3,6 +3,7 @@ const fs = require("fs");
 const ytdl = require("ytdl-core");
 const roast = require("../res/roast.json");
 const comp = require("../res/compliments.json");
+const teet = require("reddittits")
 const yt = require("scrape-youtube").default;
 const bot = new Discord.Client();
 
@@ -301,17 +302,16 @@ bot.on("message", msg => {
                             msg.channel.send(playin);
                             const stream = ytdl(link, { filter: "audioonly" });
                                 sound(stream, msg.member.voice.channel);
-                        }
-                    } else {
+                          })
+                          } else {
                         link = args[0];
                         const stream = ytdl(link, { filter: "audioonly" }, { quality: "highestaudio" } );
                             sound(stream, msg.member.voice.channel);
-                    }
-                } catch (err) {
-                    console.log(err);
-                }
+                          }
+                    } catch (err) {
+                    console.log(err);       }
+                
                 break;
-
             //------------------------------HJELPEMETODER------------------------------------------------------------
             case "restart":
                 if (msg.author.id !== "133671473591222273") return;
