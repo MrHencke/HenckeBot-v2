@@ -283,7 +283,7 @@ bot.on("message", msg => {
             case "p":
                 var link;
                 try {
-                    if (args[0].substring(0, 4) != "http") {
+                    if (args[0].substring(0, 6) != "https:") {
                         var search = args.join(" ");
                         yt.searchOne(search, { type: "video" }).then(results => {
                             link = results.link;
@@ -300,15 +300,12 @@ bot.on("message", msg => {
                             msg.channel.send("Now playing: ");
                             msg.channel.send(playin);
                             const stream = ytdl(link, { filter: "audioonly" });
-                            if (msg.member.voice.channel != null) {
                                 sound(stream, msg.member.voice.channel);
-                            } else return;});
+                        }
                     } else {
                         link = args[0];
                         const stream = ytdl(link, { filter: "audioonly" }, { quality: "highestaudio" } );
-                        if (msg.member.voice.channel != null) {
                             sound(stream, msg.member.voice.channel);
-                        } else return;
                     }
                 } catch (err) {
                     console.log(err);
