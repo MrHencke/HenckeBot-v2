@@ -728,30 +728,15 @@ bot.on("message", msg => {
         break;
       //------------------------------
       case "bestaround":
-        var voiceChannel = msg.member.voice.channel;
-        voiceChannel
-          .join()
-          .then(connection => {
-            const dispatcher = connection.play(
-              "https://www.myinstants.com/media/sounds/youre-the-best-around-by-joe-esposito-mp3cut.mp3",
-              { volume: "0.3" }
-            );
-            dispatcher.on("finish", end => msg.member.voice.channel.leave());
-          })
-          .catch(err => console.log(err));
+
+             url = "https://www.myinstants.com/media/sounds/youre-the-best-around-by-joe-esposito-mp3cut.mp3",
+            sound(url, msg.member.voice.channel);
         break;
       //------------------------------
       case "wrong":
         var voiceChannel = msg.member.voice.channel;
-        voiceChannel
-          .join()
-          .then(connection => {
-            const dispatcher = connection.play(
-              "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fwrong.mp3?v=1589662557794"
-            );
-            dispatcher.on("finish", end => msg.member.voice.channel.leave());
-          })
-          .catch(err => console.log(err));
+        var url = "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fwrong.mp3?v=1589662557794";
+        sound(url, voiceChannel);
         break;
       //------------------------------
       case "ph":
@@ -904,6 +889,9 @@ function sleep(milliseconds) {
   } while (currentDate - date < milliseconds);
 }
 
-function sound(url, msg) {
-
+function sound(url, voiceChannel) {
+voiceChannel.join().then(connection => {
+            const dispatcher = connection.play(url);
+            dispatcher.on("finish", end => voiceChannel.leave());
+}).catch(err => console.log(err));
 }
