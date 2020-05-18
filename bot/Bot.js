@@ -63,7 +63,6 @@ bot.on("voiceStateUpdate", (oldState, newState) => {
     console.log(err);
   }
 });
-var symbo = "https://www.symbolab.com/";
 bot.on("message", msg => {
   if (msg.content.includes("bad bot")) {
     msg.reply(
@@ -927,51 +926,6 @@ bot.on("message", msg => {
           console.log(err);
         }
         break;
-
-      //------------------------------
-      case "pissepop":
-        try {
-          const link = "https://www.youtube.com/watch?v=kGKkUN50R0c";
-          const stream = ytdl(
-            link,
-            { liveBuffer: "20000" },
-            { filter: "audioonly" },
-            { volume: "0.2" }
-          );
-          var voiceChannel = msg.member.voice.channel;
-          voiceChannel
-            .join()
-            .then(connection => {
-              const dispatcher = connection.play(stream);
-              dispatcher.on("finish", end => msg.member.voice.channel.leave());
-            })
-            .catch(err => console.log(err));
-        } catch (err) {
-          console.log(err);
-        }
-        break;
-      //------------------------------
-      case "trap":
-        try {
-          const link = "https://www.youtube.com/watch?v=OyWfsDTnij8";
-          const stream = ytdl(
-            link,
-            { liveBuffer: "20000" },
-            { filter: "audioonly" },
-            { volume: "0.2" }
-          );
-          var voiceChannel = msg.member.voice.channel;
-          voiceChannel
-            .join()
-            .then(connection => {
-              const dispatcher = connection.play(stream);
-              dispatcher.on("finish", end => msg.member.voice.channel.leave());
-            })
-            .catch(err => console.log(err));
-        } catch (err) {
-          console.log(err);
-        }
-        break;
       //------------------------------
       case "indie":
         try {
@@ -1030,3 +984,4 @@ function sleep(milliseconds) {
     currentDate = Date.now();
   } while (currentDate - date < milliseconds);
 }
+
