@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const fs = require("fs");
 const ytdl = require("ytdl-core");
 const roast = require("../res/roast.json");
+const comp = require("../res/compliments.json");
 const yt = require("scrape-youtube").default;
 const bot = new Discord.Client();
 
@@ -362,6 +363,11 @@ bot.on("message", msg => {
             case "insult":
                 var mentioned = args[0];
                 msg.channel.send(mentioned + " " + roast[Math.floor(Math.random() * roast.length)])
+                break;
+            //------------------------------
+            case "compliment":
+                var mentioned = args[0];
+                msg.channel.send(mentioned + " " + comp[Math.floor(Math.random() * roast.length)])
                 break;
             //------------------------------
             case "kill":
