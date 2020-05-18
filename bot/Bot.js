@@ -455,7 +455,7 @@ bot.on("message", msg => {
           .catch(err => console.log(err));
         break;
         //------------------------------
-        case "iamtheone":
+        case "tossacoin":
         var voiceChannel = msg.member.voice.channel;
         voiceChannel
           .join()
@@ -834,7 +834,7 @@ bot.on("message", msg => {
       //------------------------------
       case "invite":
         msg.channel.send(
-          "https://discord.com/api/oauth2/authorize?client_id=709760720836755477&permissions=104332353&scope=bot"
+          "https://discord.com/api/oauth2/authorize?client_id=709760720836755477&permissions=104332608&scope=bot"
         );
         break;
       //------------------------------
