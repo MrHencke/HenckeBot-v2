@@ -14,7 +14,8 @@ bot.once("ready", () => {
     });
 });
 
-
+var stream;
+var dispatcher
 
 bot.on("voiceStateUpdate", (oldState, newState) => {
     try {
@@ -240,7 +241,6 @@ bot.on("message", msg => {
                 break;
             //------------------------------
             case "ban":
-
                          url =   "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FBan.mp3?v=1589662459737"
                         sound(url, msg.member.voice.channel);
                 break;
@@ -252,67 +252,56 @@ bot.on("message", msg => {
                 break;
             //------------------------------
             case "holy":
-
                 url =   "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fholy_shit.mp3?v=1589662459678"
                         sound(url, msg.member.voice.channel);
                 break;
             //------------------------------
             case "labruzzo":
-
                 url =   "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Flabruzzo.mp3?v=1589662459238"
                         sound(url, msg.member.voice.channel);
                 break;
             //------------------------------
             case "pubg":
-
                 url =  "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FPUBG.mp3?v=1589662459634"
                         sound(url, msg.member.voice.channel);
                 break;
             //------------------------------
             case "skammekrok":
-
                 url =  "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fskammekrok.mp3?v=1589662459498"
                         sound(url, msg.member.voice.channel);
                 break;
             //------------------------------
             case "uskyldig":
-
                 url =  "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fuskyldig.mp3?v=1589662459594"
                         sound(url, msg.member.voice.channel);
                 break;
             //------------------------------ RANDOM ------------------------------------------------------------
             case "pink":
-
                 url =  "https://www.myinstants.com/media/sounds/the-pink-panther-theme-song-original-version.mp3"
                         sound(url, msg.member.voice.channel);
                 break;
             //------------------------------
             case "tossacoin":
-
                 url =   "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FThe%20Witcher%20Soundtrack%20-%20Toss%20A%20Coin%20To%20Your%20Witcher%20Lyrics.mp3?v=1589824745592"
                         sound(url, msg.member.voice.channel);
                 break;
             //------------------------------ 
             case "iamtheone":
-
                 url =  "https://www.myinstants.com/media/sounds/ultimate-respect-button_MdJiOOn.mp3"
                         sound(url, msg.member.voice.channel);
                 break;
             //------------------------------
             case "virgin":
-
                 url =  " https://www.myinstants.com/media/sounds/no-dont-do-it-im-a-virgin.mp3"
                         sound(url, msg.member.voice.channel);
                 break;
             //------------------------------  
             case "ps1":
-
                 url = "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Ftest.mp3?v=1589659578379"
                         sound(url, msg.member.voice.channel);
                 break;
             //------------------------------
             case "hypo":
-
                 url = "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Falone.mp3?v=1589738328094"
                         sound(url, msg.member.voice.channel);
                 break;
@@ -322,68 +311,29 @@ bot.on("message", msg => {
                 try {
                     if (args[0].substring(0, 4) != "http") {
                         var search = args.join(" ");
-                        console.log(search);
-                        console.log(args);
                         yt.searchOne(search, { type: "video" }).then(results => {
-                            // console.log(results);
                             link = results.link;
-
                             const playin = new Discord.MessageEmbed()
                                 .setColor("#0099ff")
                                 .setTitle("Now Playing:")
                                 .setTitle(results.title)
                                 .setURL(results.link)
-                                .setAuthor(
-                                    "HenckeBot Music",
-                                    "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FUten%20nsdsdavn.png?v=1589758105374",
-                                    "https://github.com/MrHencke"
-                                )
+                                .setAuthor("HenckeBot Music", "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FUten%20nsdsdavn.png?v=1589758105374", "https://github.com/MrHencke")
                                 .setDescription(results.description)
-                                //	.setThumbnail(results.thumbnail)
                                 .setImage(results.thumbnail)
                                 .setTimestamp()
-                                .setFooter(
-                                    "HenckeBot",
-                                    "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FUten%20nsdsdavn.png?v=1589758105374"
-                                );
-
+                                .setFooter("HenckeBot", "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FUten%20nsdsdavn.png?v=1589758105374");
                             msg.channel.send("Now playing: ");
                             msg.channel.send(playin);
-                            console.log(results.title);
-                            console.log(link);
-
                             const stream = ytdl(link, { filter: "audioonly" });
-                            var voiceChannel = msg.member.voice.channel;
-                            if (voiceChannel != null) {
-                                voiceChannel
-                                    .join()
-                                    .then(connection => {
-                                        const dispatcher = connection.play(stream);
-                                        dispatcher.on("finish", end =>
-                                            msg.member.voice.channel.leave()
-                                        );
-                                    })
-                                    .catch(err => console.log(err));
-                            } else return;
-                        });
+                            if (msg.member.voice.channel != null) {
+                                sound(stream, msg.member.voice.channel);
+                            } else return;});
                     } else {
                         link = args[0];
-                        const stream = ytdl(
-                            link,
-                            { filter: "audioonly" },
-                            { quality: "highestaudio" }
-                        );
-                        var voiceChannel = msg.member.voice.channel;
-                        if (voiceChannel != null) {
-                            voiceChannel
-                                .join()
-                                .then(connection => {
-                                    const dispatcher = connection.play(stream);
-                                    dispatcher.on("finish", end =>
-                                        msg.member.voice.channel.leave()
-                                    );
-                                })
-                                .catch(err => console.log(err));
+                        const stream = ytdl(link, { filter: "audioonly" }, { quality: "highestaudio" } );
+                        if (msg.member.voice.channel != null) {
+                            sound(stream, msg.member.voice.channel);
                         } else return;
                     }
                 } catch (err) {
@@ -517,29 +467,27 @@ bot.on("message", msg => {
             //------------------------------
             case "lofi":
                     var link = "https://www.youtube.com/watch?v=5qap5aO4i9A";
-                    const stream = ytdl(link,{ liveBuffer: "20000" },{ filter: "audioonly" },{ volume: "0.1" });
+                     stream = ytdl(link,{ liveBuffer: "20000" },{ filter: "audioonly" },{ volume: "0.1" });
                     sound(stream, msg.member.voice.channel);
                 break;
             //------------------------------
             case "jazz":
-            try{
                     var link = "https://www.youtube.com/watch?v=DSGyEsJ17cI";
-                     cons stream = ytdl(link,{ liveBuffer: "20000" },{ filter: "audioonly" },{ volume: "0.2" });
+                      stream = ytdl(link,{ liveBuffer: "20000" },{ filter: "audioonly" },{ volume: "0.2" });
                     sound(stream, msg.member.voice.channel);
               
                 break;
             //------------------------------
             case "indie":
-                    const link = "https://www.youtube.com/watch?v=oVi5gtzTDx0";
-                    const stream = ytdl(link,{ liveBuffer: "20000" },{ filter: "audioonly" },{ volume: "0.2" });
+                    var link = "https://www.youtube.com/watch?v=oVi5gtzTDx0";
+                     stream = ytdl(link,{ liveBuffer: "20000" },{ filter: "audioonly" },{ volume: "0.2" });
                     sound(stream, msg.member.voice.channel);
                 break;
 
             //------------------------------
             case "mix":
-                try {
-                    const link = "https://www.youtube.com/watch?v=1itSqkbXIlU";
-                    const stream = ytdl(link,{ liveBuffer: "20000" },{ filter: "audioonly" },{ volume: "0.2" });
+                    var link = "https://www.youtube.com/watch?v=1itSqkbXIlU";
+                     stream = ytdl(link,{ liveBuffer: "20000" },{ filter: "audioonly" },{ volume: "0.2" });
                     sound(stream, msg.member.voice.channel);
                 break;
             //------------------------------
