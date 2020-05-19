@@ -78,7 +78,7 @@ bot.on("message", msg => {
        msg.channel.send({files: ["https://cdn.glitch.com/2c6c8596-d523-4520-a5a7-8caa66a05edf%2F1b72da8a-c1d0-48e4-92df-f8b35fe2fb40.bilde.png?v=1589880897535"]});
     }else if (msg.content.includes("nuddel")) {
                 url = "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fskididdel.mp3?v=1589665443245",
-                sound(url, voiceChannel, msg);
+                sound(url, msg.member.voice.channel, msg);
     } else if (msg.content.substring(0, 1) == "!" && !msg.author.bot){
         var args = msg.content.substring(1).split(" ");
         var cmd = args[0];
@@ -460,9 +460,8 @@ bot.on("message", msg => {
                 break;
             //------------------------------
             case "wrong":
-                var voiceChannel = msg.member.voice.channel;
                 var url = "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fwrong.mp3?v=1589662557794";
-                sound(url, voiceChannel, msg);
+                sound(url, msg.member.voice.channel, msg);
                 break;
             //------------------------------
             case "ph":
@@ -478,9 +477,7 @@ bot.on("message", msg => {
                 break;
             //------------------------------
             case "coffin":
-
-                url =        "https://www.myinstants.com/media/sounds/hq-coffin-dance-funeral-vicetone-tony-igy-astronomia.mp3",
-                            { volume: 0.2 }
+                url =        "https://www.myinstants.com/media/sounds/hq-coffin-dance-funeral-vicetone-tony-igy-astronomia.mp3"
                         sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
