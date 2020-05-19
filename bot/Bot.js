@@ -157,7 +157,7 @@ bot.on("message", msg => {
             //------------------------------
             case "slett":
                 var henckeID = "133671473591222273";
-                if (msg.author.id == henckeID) {
+                if (msg.author.id == henckeID ||msg.author.id == "152019710949588992") {
                     const amount = (parseInt(args.join(" "), 10))+1;
                     if (isNaN(amount) == true) {
                         return msg.channel.send("Skriv inn et tall da din fitte.");
@@ -295,8 +295,8 @@ bot.on("message", msg => {
             case "p":
                 var link;
                 try {
-                  if(msg.author.channel == undefined){
-                    console.log(msg.author.channel)
+                  if(msg.author.channelID !== undefined){
+                    console.log("Kanal id: " + msg.author.channelID)
                     if (args[0].substring(0, 6) != "https:") {
                         var search = args.join(" ");
                         yt.searchOne(search, { type: "video" }).then(results => {
@@ -321,7 +321,7 @@ bot.on("message", msg => {
                         const stream = ytdl(link, { filter: "audioonly" }, { quality: "highestaudio" } );
                             sound(stream, msg.member.voice.channel, msg);
                           }
-                    }
+                    }else msg.channel.send("Gå nå inn i en kanal din nepe");
                     } catch (err) {
                     console.log(err);       }
                 
