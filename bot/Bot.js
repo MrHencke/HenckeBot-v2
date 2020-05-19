@@ -391,7 +391,7 @@ bot.on("message", msg => {
                 break;
             //------------------------------
             case "film":
-                var filmdata = film[Math.floor(Math.random() * land.length)]
+                var filmdata = film[Math.floor(Math.random() * film.length)]
                 msg.channel.send("Jeg foreslår: "+ filmdata.title + " fra " + filmdata.year)
                 break;
             //------------------------------
