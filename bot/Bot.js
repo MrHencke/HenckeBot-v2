@@ -152,7 +152,7 @@ bot.on("message", msg => {
             case "slett":
                 var henckeID = "133671473591222273";
                 if (msg.author.id == henckeID) {
-                    const amount = ((args.join(" "))+1);
+                    const amount = (parseInt(args.join(" "), 10))+1;
                     if (isNaN(amount) == true) {
                         return msg.channel.send("Skriv inn et tall da din fitte.");
                     } else if (!amount) {
@@ -174,7 +174,7 @@ bot.on("message", msg => {
                     msg.reply("App, app, app! Dette har du ikke lov til.");
                 }
                 break;
-            //------------------------------	VOICE	------------------------------------------------------------
+            //------------------------------	Postmann PAT	------------------------------------------------------------
             case "frukt":
                 url = "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fkurvfrukt.mp3?v=1589659578065"
                 sound(url, msg.member.voice.channel);
