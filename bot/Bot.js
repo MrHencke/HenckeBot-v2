@@ -160,7 +160,7 @@ bot.on("message", msg => {
                 if (msg.author.id == henckeID ||msg.author.id == "152019710949588992") {
                     const amount = (parseInt(args.join(" "), 10))+1;
                     if (isNaN(amount) == true) {
-                        return msg.channel.send("Skriv inn et tall da din fitte.");
+                        return msg.channel.send("Skriv inn et tall da din nepe.");
                     } else if (!amount) {
                         return msg.reply(
                             "Kan du lese? Skriv inn et tall mellom 2 og 100, helst ikke vær grådig og gå for hundre. Husk at du kan telle på hånden om du trenger hjelp."
