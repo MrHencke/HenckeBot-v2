@@ -32,6 +32,7 @@ function sound(url, voiceChannel, msg) {
       console.log(err)
       msg.channel.send("Gå inn i en voicechannel da din nepe")
     }}
+
 var stream;
 var dispatcher;
 
