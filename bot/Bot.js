@@ -46,8 +46,8 @@ bot.on("voiceStateUpdate", (oldState, newState) => {
                     var voiceChannel = newState.channel;
                     if (oldState.channel != newState.channel && newState.channelID != "undefined") {
                             if (person != "133671473591222273") {
-                                          var url =  "https://www.myinstants.com/media/sounds/you_were_banned_2.mp3" //"https://www.myinstants.com/media/sounds/metalgearsolid.swf.mp3",
-                                        sound(url, voiceChannel);
+                                          var url2 =  "https://www.myinstants.com/media/sounds/you_were_banned_2.mp3" //"https://www.myinstants.com/media/sounds/metalgearsolid.swf.mp3",
+                                        sound(url2, voiceChannel);
                             } else {
                                           var url = "https://www.myinstants.com/media/sounds/aplausos_2.mp3" //"https://www.myinstants.com/media/sounds/metalgearsolid.swf.mp3",
                                           sound(url, voiceChannel);
@@ -295,8 +295,8 @@ bot.on("message", msg => {
             case "p":
                 var link;
                 try {
-                  if(msg.author.channelID !== undefined){
-                    console.log("Kanal id: " + msg.author.channelID)
+                  console.log("Kanal id: " + msg.member.voice.channel)
+                  if(msg.member.voice.channel !== null){
                     if (args[0].substring(0, 6) != "https:") {
                         var search = args.join(" ");
                         yt.searchOne(search, { type: "video" }).then(results => {
