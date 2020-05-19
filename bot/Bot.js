@@ -76,8 +76,7 @@ bot.on("message", msg => {
     } else if (msg.content.substring(0, 1) == "!" && !msg.author.bot){
         var args = msg.content.substring(1).split(" ");
         var cmd = args[0];
-        //args = args.splice(1);
-      console.log(args)
+        args = args.splice(1);
         switch (cmd.toLowerCase()) {
             //------------------------------	TEKST	------------------------------------------------------------------------------------------------------------------------
             case "i":
@@ -356,14 +355,12 @@ bot.on("message", msg => {
             //------------------------------
             case "tits":
             teet(function(data, err) {
-            msg.channel.send(`${data.url[0]}`);
-                });
+            msg.channel.send([data.url[0]]);});
                 break;
             //------------------------------
             case "4k":
             fourk(function(data, err) {
-            msg.channel.send(`${data.url[0]}`);
-                });
+            msg.channel.send([data.url[0]])});
                 break;
             
             //------------------------------
@@ -388,7 +385,6 @@ bot.on("message", msg => {
                 var filmdata = film[Math.floor(Math.random() * land.length)]
                 msg.channel.send("Jeg foreslår: "+ filmdata.title + " fra " + filmdata.year)
                 break;
-          
             //------------------------------
             case "quote":
                 var mentioned = args[0];
@@ -418,13 +414,13 @@ bot.on("message", msg => {
                 var linje = "--------------------------------------------";
                 var bruker = " Look what i can do: \n";
                 var youtube =linje +"YOUTUBE" +linje +" \n !p ----> Kan ta i mot søkeord og linker, \n"; //youtube only
-                var tekst =linje +"TEKST" +linje +"\n !i, \n !alle,\n !status, \n !say, \n !slett \n"; //TEKST
-                var tts =linje +"TTS" +linje +"\n !båt, \n !sprinkler,\n !meow, \n !mehe, \n !saytts \n !nevergonna \n !giveyouup \n"; //TTS
+                var tekst =linje +"TEKST" +linje +"\n !i, \n !alle,\n !status, \n !say, \n !slett, \n roast, \n comp --- kompliment, \n ferie --- foreslår destinasjon, \n film --- foreslår en film, \n quote --- gir inspirational quotes, \n kill, \n"; //TEKST
+                var tts =linje +"TTS" +linje +"\n !båt, \n !sprinkler,\n !meow, \n !saytts \n !nevergonna \n !giveyouup \n"; //TTS
                 var pat = linje + "Postmann Pat" +linje +" \n !frukt, \n !georg,\n !downs, \n !narko, \n !narko2, \n !herren, \n !pul, \n !kattepusen, \n"; //PAT
                 var kai = linje +"Kai" +linje +" \n !uskyldig, \n !nakokia,\n !ban, \n !flue, \n !labruzzo, \n !pubg, \n !skammekrok, \n !holy, \n"; //KAI
                 var music =linje + "MUSIC STREAMS" + linje +" \n !lofi, \n !teatime,\n !jazz, \n !pop, \n !pissepop, \n !trap, \n !indie, \n !mix, \n"; //MUSIC
-                var randvoice = linje + "RANDOM VOICELINES" + linje + "\n !null, \n !wrong,\n !ph, \n !mgs, \n !coffin, \n !ps1, \n !hypo, \n "; //RANDOM
-                var hjelp =linje + "HJELPEMETODER" +linje + "\n !pingu, \n !version,\n !hencke, \n !komher, \n !stikk, \n !alle, \n"; //HJELP
+                var randvoice = linje + "RANDOM VOICELINES" + linje + "\n !null, \n !wrong,\n !ph, \n !mgs, \n !coffin, \n !ps1, \n !hypo, \n !virgin, \n !iamtheone, \n !tossacoin, \n !pink (panther), \n"; //RANDOM
+                var hjelp =linje + "HJELPEMETODER" +linje + "\n !pingu, \n !version,\n !hencke, \n !komher, \n !stikk, \n !alle, \n !at --- @ noen 5 ganger, \n !stats, \n stream (Kai), \n"; //HJELP
                 var wip = "-------------------------------------------------------------------------------------------- \n";
                 var sendmld ="Send gjerne en melding med forslag for nye funksjoner til <@133671473591222273> \n"; //MUSIc
                 msg.author.send(bruker + youtube + tekst + tts + pat + kai + music + randvoice + hjelp);
