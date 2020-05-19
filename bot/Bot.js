@@ -396,7 +396,6 @@ bot.on("message", msg => {
                 break;
             //------------------------------
             case "quote":
-                var mentioned = args[0];
                 var index = Math.floor(Math.random() * quote.length);
                var kvote = ('"' + quote[index].quoteText + '"');
                 const mbed = new Discord.MessageEmbed()
