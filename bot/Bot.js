@@ -15,7 +15,7 @@ const bot = new Discord.Client();
 bot.once("ready", () => {
     console.log(`Logged in as ${bot.user.tag}!`);
     console.log(`Ready to fuck shit up`);
-    bot.user.setActivity("Cyberpunk 2077", {
+    bot.user.setActivity("my pp", {
         type: "STREAMING",
         url: "https://www.twitch.tv/mrhencke"
     });
@@ -158,7 +158,7 @@ bot.on("message", msg => {
             //------------------------------
             case "slett":
                 var henckeID = "133671473591222273";
-                if (msg.author.id == henckeID ||msg.author.id == "152019710949588992") {
+                if (msg.author.id == henckeID || msg.author.id == "152019710949588992") {
                     const amount = (parseInt(args.join(" "), 10))+1;
                     if (isNaN(amount) == true) {
                         return msg.channel.send("Skriv inn et tall da din nepe.");
