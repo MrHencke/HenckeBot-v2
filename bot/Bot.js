@@ -59,21 +59,25 @@ bot.on("voiceStateUpdate", (oldState, newState) => {
 bot.on("message", msg => {
     if (msg.content.includes("bad bot")) {
         msg.reply("Vi er kanskje en dårlig bot, MEN! Vi er ikke like utdatert søppel som en viss TrashBOT");
-    } else if (msg.content.includes(" ein")) {
+    } else if (msg.content.toLowerCase().includes(" ein")) {
         msg.reply("Nynorsk oppdaget, gjør som resten av moderne sivilisasjon og skriv på en forståelig målform.");
-    }else if (msg.content.includes("groyun")) {
-        msg.reply("Nynorsk oppdaget, gjør som resten av moderne sivilisasjon og skriv på en forståelig målform.");
+    }else if (msg.content.toLowerCase().includes("ground control to major tom")) {
+        msg.channel.send("This is Major Tom to Ground Control\nI'm stepping through the door\nAnd I'm floating in a most peculiar way\nAnd the stars look very different today");
     } else if (msg.content.includes("good bot")) {
         msg.reply(
-            "Tusen takk, vi hos HenckeBot Inc Ltd. vet at vår bot er mye bedre enn TrashBOT, vennligst skriv et brev til denne søppelboten og gi 1-star review på google"
-        );
-    } else if (msg.content.includes("nuddel")) {
-                url =    "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fskididdel.mp3?v=1589665443245",
-         sound(url, voiceChannel);
+            "Tusen takk, vi hos HenckeBot Inc Ltd. vet at vår bot er mye bedre enn TrashBOT, vennligst skriv et brev til denne søppelboten og gi 1-star review på google");
+    }else if(msg.content.includes("hmm")){
+       msg.channel.send({files: ["https://media.tenor.com/images/69983541b409be168812dfd95be4bbf2/tenor.gif"]});
+    }else if(msg.content.includes("hmm")){
+       msg.channel.send({files: ["https://thumbs.gfycat.com/PaltryHappygoluckyAyeaye-small.gif"]});
+    }else if (msg.content.includes("nuddel")) {
+                url = "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fskididdel.mp3?v=1589665443245",
+                sound(url, voiceChannel);
     } else if (msg.content.substring(0, 1) == "!" && !msg.author.bot){
         var args = msg.content.substring(1).split(" ");
         var cmd = args[0];
-        args = args.splice(1);
+        //args = args.splice(1);
+      console.log(args)
         switch (cmd.toLowerCase()) {
             //------------------------------	TEKST	------------------------------------------------------------------------------------------------------------------------
             case "i":
