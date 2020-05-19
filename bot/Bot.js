@@ -295,6 +295,8 @@ bot.on("message", msg => {
             case "p":
                 var link;
                 try {
+                  if(msg.author.channel == undefined){
+                    console.log(msg.author.channel)
                     if (args[0].substring(0, 6) != "https:") {
                         var search = args.join(" ");
                         yt.searchOne(search, { type: "video" }).then(results => {
@@ -312,13 +314,14 @@ bot.on("message", msg => {
                             msg.channel.send("Now playing: ");
                             msg.channel.send(playin);
                             const stream = ytdl(link, { filter: "audioonly" });
-                                sound(stream, msg.member.voice.channel);
+                                sound(stream, msg.member.voice.channel, msg);
                           })
                           } else {
                         link = args[0];
                         const stream = ytdl(link, { filter: "audioonly" }, { quality: "highestaudio" } );
-                            sound(stream, msg.member.voice.channel);
+                            sound(stream, msg.member.voice.channel, msg);
                           }
+                    }
                     } catch (err) {
                     console.log(err);       }
                 
