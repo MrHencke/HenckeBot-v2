@@ -21,12 +21,17 @@ bot.once("ready", () => {
     });
 });
 
-function sound(url, voiceChannel) {
+function sound(url, voiceChannel, msg) {
+  try{
     voiceChannel.join().then(connection => {
         const dispatcher = connection.play(url);
         dispatcher.on("finish", end => voiceChannel.leave());
     }).catch(err => console.log(err));
-}
+  
+    }catch(err){
+      console.log(err)
+      msg.channel.send("Gå inn i en voicechannel da din nepe")
+    }}
 var stream;
 var dispatcher;
 
@@ -68,11 +73,11 @@ bot.on("message", msg => {
             "Tusen takk, vi hos HenckeBot Inc Ltd. vet at vår bot er mye bedre enn TrashBOT, vennligst skriv et brev til denne søppelboten og gi 1-star review på google");
     }else if(msg.content.includes("hmm")){
        msg.channel.send({files: ["https://media.tenor.com/images/69983541b409be168812dfd95be4bbf2/tenor.gif"]});
-    }else if(msg.content.includes("hmm")){
-       msg.channel.send({files: ["https://thumbs.gfycat.com/PaltryHappygoluckyAyeaye-small.gif"]});
+    }else if(msg.content.includes("ree")){
+       msg.channel.send({files: ["https://cdn.glitch.com/2c6c8596-d523-4520-a5a7-8caa66a05edf%2F1b72da8a-c1d0-48e4-92df-f8b35fe2fb40.bilde.png?v=1589880897535"]});
     }else if (msg.content.includes("nuddel")) {
                 url = "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fskididdel.mp3?v=1589665443245",
-                sound(url, voiceChannel);
+                sound(url, voiceChannel, msg);
     } else if (msg.content.substring(0, 1) == "!" && !msg.author.bot){
         var args = msg.content.substring(1).split(" ");
         var cmd = args[0];
@@ -178,113 +183,113 @@ bot.on("message", msg => {
             //------------------------------	Postmann PAT	------------------------------------------------------------
             case "frukt":
                 url = "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fkurvfrukt.mp3?v=1589659578065"
-                sound(url, msg.member.voice.channel);
+                sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
             case "georg":
                 url = "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FGEORG.mp3?v=1589659576813"
-                sound(url, msg.member.voice.channel);
+                sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
             case "narko":
                url = "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fnaarkotika.mp3?v=1589662311887"
-                sound(url, msg.member.voice.channel);
+                sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
             case "narko2":
                 url = "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fdowns.mp3?v=1589659578314"
-                sound(url, msg.member.voice.channel);
+                sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
             case "downs":
                 url = "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fdowns.mp3?v=1589659578314"
-                sound(url, msg.member.voice.channel);
+                sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
             case "herren":
               url =    "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fpriseherren.mp3?v=1589659577913"
-              sound(url, msg.member.voice.channel);
+              sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
             case "pul":
               url =    "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fpatpul.mp3?v=1589659578203"
-              sound(url, msg.member.voice.channel);
+              sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
             case "kattepusen":
                          url =   "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fkattepusen.mp3?v=1589659577337"
-                         sound(url, msg.member.voice.channel);
+                         sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------ KAI KAI KAI KAI KAI KAI KAI	------------------------------------------------------------
             case "nakokia":
                          url =   "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fnarkotika.mp3?v=1589662459656"
-                         sound(url, msg.member.voice.channel);
+                         sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
             case "ban":
                          url =   "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FBan.mp3?v=1589662459737"
-                        sound(url, msg.member.voice.channel);
+                        sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
             case "flue":
 
                 url =   "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fflue.mp3?v=1589662459879"
-                        sound(url, msg.member.voice.channel);
+                        sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
             case "holy":
                 url =   "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fholy_shit.mp3?v=1589662459678"
-                        sound(url, msg.member.voice.channel);
+                        sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
             case "labruzzo":
                 url =   "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Flabruzzo.mp3?v=1589662459238"
-                        sound(url, msg.member.voice.channel);
+                        sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
             case "pubg":
                 url =  "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FPUBG.mp3?v=1589662459634"
-                        sound(url, msg.member.voice.channel);
+                        sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
             case "skammekrok":
                 url =  "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fskammekrok.mp3?v=1589662459498"
-                        sound(url, msg.member.voice.channel);
+                        sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
             case "uskyldig":
                 url =  "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fuskyldig.mp3?v=1589662459594"
-                        sound(url, msg.member.voice.channel);
+                        sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------ RANDOM ------------------------------------------------------------
             case "pink":
                 url =  "https://www.myinstants.com/media/sounds/the-pink-panther-theme-song-original-version.mp3"
-                        sound(url, msg.member.voice.channel);
+                        sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
             case "tossacoin":
                 url =   "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FThe%20Witcher%20Soundtrack%20-%20Toss%20A%20Coin%20To%20Your%20Witcher%20Lyrics.mp3?v=1589824745592"
-                        sound(url, msg.member.voice.channel);
+                        sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------ 
             case "iamtheone":
                 url =  "https://www.myinstants.com/media/sounds/ultimate-respect-button_MdJiOOn.mp3"
-                        sound(url, msg.member.voice.channel);
+                        sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
             case "virgin":
                 url =  " https://www.myinstants.com/media/sounds/no-dont-do-it-im-a-virgin.mp3"
-                        sound(url, msg.member.voice.channel);
+                        sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------  
             case "ps1":
                 url = "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Ftest.mp3?v=1589659578379"
-                        sound(url, msg.member.voice.channel);
+                        sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
             case "hypo":
                 url = "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Falone.mp3?v=1589738328094"
-                        sound(url, msg.member.voice.channel);
+                        sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
             case "p":
@@ -419,8 +424,8 @@ bot.on("message", msg => {
                 var pat = linje + "Postmann Pat" +linje +" \n !frukt, \n !georg,\n !downs, \n !narko, \n !narko2, \n !herren, \n !pul, \n !kattepusen, \n"; //PAT
                 var kai = linje +"Kai" +linje +" \n !uskyldig, \n !nakokia,\n !ban, \n !flue, \n !labruzzo, \n !pubg, \n !skammekrok, \n !holy, \n"; //KAI
                 var music =linje + "MUSIC STREAMS" + linje +" \n !lofi, \n !teatime,\n !jazz, \n !pop, \n !pissepop, \n !trap, \n !indie, \n !mix, \n"; //MUSIC
-                var randvoice = linje + "RANDOM VOICELINES" + linje + "\n !null, \n !wrong,\n !ph, \n !mgs, \n !coffin, \n !ps1, \n !hypo, \n !virgin, \n !iamtheone, \n !tossacoin, \n !pink (panther), \n"; //RANDOM
-                var hjelp =linje + "HJELPEMETODER" +linje + "\n !pingu, \n !version,\n !hencke, \n !komher, \n !stikk, \n !alle, \n !at --- @ noen 5 ganger, \n !stats, \n stream (Kai), \n"; //HJELP
+                var randvoice = linje + "RANDOM VOICELINES" + linje + "\n !null, \n !wrong,\n !ph, \n !mgs, \n !coffin, \n !ps1, \n !hypo, \n !virgin, \n !iamtheone, \n !tossacoin, \n !pink (panther), \n !bestaround, \n !offer, \n"; //RANDOM
+                var hjelp =linje + "HJELPEMETODER" +linje + "\n !pingu, \n !invite --- gir invite link til boten \n !version,\n !hencke, \n !komher, \n !stikk, \n !alle, \n !at --- @ noen 5 ganger, \n !stats, \n stream (Kai), \n"; //HJELP
                 var wip = "-------------------------------------------------------------------------------------------- \n";
                 var sendmld ="Send gjerne en melding med forslag for nye funksjoner til <@133671473591222273> \n"; //MUSIc
                 msg.author.send(bruker + youtube + tekst + tts + pat + kai + music + randvoice + hjelp);
@@ -433,48 +438,46 @@ bot.on("message", msg => {
                 var sendmld ="Send gjerne en melding med forslag for nye funksjoner til <@133671473591222273> \n"; //MUSI
                 msg.author.send(nytt);
                 msg.author.send(sendmld);
-                //utdatert2	msg.author.send(" Kjære bruker, her er mine primærfunksjoner\n TEXT COMMANDS \n  hei \n  grete \n  i \n  alle \n  status \n  heisann \n  heidu \n  hjelp \n  meow \n  ttsbåt \n  mehe \n  nevergonna \n  giveyouup \n  say \n  slett \n  georg \n  music \n  frukt \n  narko \n  narko \n  jesus \n  her \n VOICE COMMANDS \n  fruktv \n  steviev \n  georgv \n  narkov \n  narkov \n  nakokia \n  ban \n  flue \n  holy \n  labruzzo \n  pubg \n  skammekrok \n  uskyldig \n  uskyldig \n  p Brukes slik !p + youtube-link  \n HJELPEMETODER \n  stikk \n  komher \n  hencke \n  hjelp \n MUSIKKSTREAMS \n  lofi \n  indie \n  trap \n  pissepop \n  jazz \n  pop \n  teatime \n  mix");
-                //utdatert	msg.author.send(" Kjære bruker, her er mine primærfunksjoner:\n TEXT COMMANDS: \n 1: hei \n 2: grete \n 3: i \n 4: alle \n 5: status \n 6: heisann \n 7: heidu \n 8: hjelp \n 9: meow \n 10: ttsbåt \n 11: mehe \n 12: nevergonna \n 13: giveyouup \n 14: say \n 15: slett \n 16: georg \n 17: music \n 18: frukt \n 19: narko \n 20: narko2 \n 21: jesus \n 22: her \n VOICE COMMANDS: \n 23: fruktv \n 24: steviev \n 25: georgv \n 26: narkov \n 27: narko2v \n 28: nakokia \n 29: ban \n 30: flue \n 31: holy \n 32: labruzzo \n 33: pubg \n 34: skammekrok \n 35: uskyldig \n 36: uskyldig \n 37: p Brukes slik: !p + youtube-link  \n HJELPEMETODER: \n 38: stikk \n 39: komher \n 40: hencke \n 41: hjelp \n MUSIKKSTREAMS: \n 42: lofi \n 43: indie \n 44: trap \n 45: pissepop \n 46: jazz \n 47: pop \n 48: teatime \n 49: mix");
                 break;
             //------------------------------ RANDOM VOICE ------------------------------------------------------------------------------------------
             case "null":
                 url =     "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fninjashit.mp3?v=1589662555361"
-                        sound(url, msg.member.voice.channel);
+                        sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
             case "offer":
                 url =        "https://www.myinstants.com/media/sounds/godfather-5.mp3"
-                        sound(url, msg.member.voice.channel);
+                        sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
             case "bestaround":
                 url =    "https://www.myinstants.com/media/sounds/youre-the-best-around-by-joe-esposito-mp3cut.mp3",{ volume: "0.3" }
-                        sound(url, msg.member.voice.channel);
+                        sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
             case "wrong":
                 var voiceChannel = msg.member.voice.channel;
                 var url = "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fwrong.mp3?v=1589662557794";
-                sound(url, voiceChannel);
+                sound(url, voiceChannel, msg);
                 break;
             //------------------------------
             case "ph":
 
                 url =          "https://www.myinstants.com/media/sounds/pornhub-community-intro.mp3"
-                        sound(url, msg.member.voice.channel);
+                        sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
             case "mgs":
 
                 url =       "https://www.myinstants.com/media/sounds/metalgearsolid.swf.mp3"
-                        sound(url, msg.member.voice.channel);
+                        sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
             case "coffin":
 
                 url =        "https://www.myinstants.com/media/sounds/hq-coffin-dance-funeral-vicetone-tony-igy-astronomia.mp3",
                             { volume: 0.2 }
-                        sound(url, msg.member.voice.channel);
+                        sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
             case "invite":
@@ -486,27 +489,27 @@ bot.on("message", msg => {
             case "lofi":
                     var link = "https://www.youtube.com/watch?v=5qap5aO4i9A";
                      stream = ytdl(link,{ liveBuffer: "20000" },{ filter: "audioonly" },{ volume: "0.1" });
-                    sound(stream, msg.member.voice.channel);
+                    sound(stream, msg.member.voice.channel, msg);
                 break;
             //------------------------------
             case "jazz":
                     var link = "https://www.youtube.com/watch?v=DSGyEsJ17cI";
                       stream = ytdl(link,{ liveBuffer: "20000" },{ filter: "audioonly" },{ volume: "0.2" });
-                    sound(stream, msg.member.voice.channel);
+                    sound(stream, msg.member.voice.channel, msg);
               
                 break;
             //------------------------------
             case "indie":
                     var link = "https://www.youtube.com/watch?v=oVi5gtzTDx0";
                      stream = ytdl(link,{ liveBuffer: "20000" },{ filter: "audioonly" },{ volume: "0.2" });
-                    sound(stream, msg.member.voice.channel);
+                    sound(stream, msg.member.voice.channel, msg);
                 break;
 
             //------------------------------
             case "mix":
                     var link = "https://www.youtube.com/watch?v=1itSqkbXIlU";
                      stream = ytdl(link,{ liveBuffer: "20000" },{ filter: "audioonly" },{ volume: "0.2" });
-                    sound(stream, msg.member.voice.channel);
+                    sound(stream, msg.member.voice.channel, msg);
                 break;
             //------------------------------
         }
