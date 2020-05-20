@@ -6,6 +6,7 @@ const comp = require("../res/compliments.json");
 const quote = require("../res/quote.json");
 const land = require("../res/countries.json");
 const film = require("../res/movies.json");
+const custom = require("../res/customClips.json");
 const mem = require("memejs") //https://www.npmjs.com/package/memejs
 const teet = require("reddittits")
 const fourk = require("reddit4k")
@@ -23,14 +24,14 @@ bot.once("ready", () => {
 
 function sound(url, voiceChannel, msg) {
   try{
+    if(voiceChannel != null){
     voiceChannel.join().then(connection => {
         const dispatcher = connection.play(url);
         dispatcher.on("finish", end => voiceChannel.leave());
     }).catch(err => console.log(err));
-  
+    }else msg.channel.send("Vet du forskjellen på voice og tekst? Gå inn i en voicechannel da din nepe");
     }catch(err){
-      console.log(err)
-      msg.channel.send("Gå inn i en voicechannel da din nepe")
+      //console.log(err)
     }}
 
 var stream;
@@ -182,8 +183,23 @@ bot.on("message", msg => {
                 }
                 break;
             //------------------------------	Postmann PAT	------------------------------------------------------------
+             case "customTest":
+                url = "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fkurvfrukt.mp3?v=1589659578065"
+                sound(url,msg.member.voice.channel, msg);
+                break;
+            //------------------------------
             case "frukt":
                 url = "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fkurvfrukt.mp3?v=1589659578065"
+                sound(url,msg.member.voice.channel, msg);
+                break;
+            //------------------------------
+            case "jævli":
+                url = "https://cdn.glitch.com/2c6c8596-d523-4520-a5a7-8caa66a05edf%2F%C3%A5j%C3%A6vli.mp3?v=1589967082829"
+                sound(url,msg.member.voice.channel, msg);
+                break;
+            //------------------------------
+            case "fyf":
+                url = "https://cdn.glitch.com/2c6c8596-d523-4520-a5a7-8caa66a05edf%2Ffyfae.mp3?v=1589967083369"
                 sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
