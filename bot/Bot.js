@@ -183,21 +183,30 @@ bot.on("message", msg => {
                 }
                 break;
             //------------------------------	Postmann PAT	------------------------------------------------------------
-             case "c":
+             //!c add georg https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FGEORG.mp3?v=1589659576813
+            case "c":
                 if(args[0] = "add"){
                   var name = args[1]
                   if(args[2].substring(0,4) == "http") var url = args[2];
-                  fs.readFile(custom, 'utf8', function readFileCallback(err, data){
+                  fs.readFile("./res/customClips.json", 'utf8', function readFileCallback(err, data){
                   if (err){
                       console.log(err);
                   } else {
                   var obj = JSON.parse(data); //now it an object
-                  obj.table.push({"name" : name, "url" : url}); //add some data
+                  console.log(obj)
+                  obj.push({"name" : name, "url" : url}); //add some data
                   var json = JSON.stringify(obj); //convert it back to json
-                  fs.writeFile('..res/customClips.json', json, 'utf8', (err) => {
+                  fs.writeFile("./res/customClips.json", json, 'utf8', (err) => {
                   if (err) throw err;
                   console.log('Data written to file');
                   });}});
+                }else if(args[0] != "add"){
+                  custom.find(function(item, i){
+                  if(item.name === args[0]){
+                  sound(item.url ,msg.member.voice.channel, msg);
+                }
+                }
+                
                 }
                 //sound(url,msg.member.voice.channel, msg);
                 break;
