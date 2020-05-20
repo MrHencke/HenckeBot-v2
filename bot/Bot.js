@@ -51,7 +51,7 @@ bot.on("voiceStateUpdate", (oldState, newState) => {
                                           var url2 = "https://cdn.glitch.com/2c6c8596-d523-4520-a5a7-8caa66a05edf%2F%C3%A5j%C3%A6vli.mp3?v=1589967082829"   // "https://www.myinstants.com/media/sounds/you_were_banned_2.mp3" //"https://www.myinstants.com/media/sounds/metalgearsolid.swf.mp3",
                                         sound(url2, voiceChannel);
                             } else {
-                                          var url ="https://www.myinstants.com/media/sounds/itmd.mp3" //"https://www.myinstants.com/media/sounds/aplausos_2.mp3" //"https://www.myinstants.com/media/sounds/metalgearsolid.swf.mp3",
+                                          var url = "https://www.myinstants.com/media/sounds/aplausos_2.mp3" //"https://www.myinstants.com/media/sounds/metalgearsolid.swf.mp3",
                                           sound(url, voiceChannel);
                             }
                         } else return;
