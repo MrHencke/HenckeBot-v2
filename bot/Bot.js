@@ -64,7 +64,9 @@ bot.on("voiceStateUpdate", (oldState, newState) => {
 });
 
 bot.on("message", msg => {
-    if (msg.content.includes("bad bot")) {
+  if(msg.author.bot){
+    return;
+  } else if (msg.content.includes("bad bot")) {
         msg.reply("Vi er kanskje en dårlig bot, MEN! Vi er ikke like utdatert søppel som en viss TrashBOT");
     } else if (msg.content.toLowerCase().includes(" ein")) {
         msg.reply("Nynorsk oppdaget, gjør som resten av moderne sivilisasjon og skriv på en forståelig målform.");
@@ -80,6 +82,8 @@ bot.on("message", msg => {
     }else if (msg.content.includes("nuddel")) {
                 url = "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fskididdel.mp3?v=1589665443245",
                 sound(url, msg.member.voice.channel, msg);
+    }else if (msg.content.includes("F")) {
+                msg.channel.send("F")
     } else if (msg.content.substring(0, 1) == "!" && !msg.author.bot){
         var args = msg.content.substring(1).split(" ");
         var cmd = args[0];
