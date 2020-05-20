@@ -187,10 +187,17 @@ bot.on("message", msg => {
                 if(args[0] = "add"){
                   var name = args[1]
                   var url = args[2];
-                  var data = [{"name" : name, "url" : url}]
-                  data.push
-                  
-                }
+                  var obj;
+                  var data;
+                    fs.readFile('myjsonfile.json', 'utf8', function readFileCallback(err, data){
+                  if (err){
+                      console.log(err);
+                  } else {
+                  obj = JSON.parse(data); //now it an object
+                  obj.table.push({id: 2, square:3}); //add some data
+                  json = JSON.stringify(obj); //convert it back to json
+                  fs.writeFile('myjsonfile.json', json, 'utf8', callback); // write it back 
+              }});
                 //sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
