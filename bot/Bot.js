@@ -186,18 +186,19 @@ bot.on("message", msg => {
              case "c":
                 if(args[0] = "add"){
                   var name = args[1]
-                  var url = args[2];
-                  var obj;
-                  var data;
-                    fs.readFile('myjsonfile.json', 'utf8', function readFileCallback(err, data){
+                  if(args[2].substring(0,4) == "http") var url = args[2];
+                  fs.readFile(custom, 'utf8', function readFileCallback(err, data){
                   if (err){
                       console.log(err);
                   } else {
-                  obj = JSON.parse(data); //now it an object
-                  obj.table.push({id: 2, square:3}); //add some data
-                  json = JSON.stringify(obj); //convert it back to json
-                  fs.writeFile('myjsonfile.json', json, 'utf8', callback); // write it back 
-              }});
+                  var obj = JSON.parse(data); //now it an object
+                  obj.table.push({"name" : name, "url" : url}); //add some data
+                  var json = JSON.stringify(obj); //convert it back to json
+                  fs.writeFile('..res/customClips.json', json, 'utf8', (err) => {
+                  if (err) throw err;
+                  console.log('Data written to file');
+                  });}});
+                }
                 //sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
