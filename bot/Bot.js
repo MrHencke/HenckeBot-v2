@@ -183,35 +183,36 @@ bot.on("message", msg => {
                 }
                 break;
             //------------------------------	Postmann PAT	------------------------------------------------------------
-            case "c":
-                  if(args[0] != "add"){
-                  custom.find(function(item, i){
-                  if(item.name === args[0]){
-                  sound(item.url ,msg.member.voice.channel, msg);
-                }
-                });
-                }else{
-                  var name = args[1]
-                  if(args[2].substring(0,4) == "http") var url = args[2];
-                  fs.readFile("./res/customClips.json", 'utf8', function readFileCallback(err, data){
-                  if (err){
-                      console.log(err);
-                  } else if(args[0] == "alle"){
-                    
-                    
-                    
-                    
-                  } else{
-                  var obj = JSON.parse(data); //now it an object
-                  console.log(obj)
-                  obj.push({"name" : name, "url" : url}); //add some data
-                  var json = JSON.stringify(obj); //convert it back to json
-                  fs.writeFile("./res/customClips.json", json, 'utf8', (err) => {
-                  if (err) throw err;
-                  console.log('Data written to file');
-                  });}});}
-                //sound(url,msg.member.voice.channel, msg);
-                break;
+         case "c":
+            if(args[0] != "add"){
+            custom.find(function(item, i){
+            if(item.name === args[0]){
+            sound(item.url ,msg.member.voice.channel, msg);
+          }
+          });
+          } else if(args[0] == "alle"){
+            var liste = ""
+            var i;
+            for (i = 0; i < custom.length; i++) {
+              liste = liste + custom[i].name + ", "
+            }
+            msg.channel.send(liste)
+            } else{
+            var name = args[1]
+            if(args[2].substring(0,4) == "http") var url = args[2];
+            fs.readFile("./res/customClips.json", 'utf8', function readFileCallback(err, data){
+            if (err){
+                console.log(err);
+            var obj = JSON.parse(data); //now it an object
+            console.log(obj)
+            obj.push({"name" : name, "url" : url}); //add some data
+            var json = JSON.stringify(obj); //convert it back to json
+            fs.writeFile("./res/customClips.json", json, 'utf8', (err) => {
+            if (err) throw err;
+            console.log('Data written to file');
+            });}});}
+          //sound(url,msg.member.voice.channel, msg);
+          break;
             //------------------------------
             case "frukt":
                 url = "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fkurvfrukt.mp3?v=1589659578065"
