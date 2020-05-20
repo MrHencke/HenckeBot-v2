@@ -183,9 +183,15 @@ bot.on("message", msg => {
                 }
                 break;
             //------------------------------	Postmann PAT	------------------------------------------------------------
-             case "customTest":
-                url = "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fkurvfrukt.mp3?v=1589659578065"
-                sound(url,msg.member.voice.channel, msg);
+             case "c":
+                if(args[0] = "add"){
+                  var name = args[1]
+                  var url = args[2];
+                  var data = [{"name" : name, "url" : url}]
+                  data.push
+                  
+                }
+                //sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
             case "frukt":
