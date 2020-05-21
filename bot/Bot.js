@@ -82,7 +82,7 @@ bot.on("message", msg => {
     }else if (msg.content.includes("nuddel")) {
                 url = "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fskididdel.mp3?v=1589665443245",
                 sound(url, msg.member.voice.channel, msg);
-    }else if (msg.content.includes("F")) {
+    }else if (msg.content.includes("F") && msg.content.length < 2) {
                 msg.channel.send("F")
     } else if (msg.content.substring(0, 1) == "!" && !msg.author.bot){
         var args = msg.content.substring(1).split(" ");
