@@ -482,6 +482,7 @@ bot.on("message", msg => {
                 var sendmld = "Send gjerne en melding med forslag for nye funksjoner til <@133671473591222273> \n"; //MUSIc
                 msg.author.send(bruker + youtube + tekst + tts + pat + kai + music + randvoice + hjelp);
                msg.author.send(nyfunkc)
+                msg.author.send({files: ["https://cdn.glitch.com/2c6c8596-d523-4520-a5a7-8caa66a05edf%2Feksempel.gif?v=1590052834420"]});
                 msg.author.send(wip + sendmld + wip);
                 break;
             //------------------------------ RANDOM VOICE ------------------------------------------------------------------------------------------

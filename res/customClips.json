@@ -1,1 +1,40 @@
-[{"name":"frukt","url":"https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fkurvfrukt.mp3?v=1589659578065"},{"name":"jævli","url":"https://cdn.glitch.com/2c6c8596-d523-4520-a5a7-8caa66a05edf%2F%C3%A5j%C3%A6vli.mp3?v=1589967082829"},{"name":"georg","url":"https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FGEORG.mp3?v=1589659576813"},{"name":"fbi","url":"https://www.myinstants.com/media/sounds/fbi-open-up-sfx.mp3"},{"name":"cyka","url":"https://www.myinstants.com/media/sounds/cyka-blyat.mp3"},{"name":"rickastley","url":"https://www.myinstants.com/media/sounds/epic.swf_1.mp3"},{"name":"scream","url":"https://www.myinstants.com/media/sounds/r2d2_scream_converted.mp3"},{"name":"r2d2","url":"https://www.myinstants.com/media/sounds/r2d2_scream_converted.mp3"}]
+[
+  {
+    "name": "frukt",
+    "url": "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fkurvfrukt.mp3?v=1589659578065"
+  },
+  {
+    "name": "jævli",
+    "url": "https://cdn.glitch.com/2c6c8596-d523-4520-a5a7-8caa66a05edf%2F%C3%A5j%C3%A6vli.mp3?v=1589967082829"
+  },
+  {
+    "name": "georg",
+    "url": "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FGEORG.mp3?v=1589659576813"
+  },
+  {
+    "name": "fbi",
+    "url": "https://www.myinstants.com/media/sounds/fbi-open-up-sfx.mp3"
+  },
+  {
+    "name": "cyka",
+    "url": "https://www.myinstants.com/media/sounds/cyka-blyat.mp3"
+  },
+  {
+    "name": "rickastley",
+    "url": "https://www.myinstants.com/media/sounds/epic.swf_1.mp3"
+  },
+  {
+    "name": "scream",
+    "url": "https://www.myinstants.com/media/sounds/r2d2_scream_converted.mp3"
+  },
+  {
+    "name": "r2d2",
+    "url": "https://www.myinstants.com/media/sounds/r2d2_scream_converted.mp3"
+  },
+  {
+    "name": "xp",
+    "url": "https://www.myinstants.com/media/sounds/erro.mp3",
+    "bruker": "Henrik"
+  }
+  
+]
