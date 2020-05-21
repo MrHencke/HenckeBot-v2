@@ -23,7 +23,6 @@ bot.once("ready", () => {
 });
 
 function sound(url, voiceChannel, msg, volume) {
-  if(volume = null) volume = 1;
   try{
     if(voiceChannel != null){
     voiceChannel.join().then(connection => {
@@ -365,7 +364,7 @@ bot.on("message", msg => {
                             msg.channel.send("Now playing: ");
                             msg.channel.send(playin);
                             const stream = ytdl(link, { filter: "audioonly" });
-                                sound(stream, msg.member.voice.channel, msg);
+                                sound(stream, msg.member.voice.channel, msg, 1);
                           })
                           } else {
                         link = args[0];
@@ -539,7 +538,6 @@ bot.on("message", msg => {
                     var link = "https://www.youtube.com/watch?v=DSGyEsJ17cI";
                       stream = ytdl(link,{ liveBuffer: "20000" },{ filter: "audioonly" },{ volume: "0.2" });
                     sound(stream, msg.member.voice.channel, msg);
-              
                 break;
             //------------------------------
             case "indie":
