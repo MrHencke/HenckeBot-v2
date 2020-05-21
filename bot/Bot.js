@@ -194,14 +194,8 @@ bot.on("message", msg => {
                   for(i=0; i < custom.length; i++){
                     list = list + custom[i].name + ", "
                   }
-                  msg.channel.send(list);
-                }else if(args[0] != "add"){
-                custom.find(function(item, i){
-                if(item.name == args[0]){
-                sound(item.url ,msg.member.voice.channel, msg);
-                }
-                });
-                } else {
+                  msg.channel.send(list)
+                } else if(args[0]== "add") {
                   var name = args[1]
                   if(args[2].substring(0,4) == "http") var url = args[2];
                   fs.readFile("./res/customClips.json", 'utf8', function readFileCallback(err, data){
@@ -209,13 +203,20 @@ bot.on("message", msg => {
                       console.log(err);
                   } else {
                   var obj = JSON.parse(data); //now it an object
-                  console.log(obj)
-                  obj.push({"name" : name, "url" : url}); //add some data
+                  //console.log(obj)
+                    console.log(msg.author.username)
+                  obj.push({"name" : name, "url" : url, "bruker" : msg.author.username}); //add some data
                   var json = JSON.stringify(obj); //convert it back to json
                   fs.writeFile("./res/customClips.json", json, 'utf8', (err) => {
                   if (err) throw err;
                   console.log('Data written to file');
                   });}});
+                } else{
+                custom.find(function(item, i){
+                if(item.name == args[0]){
+                sound(item.url ,msg.member.voice.channel, msg);
+                }
+                });
                 }
           break;
             //------------------------------
@@ -476,7 +477,7 @@ bot.on("message", msg => {
                 var music =linje + "MUSIC STREAMS" + linje +" \n !lofi, \n !jazz, \n !indie, \n !mix \n"; //MUSIC
                 var randvoice = linje + "RANDOM VOICELINES" + linje + "\n !null, \n !wrong,\n !ph, \n !mgs, \n !coffin, \n !ps1, \n !hypo, \n !virgin, \n !iamtheone, \n !tossacoin, \n !pink (panther), \n !bestaround, \n !offer \n"; //RANDOM
                 var hjelp = linje + "HJELPEMETODER" +linje + "\n !pingu, \n !invite --- gir invite link til boten \n !version,\n !hencke, \n !komher --- får boten inn i voice, \n !stikk --- får boten ut av voice, \n !alle --- @ alle 10 ganger, \n !at --- @ noen 5 ganger, \n !stats, \n stream (Kai) \n"; //HJELP
-                var nyfunkc = linje + "NY FUNKSJON" + linje + "\n" + "!c --- Dette er en ny funksjon, den kan brukes til å lage og calle egne clips \n" + "Ved adding: !c add '*navn på ditt clip*' '*clipurl*' \n" + "merk at clipet må være en mp3, og må være lastet opp på nettet og tilgjengelig via link\n" +"For å bruke clipet bruker du bare !c '*navn på ditt clip*'\n" + "Har du et klipp liggende kan du laste det opp til f. eks www.clyp.it/ og bruke linken derfra i kommandoen, eller kopiere en link fra www.myinstants.com \n For å se alle clipsene som ligger inne, bruk !c list" 
+                var nyfunkc = linje + "NY FUNKSJON" + linje + "\n" + "!c --- Dette er en ny funksjon, den kan brukes til å lage og calle egne clips \n" + "Ved adding: !c add '*navn på ditt clip*' '*clipurl*' \n" + "merk at clipet må være en mp3, og må være lastet opp på nettet og tilgjengelig via link\n" +"For å bruke clipet bruker du bare !c '*navn på ditt clip*'\n" + "Har du et klipp liggende kan du laste det opp til f. eks www.myinstants.com  og bruke linken derfra i kommandoen, eller kopiere en eksisterende link fra www.myinstants.com \n For å se alle clipsene som ligger inne, bruk !c list \n På MyInstants må du kopiere lenkeadressen der det står *download this mp3* " 
                 var wip = "-------------------------------------------------------------------------------------------- \n";
                 var sendmld = "Send gjerne en melding med forslag for nye funksjoner til <@133671473591222273> \n"; //MUSIc
                 msg.author.send(bruker + youtube + tekst + tts + pat + kai + music + randvoice + hjelp);
