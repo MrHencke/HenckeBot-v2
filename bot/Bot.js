@@ -22,11 +22,12 @@ bot.once("ready", () => {
     });
 });
 
-function sound(url, voiceChannel, msg) {
+function sound(url, voiceChannel, msg, volume) {
+  if(volume = null) volume = 1;
   try{
     if(voiceChannel != null){
     voiceChannel.join().then(connection => {
-        const dispatcher = connection.play(url);
+        const dispatcher = connection.play(url, { volume: volume });
         dispatcher.on("finish", end => voiceChannel.leave());
     }).catch(err => console.log(err));
     }else msg.channel.send("Vet du forskjellen på voice og tekst? Gå inn i en voicechannel da din nepe");
