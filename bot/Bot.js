@@ -210,12 +210,12 @@ bot.on("message", msg => {
                   fs.writeFile("./res/customClips.json", json, 'utf8', (err) => {
                   if (err) throw err;
                   console.log('Data written to file');
-                  msg.channel.send("Skrevet til databasen");
+                  msg.channel.send("Skrevet til databasen, vent rundt 15 min til neste restart, så er filen tilgjengelig");
                   });}});
                 } else{
                 custom.find(function(item, i){
                 if(item.name == args[0]){
-                sound(item.url ,msg.member.voice.channel, msg);
+                sound(item.url, msg.member.voice.channel, msg);
                 }
                 });
                 }
