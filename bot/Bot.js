@@ -7,6 +7,8 @@ const quote = require("../res/quote.json");
 const land = require("../res/countries.json");
 const film = require("../res/movies.json");
 const custom = require("../res/customClips.json");
+const maktsyk = require("../res/maktSykListe.json");
+const Toggle = require("../res/Toggle.json");
 const mem = require("memejs") //https://www.npmjs.com/package/memejs
 const teet = require("reddittits")
 const fourk = require("reddit4k")
@@ -62,7 +64,7 @@ bot.on("voiceStateUpdate", (oldState, newState) => {
         console.log(err);
     }
 });
-//var havardID = 132193704860450817;
+
 bot.on("message", msg => {
   if(msg.author.bot){
     return;
@@ -79,8 +81,14 @@ bot.on("message", msg => {
        msg.channel.send({files: ["https://media.tenor.com/images/69983541b409be168812dfd95be4bbf2/tenor.gif"]});
     }else if(msg.content.includes("reee") && msg.author.id != '132193704860450817'){
        msg.channel.send({files: ["https://cdn.glitch.com/2c6c8596-d523-4520-a5a7-8caa66a05edf%2F1b72da8a-c1d0-48e4-92df-f8b35fe2fb40.bilde.png?v=1589880897535"]});
-    }else if (msg.author.id = "132193704860450817" && msg.content.includes("https://tenor.com")){
-                    msg.delete().catch(O_o => { });
+    }else if (msg.content.includes("https://tenor.com")){
+                    var i;
+                    for (i = 0; i < maktsyk.length; i++){
+                      if(msg.author.id = maktsyk[i].ID){
+                        msg.delete().catch(O_o => { });
+                      }
+                    }
+                    
     } else if(msg.content.includes("nuddel")) {
                 url = "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fskididdel.mp3?v=1589665443245",
                 sound(url, msg.member.voice.channel, msg);
@@ -94,6 +102,10 @@ bot.on("message", msg => {
             //------------------------------	TEKST	------------------------------------------------------------------------------------------------------------------------
             case "i":
                 msg.channel.send("*I M A G I N E*");
+                break;
+            //------------------------------
+             case "toggleMaktSyk":
+                if(Toggle.toggle =) 
                 break;
             //------------------------------
             case "alle":
