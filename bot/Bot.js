@@ -11,7 +11,6 @@ const mem = require("memejs") //https://www.npmjs.com/package/memejs
 const teet = require("reddittits")
 const fourk = require("reddit4k")
 const yt = require("scrape-youtube").default;
-const ttt = require("discord.js-tictactoe")
 const bot = new Discord.Client();
 
 bot.once("ready", () => {
@@ -145,7 +144,7 @@ bot.on("message", msg => {
                 break;
             //------------------------------
             case "tictactoe":
-            
+            msg.channel.send("Plassholder inntil videre")
                 break;
             //-----------
             //------------------------------ TEKST ------------------------------------------------------------------------------------------
