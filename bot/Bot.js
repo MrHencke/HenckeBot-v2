@@ -8,7 +8,6 @@ const land = require("../res/countries.json");
 const film = require("../res/movies.json");
 const custom = require("../res/customClips.json");
 const maktsyk = require("../res/maktSykListe.json");
-const Toggle = require("../res/Toggle.json");
 const mem = require("memejs") //https://www.npmjs.com/package/memejs
 const teet = require("reddittits")
 const fourk = require("reddit4k")
@@ -72,11 +71,8 @@ bot.on("message", msg => {
         msg.reply("Vi er kanskje en dårlig bot, MEN! Vi er ikke like utdatert søppel som en viss TrashBOT");
     } else if (msg.content.toLowerCase().includes(" ein")) {
         msg.reply("Nynorsk oppdaget, gjør som resten av moderne sivilisasjon og skriv på en forståelig målform.");
-    }else if (msg.content.toLowerCase().includes("ground control to major tom")) {
-        msg.channel.send("This is Major Tom to Ground Control\nI'm stepping through the door\nAnd I'm floating in a most peculiar way\nAnd the stars look very different today");
     } else if (msg.content.includes("good bot")) {
-        msg.reply(
-            "Tusen takk, vi hos HenckeBot Inc Ltd. vet at vår bot er mye bedre enn TrashBOT, vennligst skriv et brev til denne søppelboten og gi 1-star review på google");
+        msg.reply("Tusen takk, vi hos HenckeBot Inc Ltd. vet at vår bot er mye bedre enn TrashBOT, vennligst skriv et brev til denne søppelboten og gi 1-star review på google");
     }else if(toggleblock && msg.content.includes("hmm") && msg.author.id != '132193704860450817'){
        msg.channel.send({files: ["https://media.tenor.com/images/69983541b409be168812dfd95be4bbf2/tenor.gif"]});
     }else if(toggleblock && msg.content.includes("reee") && msg.author.id != '132193704860450817'){
@@ -84,9 +80,7 @@ bot.on("message", msg => {
     }else if (toggleblock && msg.content.includes("https://tenor.com")){
                     for (var i = 0; i < maktsyk.length; i++){
                       if(msg.author.id = maktsyk[i].ID){
-                        msg.delete().catch(O_o => { });
-                      }
-                    }
+                        msg.delete().catch(O_o => { });}}
     } else if(msg.content.includes("nuddel")) {
                 url = "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fskididdel.mp3?v=1589665443245",
                 sound(url, msg.member.voice.channel, msg);
@@ -102,42 +96,14 @@ bot.on("message", msg => {
                 msg.channel.send("*I M A G I N E*");
                 break;
             //------------------------------
-             case "toggleblock":
-            if(toggleblock = true){
-                  toggleblock = false
-                  console.log("toggle satt til false")
-                } else if(toggleblock = false){
-                  toggleblock = true
-                  console.log("toggle satt til true")
-                }
-            /*
-                if(Toggle.toggle = "true"){
-                  Toggle.toggle = "false"
-                  console.log("toggle satt til false")
-                } else if(Toggle.toggle = "false"){
-                  Toggle.toggle = "true"
-                  console.log("toggle satt til true")
-                }
-                */
+            case "toggleblockon":
+            if (msg.author.id == "133671473591222273") toggleblock = true
+            msg.channel.send("Maktsykdomskontrollalgoritmen er aktivert")
                 break;
-                        //------------------------------
-             case "toggleblock":
-            if(toggleblock = true){
-                  toggleblock = false
-                  console.log("toggle satt til false")
-                } else if(toggleblock = false){
-                  toggleblock = true
-                  console.log("toggle satt til true")
-                }
-            /*
-                if(Toggle.toggle = "true"){
-                  Toggle.toggle = "false"
-                  console.log("toggle satt til false")
-                } else if(Toggle.toggle = "false"){
-                  Toggle.toggle = "true"
-                  console.log("toggle satt til true")
-                }
-                */
+            //------------------------------
+             case "toggleblockoff":   
+            if (msg.author.id == "133671473591222273") toggleblock = false
+            msg.channel.send("Maktsykdomskontrollalgoritmen er deaktivert")
                 break;
             //------------------------------
             case "alle":
