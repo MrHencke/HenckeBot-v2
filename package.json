@@ -18,8 +18,7 @@
     "reddittits": "^1.0.0",
     "memejs": "^1.2.3",
     "reddit4k": "^1.0.1",
-    "canvas": "^2.6.1",
-    "discord.js-tictactoe": "^1.0.1"
+    "canvas": "^2.6.1"
   },
   "devDependencies": {},
   "author": "Hencke",

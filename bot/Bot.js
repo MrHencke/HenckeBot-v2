@@ -11,6 +11,7 @@ const mem = require("memejs") //https://www.npmjs.com/package/memejs
 const teet = require("reddittits")
 const fourk = require("reddit4k")
 const yt = require("scrape-youtube").default;
+const ttt = require("discord.js-tictactoe")
 const bot = new Discord.Client();
 
 bot.once("ready", () => {
@@ -142,6 +143,11 @@ bot.on("message", msg => {
             case "giveyouup":
                 msg.channel.send("I just wanna tell you how Im feeling \n Gotta make you understand \n Never gonna give you up \n Never gonna let you down \n Never gonna run around and desert you \n Never gonna make you cry \n Never gonna say goodbye \n Never gonna tell a lie and hurt you",{ tts: true });
                 break;
+            //------------------------------
+            case "tictactoe":
+            
+                break;
+            //-----------
             //------------------------------ TEKST ------------------------------------------------------------------------------------------
             case "say":
                 var henckeID = "133671473591222273";
