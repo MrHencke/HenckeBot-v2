@@ -64,7 +64,7 @@ bot.on("voiceStateUpdate", (oldState, newState) => {
         console.log(err);
     }
 });
-
+var toggleblock = false;
 bot.on("message", msg => {
   if(msg.author.bot){
     return;
@@ -77,18 +77,16 @@ bot.on("message", msg => {
     } else if (msg.content.includes("good bot")) {
         msg.reply(
             "Tusen takk, vi hos HenckeBot Inc Ltd. vet at vår bot er mye bedre enn TrashBOT, vennligst skriv et brev til denne søppelboten og gi 1-star review på google");
-    }else if(msg.content.includes("hmm") && msg.author.id != '132193704860450817'){
+    }else if(toggleblock && msg.content.includes("hmm") && msg.author.id != '132193704860450817'){
        msg.channel.send({files: ["https://media.tenor.com/images/69983541b409be168812dfd95be4bbf2/tenor.gif"]});
-    }else if(msg.content.includes("reee") && msg.author.id != '132193704860450817'){
+    }else if(toggleblock && msg.content.includes("reee") && msg.author.id != '132193704860450817'){
        msg.channel.send({files: ["https://cdn.glitch.com/2c6c8596-d523-4520-a5a7-8caa66a05edf%2F1b72da8a-c1d0-48e4-92df-f8b35fe2fb40.bilde.png?v=1589880897535"]});
-    }else if (msg.content.includes("https://tenor.com")){
-                    var i;
-                    for (i = 0; i < maktsyk.length; i++){
+    }else if (toggleblock && msg.content.includes("https://tenor.com")){
+                    for (var i = 0; i < maktsyk.length; i++){
                       if(msg.author.id = maktsyk[i].ID){
                         msg.delete().catch(O_o => { });
                       }
                     }
-                    
     } else if(msg.content.includes("nuddel")) {
                 url = "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fskididdel.mp3?v=1589665443245",
                 sound(url, msg.member.voice.channel, msg);
@@ -104,8 +102,42 @@ bot.on("message", msg => {
                 msg.channel.send("*I M A G I N E*");
                 break;
             //------------------------------
-             case "toggleMaktSyk":
-                if(Toggle.toggle =) 
+             case "toggleblock":
+            if(toggleblock = true){
+                  toggleblock = false
+                  console.log("toggle satt til false")
+                } else if(toggleblock = false){
+                  toggleblock = true
+                  console.log("toggle satt til true")
+                }
+            /*
+                if(Toggle.toggle = "true"){
+                  Toggle.toggle = "false"
+                  console.log("toggle satt til false")
+                } else if(Toggle.toggle = "false"){
+                  Toggle.toggle = "true"
+                  console.log("toggle satt til true")
+                }
+                */
+                break;
+                        //------------------------------
+             case "toggleblock":
+            if(toggleblock = true){
+                  toggleblock = false
+                  console.log("toggle satt til false")
+                } else if(toggleblock = false){
+                  toggleblock = true
+                  console.log("toggle satt til true")
+                }
+            /*
+                if(Toggle.toggle = "true"){
+                  Toggle.toggle = "false"
+                  console.log("toggle satt til false")
+                } else if(Toggle.toggle = "false"){
+                  Toggle.toggle = "true"
+                  console.log("toggle satt til true")
+                }
+                */
                 break;
             //------------------------------
             case "alle":
