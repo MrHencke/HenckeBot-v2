@@ -48,12 +48,15 @@ bot.on("voiceStateUpdate", (oldState, newState) => {
                 if (1 > bots) {
                     var voiceChannel = newState.channel;
                     if (oldState.channel != newState.channel && newState.channelID != "undefined") {
-                            if (person != "133671473591222273") {
-                                          var url2 = "https://cdn.glitch.com/2c6c8596-d523-4520-a5a7-8caa66a05edf%2F%C3%A5j%C3%A6vli.mp3?v=1589967082829"   // "https://www.myinstants.com/media/sounds/you_were_banned_2.mp3" //"https://www.myinstants.com/media/sounds/metalgearsolid.swf.mp3",
-                                        sound(url2, voiceChannel);
-                            } else {
+                             if ( person == '132193704860450817' ){
+                                          var url = "https://cdn.glitch.com/2c6c8596-d523-4520-a5a7-8caa66a05edf%2Fh%C3%A5vardo.mp3?v=1590488992607" //"https://www.myinstants.com/media/sounds/metalgearsolid.swf.mp3",
+                                          sound(url, voiceChannel);
+                            }else if( person == "133671473591222273" ){
                                           var url = "https://www.myinstants.com/media/sounds/aplausos_2.mp3" //"https://www.myinstants.com/media/sounds/metalgearsolid.swf.mp3",
                                           sound(url, voiceChannel);
+                            }else {
+                                          var url2 = "https://cdn.glitch.com/2c6c8596-d523-4520-a5a7-8caa66a05edf%2F%C3%A5j%C3%A6vli.mp3?v=1589967082829"   // "https://www.myinstants.com/media/sounds/you_were_banned_2.mp3" //"https://www.myinstants.com/media/sounds/metalgearsolid.swf.mp3",
+                                        sound(url2, voiceChannel);
                             }
                         } else return;
                     }
@@ -363,8 +366,8 @@ bot.on("message", msg => {
                         sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
-            case "hypo":
-                url = "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Falone.mp3?v=1589738328094"
+            case "håvard":
+                url = "https://cdn.glitch.com/2c6c8596-d523-4520-a5a7-8caa66a05edf%2Fh%C3%A5vardo.mp3?v=1590488992607"
                         sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
