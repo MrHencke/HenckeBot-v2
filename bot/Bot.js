@@ -72,7 +72,7 @@ bot.on("message", msg => {
     return;
   } else if (msg.content.includes("bad bot")) {
         msg.reply("Vi er kanskje en dårlig bot, MEN! Vi er ikke like utdatert søppel som en viss TrashBOT");
-    } else if (msg.content.toLowerCase().includes(" ein")) {
+    } else if (msg.content.toLowerCase().includes(" ein") || msg.content.toLowerCase().includes("mykje")mykje) {
         msg.reply("Nynorsk oppdaget, gjør som resten av moderne sivilisasjon og skriv på en forståelig målform.");
     } else if (msg.content.includes("good bot")) {
         msg.reply("Tusen takk, vi hos HenckeBot Inc Ltd. vet at vår bot er mye bedre enn TrashBOT, vennligst skriv et brev til denne søppelboten og gi 1-star review på google");
