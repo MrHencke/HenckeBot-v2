@@ -356,7 +356,7 @@ bot.on("message", msg => {
                 break;
             //------------------------------
             case "virgin":
-                url =  " https://www.myinstants.com/media/sounds/no-dont-do-it-im-a-virgin.mp3"
+                url =  "https://www.myinstants.com/media/sounds/no-dont-do-it-im-a-virgin.mp3"
                         sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------  
