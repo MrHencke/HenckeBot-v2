@@ -146,6 +146,10 @@ bot.on("message", msg => {
                 msg.channel.send( "My sprinkler goes like thisstststststststststststststststststststststststst", { tts: true });
                 break;
             //------------------------------
+            case "starbucks":
+                msg.channel.send( "I want a  quad long shot grande in a venti cup half calf double cupped no sleeve salted caramel mocha latte with 2 pumps of vanilla substitute 2 pumps of white chocolate mocha for mocha and substitute 2 pumps of hazelnut for  toffee nut half whole milk and half breve with no whipped cream extra hot extra foam extra caramel drizzle extra salt add a scoop of vanilla bean powder with light ice well stirred", { tts: true });
+                break;
+            //------------------------------
             case "meow":
                 msg.channel.send("Don't you just hate it when your cat wakes you up like this? Meow. Meow. Meow. Meow. Meow. Meow. Meow. Meow. Meow. Meow. Meow. Meow. Meow. Meow. Meow. Meow. Meow. Meow. Meow. Meow.",{ tts: true });
                 break;
