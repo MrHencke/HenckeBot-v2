@@ -8,7 +8,7 @@ const land = require("../res/countries.json");
 const film = require("../res/movies.json");
 const custom = require("../res/customClips.json");
 const maktsyk = require("../res/maktSykListe.json");
-const mem = require("memejs") //https://www.npmjs.com/package/memejs
+const { meme } = require("memejs") //https://www.npmjs.com/package/memejs
 const teet = require("reddittits")
 const fourk = require("reddit4k")
 const yt = require("scrape-youtube").default;
@@ -27,7 +27,7 @@ function sound(url, voiceChannel, msg) {
   try{
     if(voiceChannel != null){
     voiceChannel.join().then(connection => {
-        const dispatcher = connection.play(url, { volume: 0.3});
+        const dispatcher = connection.play(url, { volume: 0.4});
         dispatcher.on("finish", end => voiceChannel.leave());
     }).catch(err => console.log(err));
     }else msg.channel.send("Vet du forskjellen på voice og tekst? Gå inn i en voicechannel da din nepe");
@@ -66,7 +66,9 @@ bot.on("voiceStateUpdate", (oldState, newState) => {
         console.log(err);
     }
 });
+
 var toggleblock = false;
+
 bot.on("message", msg => {
   if(msg.author.bot){
     return;
@@ -375,6 +377,28 @@ bot.on("message", msg => {
                         sound(url,msg.member.voice.channel, msg);
                 break;
             //------------------------------
+            case "dank":
+            meme('dankmemes', function(err, data) {
+            if (err) return console.error(err);
+            msg.channel.send(data.url);
+              });
+            break;
+            //------------------------------
+            case "dark":
+            meme('darkmeme', function(err, data) {
+            if (err) return console.error(err);
+            msg.channel.send(data.url);
+              });
+            break;
+            //------------------------------
+            case "sub":
+            var subreddit = args[0];
+            meme(subreddit, function(err, data) {
+            if (err) return console.error(err);
+            msg.channel.send(data.url);
+              });
+            break;
+           //------------------------------ 
             case "p":
                 var link;
                 try {
