@@ -478,7 +478,14 @@ bot.on("message", msg => {
             fourk(function(data, err) {
             msg.channel.send([data.url[0]])});
                 break;
-            
+            //------------------------------
+            case "4kpost":
+            for(var i = 0; i<10; i){
+            fourk(function(data, err) {
+            msg.channel.send([data.url[0]])});
+            msg.channel.send("<@132193704860450817>");
+              }
+                break;
             //------------------------------
             case "roast":
                 var mentioned = args[0];
