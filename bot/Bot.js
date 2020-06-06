@@ -14,14 +14,13 @@ const fourk = require("reddit4k")
 const yt = require("scrape-youtube").default;
 const bot = new Discord.Client();
 
-const client = new Discord.Client();
-client.commands = new Discord.Collection();
+bot.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
-	client.commands.set(command.name, command);
+	bot.commands.set(command.name, command);
 }
 
 bot.once("ready", () => {
@@ -32,21 +31,6 @@ bot.once("ready", () => {
         url: "https://www.twitch.tv/mrhencke"
     });
 });
-
-function sound(url, voiceChannel, msg) {
-  try{
-    if(voiceChannel != null){
-    voiceChannel.join().then(connection => {
-        const dispatcher = connection.play(url, { volume: 0.4});
-        dispatcher.on("finish", end => voiceChannel.leave());
-    }).catch(err => console.log(err));
-    }else msg.channel.send("Vet du forskjellen på voice og tekst? Gå inn i en voicechannel da din nepe");
-    }catch(err){
-      //console.log(err)
-    }}
-
-var stream;
-var dispatcher;
 
 bot.on("voiceStateUpdate", (oldState, newState) => {
     try {
@@ -74,15 +58,19 @@ bot.on("voiceStateUpdate", (oldState, newState) => {
         }
     } catch (err) {
         console.log(err);
-    }
-});
+    }});
 
 var toggleblock = false;
 
 bot.on("message", async msg => {
-  if(msg.author.bot){
-    return;
-  } else if (msg.content.includes("bad bot")) {
+  if(msg.author.bot) return;
+    
+        if(msg.content.substring(0, 1) == "!")
+        var args = msg.content.substring(1).split(" ");
+        var cmd = args[0];
+        args = args.splice(1);
+    
+  }/* else if (msg.content.includes("bad bot")) {
         msg.reply("Vi er kanskje en dårlig bot, MEN! Vi er ikke like utdatert søppel som en viss TrashBOT");
     } else if (msg.content.toLowerCase().includes(" ein") || msg.content.toLowerCase().includes("mykje") || msg.content.toLowerCase().includes("dinna") || msg.content.toLowerCase().includes("hugleik på staur")) {
         msg.reply("Nynorsk oppdaget, gjør som resten av moderne sivilisasjon og skriv på en forståelig målform.");
@@ -619,7 +607,7 @@ bot.on("message", async msg => {
                 break;
             //------------------------------
         }
-    }
+    }*/
 });
 
 
@@ -633,3 +621,14 @@ function sleep(milliseconds) {
     } while (currentDate - date < milliseconds);
 }
 
+function sound(url, voiceChannel, msg) {
+  try{
+    if(voiceChannel != null){
+    voiceChannel.join().then(connection => {
+        const dispatcher = connection.play(url, { volume: 0.4});
+        dispatcher.on("finish", end => voiceChannel.leave());
+    }).catch(err => console.log(err));
+    }else msg.channel.send("Vet du forskjellen på voice og tekst? Gå inn i en voicechannel da din nepe");
+    }catch(err){
+      //console.log(err)
+    }}
