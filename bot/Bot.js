@@ -92,7 +92,7 @@ bot.on("message", msg => {
     }else if (msg.content.includes("F") && msg.content.length < 2) {
                 msg.channel.send("F")
     }else if (msg.content.includes("!i")){
-                 //msg.delete().catch(O_o => { });
+                 msg.delete().catch(O_o => { });
                 for(var p = 0; p < msg.content.length-1; p++){
                   msg.channel.send("*I M A G I N E*");}
     } else if (msg.content.substring(0, 1) == "!" && !msg.author.bot){
@@ -167,7 +167,6 @@ bot.on("message", msg => {
             case "tictactoe":
             msg.channel.send("Plassholder inntil videre")
                 break;
-            //-----------
             //------------------------------ TEKST ------------------------------------------------------------------------------------------
             case "say":
                 var henckeID = "133671473591222273";
