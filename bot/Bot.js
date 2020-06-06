@@ -65,12 +65,23 @@ var toggleblock = false;
 bot.on("message", async msg => {
   if(msg.author.bot) return;
     
-        if(msg.content.substring(0, 1) == "!")
+        if(msg.content.substring(0, 1) == "!"){
         var args = msg.content.substring(1).split(" ");
         var cmd = args[0];
         args = args.splice(1);
-    
-  }/* else if (msg.content.includes("bad bot")) {
+        const commandName = cmd.shift().toLowerCase();
+        const command = bot.commands.get(commandName) || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+         
+          try {
+          command.execute(msg, args);
+          } catch (error) {
+	        console.error(error);
+	        msg.reply('Oops, den commanden gikk skeis');
+}
+  }
+  
+  
+  /* else if (msg.content.includes("bad bot")) {
         msg.reply("Vi er kanskje en dårlig bot, MEN! Vi er ikke like utdatert søppel som en viss TrashBOT");
     } else if (msg.content.toLowerCase().includes(" ein") || msg.content.toLowerCase().includes("mykje") || msg.content.toLowerCase().includes("dinna") || msg.content.toLowerCase().includes("hugleik på staur")) {
         msg.reply("Nynorsk oppdaget, gjør som resten av moderne sivilisasjon og skriv på en forståelig målform.");
