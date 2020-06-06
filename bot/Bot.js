@@ -8,11 +8,21 @@ const land = require("../res/countries.json");
 const film = require("../res/movies.json");
 const custom = require("../res/customClips.json");
 const maktsyk = require("../res/maktSykListe.json");
-const { meme } = require("memejs") //https://www.npmjs.com/package/memejs
+const { meme } = require("memejs") 
 const teet = require("reddittits")
 const fourk = require("reddit4k")
 const yt = require("scrape-youtube").default;
 const bot = new Discord.Client();
+
+const client = new Discord.Client();
+client.commands = new Discord.Collection();
+
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+
+for (const file of commandFiles) {
+	const command = require(`./commands/${file}`);
+	client.commands.set(command.name, command);
+}
 
 bot.once("ready", () => {
     console.log(`Logged in as ${bot.user.tag}!`);
@@ -69,7 +79,7 @@ bot.on("voiceStateUpdate", (oldState, newState) => {
 
 var toggleblock = false;
 
-bot.on("message", msg => {
+bot.on("message", async msg => {
   if(msg.author.bot){
     return;
   } else if (msg.content.includes("bad bot")) {
