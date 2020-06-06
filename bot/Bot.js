@@ -99,7 +99,9 @@ bot.on("message", msg => {
             //------------------------------	TEKST	------------------------------------------------------------------------------------------------------------------------
             case "i":
                 msg.delete().catch(O_o => { });
-                msg.channel.send("*I M A G I N E*");
+                for(var p = 0; p < cmd.length; p++){
+                  msg.channel.send("*I M A G I N E*");
+                }
                 break;
             //------------------------------
             case "toggleblockon":
