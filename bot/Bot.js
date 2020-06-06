@@ -91,19 +91,16 @@ bot.on("message", msg => {
                 sound(url, msg.member.voice.channel, msg);
     }else if (msg.content.includes("F") && msg.content.length < 2) {
                 msg.channel.send("F")
+    }else if (msg.content.includes("!i")){
+                 //msg.delete().catch(O_o => { });
+                for(var p = 0; p < msg.content.length-1; p++){
+                  msg.channel.send("*I M A G I N E*");}
     } else if (msg.content.substring(0, 1) == "!" && !msg.author.bot){
         var args = msg.content.substring(1).split(" ");
         var cmd = args[0];
         args = args.splice(1);
         switch (cmd.toLowerCase()) {
             //------------------------------	TEKST	------------------------------------------------------------------------------------------------------------------------
-            case "i":
-                msg.delete().catch(O_o => { });
-                for(var p = 0; p < cmd.length; p++){
-                  msg.channel.send("*I M A G I N E*");
-                }
-                break;
-            //------------------------------
             case "toggleblockon":
             if (msg.author.id == "133671473591222273") toggleblock = true
             msg.channel.send("Maktsykdomskontrollalgoritmen er aktivert")
