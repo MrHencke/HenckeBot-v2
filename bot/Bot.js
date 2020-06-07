@@ -3,8 +3,9 @@ const fs = require("fs");
 const bot = new Discord.Client();
 
 bot.commands = new Discord.Collection();
+bot.aliases = new Discord.Collection();
 
-const commandFiles = fs.readdirSync('./test').filter(file => file.endsWith('.js'));
+const commandFiles = fs.readdirSync('../test').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
 	const command = require(`./test/${file}`);
@@ -13,7 +14,7 @@ for (const file of commandFiles) {
 
 const prefix = "!"
 
-bot.once("ready", () => {
+bot.once("ready", () => { 
     console.log(`Logged in as ${bot.user.tag}!`);
     console.log(`Ready to fuck shit up`);
     bot.user.setActivity("my pp", {

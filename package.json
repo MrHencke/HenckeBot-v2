@@ -15,8 +15,6 @@
     "discord.js": "^12.2.0",
     "ffmpeg-static": "^4.2.2",
     "memejs": "^1.2.3",
-    "reddit4k": "^1.0.1",
-    "reddittits": "^1.0.0",
     "scrape-youtube": "^0.1.8",
     "ytdl-core": "^2.1.7"
   },
