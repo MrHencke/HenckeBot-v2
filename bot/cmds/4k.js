@@ -1,9 +1,11 @@
+const { meme } = require("memejs") 
+
 module.exports = {
     name: '4k',
     description: '',
-    aliases: [''],
+    aliases: ['firekå'],
     execute(bot, msg, args) {
-            var subreddit = "fortyfivefiftyfive";
+            var subreddit = "UHDnsfw";
             meme(subreddit, function(err, data) {
             if (err) return console.error(err);
             if(msg.channel.nsfw){

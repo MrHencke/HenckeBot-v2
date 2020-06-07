@@ -1,7 +1,7 @@
 module.exports = {
     name: 'slett',
     description: '',
-    aliases: [''],
+    aliases: [],
     execute(bot, msg, args) {
           if (msg.author.id == process.env.HenckeID || msg.author.id == "152019710949588992") {
                     const amount = (parseInt(args.join(" "), 10))+1;

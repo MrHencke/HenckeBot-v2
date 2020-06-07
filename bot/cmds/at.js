@@ -1,7 +1,7 @@
 module.exports = {
   name: "at",
   description: "",
-  aliases: [""],
+  aliases: [],
   execute(bot, msg, args) {
     var p;
     var mentioned = args[0];
