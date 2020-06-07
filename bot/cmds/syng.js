@@ -29,7 +29,10 @@ function sound(url, voiceChannel, msg, resultata, i) {
         const dispatcher = connection.play(url, { volume: 0.4});
         dispatcher.on("finish", end => sound(discordTTS.getVoiceStream(resultata[i+1]),msg.member.voice.channel, msg, resultata, i = i+1));
     }).catch(err => console.log(err));
-    }else msg.channel.send("Tada! Applaus kan taes på DMs");
+    }else{
+      msg.channel.send("Tada! Applaus kan taes på DMs") ;
+    voiceChannel.leave();
+    } 
     }catch(err){
       msg.channel.send("Sangstemmen er ikke helt på plass i dag, sorry.")
     }}
