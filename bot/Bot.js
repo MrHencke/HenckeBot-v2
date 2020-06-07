@@ -18,8 +18,7 @@ const bot = new Discord.Client();
 const prefix = "!"
 
 bot.commands = new Discord.Collection();
-
-const commandFiles = fs.readdirSync("./commands).filter(file => file.endsWith('.js'));
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
   console.log(file);
@@ -47,14 +46,13 @@ bot.on("message", async msg => {
           console.log(commandName);
         const command = bot.commands.get(commandName) || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
           console.log(command);
-    console.log(commandFiles);
           if (!command) return;
          
           try {
           command.execute(bot, msg, args);
           } catch (err) {
 	        console.error(err);
-	        msg.reply('Oops, den commanden gikk skeis');
+	        msg.reply('Oops, ' + commandName + ' gikk til helvete');
     }
   });
 
