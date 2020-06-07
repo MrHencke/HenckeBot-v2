@@ -5,7 +5,7 @@ const discord = require("discord.js");
 module.exports = {
     name: 'syng',
     description: 'Synger en sang',
-    aliases: [''],
+    aliases: ['singstar'],
     execute(bot, msg, args) {
       var Title = args.join(' ');
         lyrics(Title).then(result => {
@@ -29,8 +29,9 @@ function sound(url, voiceChannel, msg, resultata, i) {
         const dispatcher = connection.play(url, { volume: 0.4});
         dispatcher.on("finish", end => sound(discordTTS.getVoiceStream(resultata[i+1]),msg.member.voice.channel, msg, resultata, i = i+1));
     }).catch(err => console.log(err));
-    }else msg.channel.send("Vet du forskjellen på voice og tekst? Gå inn i en voicechannel da din nepe");
+    }else msg.channel.send("Tada! Applaus kan taes på DMs");
+          voiceChannel.leave()
     }catch(err){
-      //console.log(err)
+      msg.channel.send("Sangstemmen er ikke helt på plass i dag, sorry.")
     }}
 
