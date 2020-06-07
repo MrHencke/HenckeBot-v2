@@ -11,14 +11,14 @@
   },
   "dependencies": {
     "@discordjs/opus": "^0.3.2",
+    "canvas": "^2.6.1",
     "discord.js": "^12.2.0",
     "ffmpeg-static": "^4.2.2",
-    "ytdl-core": "^2.1.4",
-    "scrape-youtube": "^0.1.8",
-    "reddittits": "^1.0.0",
     "memejs": "^1.2.3",
     "reddit4k": "^1.0.1",
-    "canvas": "^2.6.1"
+    "reddittits": "^1.0.0",
+    "scrape-youtube": "^0.1.8",
+    "ytdl-core": "^2.1.7"
   },
   "devDependencies": {},
   "author": "Hencke",

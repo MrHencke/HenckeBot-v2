@@ -1,32 +1,17 @@
 const Discord = require("discord.js");
 const fs = require("fs");
-/*
-const ytdl = require("ytdl-core");
-const roast = require("../res/roast.json");
-const comp = require("../res/compliments.json");
-const quote = require("../res/quote.json");
-const land = require("../res/countries.json");
-const film = require("../res/movies.json");
-const custom = require("../res/customClips.json");
-const maktsyk = require("../res/maktSykListe.json");
-const { meme } = require("memejs") 
-const teet = require("reddittits")
-const fourk = require("reddit4k")
-const yt = require("scrape-youtube").default;
-*/
 const bot = new Discord.Client();
-const prefix = "!"
 
 bot.commands = new Discord.Collection();
-const commandFiles = fs.readdirSync('./cmds').filter(file => file.endsWith('.js'));
+
+const commandFiles = fs.readdirSync('./test').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
-	const command = require ('./cmds/${file}');
-  console.log(file);
+	const command = require(`./test/${file}`);
 	bot.commands.set(command.name, command);
-  console.log(command.name);
-  console.log(command);
 }
+
+const prefix = "!"
 
 bot.once("ready", () => {
     console.log(`Logged in as ${bot.user.tag}!`);
@@ -47,7 +32,6 @@ bot.on("message", msg => {
           console.log(commandName);
         const command = bot.commands.get(commandName) || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
           console.log(command);
-        console.log(fs.readdirSync('./commands').filter(file => file.endsWith('.js')))
           if (!command) return;
          
           try {
