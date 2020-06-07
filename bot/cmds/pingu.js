@@ -1,8 +1,8 @@
 module.exports = {
-    name: '',
-    description: '',
-    aliases: [''],
-    execute(bot, msg, args) {
-          //sett inn her      
-    },
+	name: 'ping',
+	description: 'Ping!',
+  aliases: ['pongu'],
+	execute(bot, msg, args) {
+		msg.channel.send('Pong.');
+	},
 };

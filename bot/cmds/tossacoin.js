@@ -1,5 +1,5 @@
 module.exports = {
-    name: '',
+    name: 'tossacoin',
     description: '',
     aliases: [''],
     execute(bot, msg, args) {

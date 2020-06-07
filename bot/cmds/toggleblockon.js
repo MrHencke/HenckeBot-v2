@@ -1,5 +1,5 @@
 module.exports = {
-    name: '',
+    name: 'toggleblockon',
     description: '',
     aliases: [''],
     execute(bot, msg, args) {

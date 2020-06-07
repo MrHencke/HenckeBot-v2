@@ -1,5 +1,5 @@
 module.exports = {
-    name: '',
+    name: 'dat102',
     description: '',
     aliases: [''],
     execute(bot, msg, args) {

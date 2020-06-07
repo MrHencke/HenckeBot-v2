@@ -1,5 +1,5 @@
 module.exports = {
-    name: '',
+    name: 'tits',
     description: '',
     aliases: [''],
     execute(bot, msg, args) {
