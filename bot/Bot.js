@@ -48,12 +48,11 @@ bot.on("message", async msg => {
           if (!command) return;
          
           try {
-          command.execute(msg, args);
+          command.execute(bot, msg, args);
           } catch (err) {
 	        console.error(err);
 	        msg.reply('Oops, den commanden gikk skeis');
     }
   });
-
 
 bot.login(process.env.token);
