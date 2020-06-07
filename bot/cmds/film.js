@@ -1,8 +1,11 @@
+const path = require("path");
+const film = require(path.join(__dirname, "..", "..", "res/movies.json"));
+
 module.exports = {
     name: 'film',
     description: '',
     aliases: [''],
     execute(bot, msg, args) {
-          //sett inn her      
-    },
+               var filmdata = film[Math.floor(Math.random() * film.length)]
+                msg.channel.send("Jeg foreslår: "+ filmdata.title + " fra " + filmdata.year)    },
 };

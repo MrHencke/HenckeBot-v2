@@ -1,9 +1,9 @@
 var path = require("path")
 const sound = require(path.join(__dirname, '..', '..', 'res/sound.js'));
-
-/*const custom = require(".../res/customClips.json");
+const custom = require(path.join(__dirname, '..', '..', 'res/customClips.json'));
+const customPath = path.join(__dirname, '..', '..', 'res/customClips.json');
 const fs = require("fs")
-const sound = require(".../res/sound.js")
+
 module.exports = {
     name: 'c',
     description: '',
@@ -19,7 +19,7 @@ module.exports = {
                 } else if(args[0]== "add") {
                   var name = args[1]
                   if(args[2].substring(0,4) == "http") var url = args[2];
-                  fs.readFile(".../res/customClips.json", 'utf8', function readFileCallback(err, data){
+                  fs.readFile(customPath, 'utf8', function readFileCallback(err, data){
                   if (err){
                       console.log(err);
                   } else {
@@ -28,7 +28,7 @@ module.exports = {
                     console.log(msg.author.username)
                   obj.push({"name" : name, "url" : url, "bruker" : msg.author.username}); //add some data
                   var json = JSON.stringify(obj); //convert it back to json
-                  fs.writeFile("app/res/customClips.json", json, 'utf8', (err) => {
+                  fs.writeFile(customPath, json, 'utf8', (err) => {
                   if (err) throw err;
                   console.log('Data written to file');
                   msg.channel.send("Skrevet til databasen, vent rundt 15 min til neste restart, så er filen tilgjengelig");
@@ -42,4 +42,3 @@ module.exports = {
                 }     
     },
 };
-*/
