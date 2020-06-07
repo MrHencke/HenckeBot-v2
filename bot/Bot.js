@@ -31,7 +31,7 @@ bot.once("ready", () => {
         url: "https://www.twitch.tv/mrhencke"
     });
 });
-
+/*
 bot.on("voiceStateUpdate", (oldState, newState) => {
     try {
         var server = newState.guild.id;
@@ -61,7 +61,7 @@ bot.on("voiceStateUpdate", (oldState, newState) => {
     }});
 
 var toggleblock = false;
-
+*/
 bot.on("message", async msg => {
   if(msg.author.bot) return;
     
@@ -69,7 +69,7 @@ bot.on("message", async msg => {
         var args = msg.content.substring(1).split(" ");
         var cmd = args[0];
         args = args.splice(1);
-        const commandName = cmd.shift().toLowerCase();
+        const commandName = cmd.toLowerCase();
         const command = bot.commands.get(commandName) || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
          
           try {
@@ -623,23 +623,3 @@ bot.on("message", async msg => {
 
 
 bot.login(process.env.token);
-
-function sleep(milliseconds) {
-    const date = Date.now();
-    let currentDate = null;
-    do {
-        currentDate = Date.now();
-    } while (currentDate - date < milliseconds);
-}
-
-function sound(url, voiceChannel, msg) {
-  try{
-    if(voiceChannel != null){
-    voiceChannel.join().then(connection => {
-        const dispatcher = connection.play(url, { volume: 0.4});
-        dispatcher.on("finish", end => voiceChannel.leave());
-    }).catch(err => console.log(err));
-    }else msg.channel.send("Vet du forskjellen på voice og tekst? Gå inn i en voicechannel da din nepe");
-    }catch(err){
-      //console.log(err)
-    }}
