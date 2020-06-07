@@ -13,7 +13,8 @@ module.exports = {
           var resultat = result.content[0].lyrics
           var resultata = resultat.match(/([\s\S]{1,199})/g);
         console.log(resultata[1])
-        sound(discordTTS.getVoiceStream(resultata[0]), msg.member.voice.channel, msg, resultata)
+          var i;
+        sound(discordTTS.getVoiceStream(resultata[0]), msg.member.voice.channel, msg, resultata, i = 0)
         }    
 }).catch(error => {
     msg.channel.send("Fant ikke noe sang å synge :c");
@@ -21,14 +22,12 @@ module.exports = {
     },
 };
 
-
-function sound(url, voiceChannel, msg, resultata) {
+function sound(url, voiceChannel, msg, resultata, i) {
   try{
-    var i = 0;
-    if(voiceChannel != null && i < resultata.length){
+    if(msg.member.voice.channel != null && i < resultata.length){
     voiceChannel.join().then(connection => {
         const dispatcher = connection.play(url, { volume: 0.4});
-        dispatcher.on("finish", i++, end => sound(discordTTS.getVoiceStream(resultata[i+1]),msg.member.voice.channel, msg, resultata));
+        dispatcher.on("finish", end => sound(discordTTS.getVoiceStream(resultata[i+1]),msg.member.voice.channel, msg, resultata, i = i+1));
     }).catch(err => console.log(err));
     }else msg.channel.send("Vet du forskjellen på voice og tekst? Gå inn i en voicechannel da din nepe");
     }catch(err){
