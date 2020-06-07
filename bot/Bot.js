@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const fs = require("fs");
+/*
 const ytdl = require("ytdl-core");
 const roast = require("../res/roast.json");
 const comp = require("../res/compliments.json");
@@ -12,7 +13,9 @@ const { meme } = require("memejs")
 const teet = require("reddittits")
 const fourk = require("reddit4k")
 const yt = require("scrape-youtube").default;
+*/
 const bot = new Discord.Client();
+const prefix = "!"
 
 bot.commands = new Discord.Collection();
 
@@ -33,15 +36,11 @@ bot.once("ready", () => {
 });
 
 bot.on("message", async msg => {
-  if(msg.author.bot) return;
-    
-        if(msg.content.substring(0, 1) == "!"){
-        var args = msg.content.substring(1).split(" ");
+  if (!msg.content.startsWith(prefix) || msg.author.bot) return;
+        const args = msg.content.slice(prefix.length).split(/ +/);
+	      const cmd = args.shift().toLowerCase();
         console.log(args);
-        var cmd = args[0];
-          console.log(cmd);
-        args = args.splice(1);
-          console.log(args);
+        console.log(cmd);
         const commandName = cmd.toLowerCase();
           console.log(commandName);
         const command = bot.commands.get(commandName) || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
@@ -50,12 +49,11 @@ bot.on("message", async msg => {
          
           try {
           command.execute(msg, args);
-          } catch (error) {
-	        console.error(error);
+          } catch (err) {
+	        console.error(err);
 	        msg.reply('Oops, den commanden gikk skeis');
     }
-  }
-});
+  });
 
 
 bot.login(process.env.token);
