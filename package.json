@@ -18,7 +18,8 @@
     "memejs": "^1.2.3",
     "node-lyrics-api": "^1.0.1",
     "scrape-youtube": "^0.1.8",
-    "ytdl-core": "^2.1.7"
+    "ytdl-core": "^2.1.7",
+    "discord.js-tictactoe": "^1.0.1"
   },
   "devDependencies": {},
   "author": "Hencke",

@@ -23,7 +23,6 @@ bot.once("ready", () => {
         url: "https://www.twitch.tv/mrhencke"
     });
 });
-
 bot.on("voiceStateUpdate", (oldState, newState) => {
     try {
         var server = newState.guild.id;
