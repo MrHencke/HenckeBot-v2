@@ -3,6 +3,10 @@ module.exports = {
 	description: 'Ping!',
   aliases: ['pongu'],
 	execute(bot, msg, args) {
-		msg.channel.send('Pong.');
+		                msg.channel.send({embed: {
+                        color: 0x2ed32e,
+                        fields: [{name: "Pongu",
+                                value:"Pingen til Henckebot er: " + Math.round(bot.ws.ping) + " ms"
+                            }] } });
 	},
 };

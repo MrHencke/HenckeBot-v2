@@ -5,6 +5,10 @@ module.exports = {
     description: '',
     aliases: [''],
     execute(bot, msg, args) {
-          //sett inn her      
+        var subreddit = args[0];
+            meme(subreddit, function(err, data) {
+            if (err) return console.error(err);
+            msg.channel.send(data.url);
+              });     
     },
 };

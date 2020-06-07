@@ -6,6 +6,6 @@ module.exports = {
     description: '',
     aliases: [''],
     execute(bot, msg, args) {
-          //sett inn her      
-    },
+                  var url =    "https://www.myinstants.com/media/sounds/youre-the-best-around-by-joe-esposito-mp3cut.mp3"
+                        sound(url,msg.member.voice.channel, msg);    },
 };

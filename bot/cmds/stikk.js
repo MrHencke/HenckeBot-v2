@@ -3,6 +3,5 @@ module.exports = {
     description: '',
     aliases: [''],
     execute(bot, msg, args) {
-          //sett inn her      
-    },
+msg.member.voice.channel.leave();    },
 };

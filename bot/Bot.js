@@ -12,8 +12,6 @@ for (const file of commandFiles) {
 	const command = require(cmdFld + "/" + file);
 	bot.commands.set(command.name, command);
 }
-
-
 const prefix = "!"
 
 bot.once("ready", () => { 
@@ -24,6 +22,39 @@ bot.once("ready", () => {
         url: "https://www.twitch.tv/mrhencke"
     });
 });
+
+/*
+bot.on("voiceStateUpdate", (oldState, newState) => {
+    try {
+        var server = newState.guild.id;
+        var person = newState.member.id.toString();
+        if (server == "612947002853949458" || person == "133671473591222273") {
+            if (newState.channel != null) {
+                var bots = newState.channel.members.filter(x => x.user.bot).size;
+                if (1 > bots) {
+                    var voiceChannel = newState.channel;
+                    if (oldState.channel != newState.channel && newState.channelID != "undefined") {
+                             if ( person == '132193704860450817' ){
+                                          var url = "https://cdn.glitch.com/2c6c8596-d523-4520-a5a7-8caa66a05edf%2Fh%C3%A5vardo.mp3?v=1590488992607" //"https://www.myinstants.com/media/sounds/metalgearsolid.swf.mp3",
+                                          sound(url, voiceChannel);
+                            }else if( person == "133671473591222273" ){
+                                          var url = "https://www.myinstants.com/media/sounds/aplausos_2.mp3" //"https://www.myinstants.com/media/sounds/metalgearsolid.swf.mp3",
+                                          sound(url, voiceChannel);
+                            }else {
+                                          var url2 = "https://cdn.glitch.com/2c6c8596-d523-4520-a5a7-8caa66a05edf%2F%C3%A5j%C3%A6vli.mp3?v=1589967082829"   // "https://www.myinstants.com/media/sounds/you_were_banned_2.mp3" //"https://www.myinstants.com/media/sounds/metalgearsolid.swf.mp3",
+                                        sound(url2, voiceChannel);
+                            }
+                        } else return;
+                    }
+            }
+        }
+    } catch (err) {
+        console.log(err);
+    }
+});
+*/
+
+
 
 bot.on("message", msg => {
   if (!msg.content.startsWith(prefix) || msg.author.bot) return;

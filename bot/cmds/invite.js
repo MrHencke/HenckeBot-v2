@@ -6,6 +6,6 @@ module.exports = {
     description: '',
     aliases: [''],
     execute(bot, msg, args) {
-          //sett inn her      
+msg.channel.send("https://discord.com/api/oauth2/authorize?client_id=709760720836755477&permissions=104332608&scope=bot");    
     },
 };

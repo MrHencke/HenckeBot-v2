@@ -5,6 +5,8 @@ module.exports = {
   description: "",
   aliases: [""],
   execute(bot, msg, args) {
-    //sett inn her
-  }
+      meme('darkmeme', function(err, data) {
+            if (err) return console.error(err);
+            msg.channel.send(data.url);
+              });  }
 };
