@@ -5,12 +5,14 @@ const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
 bot.aliases = new Discord.Collection();
 
-const commandFiles = fs.readdirSync('../test').filter(file => file.endsWith('.js'));
+const cmdFld = (__dirname + "/cmds");
+const commandFiles = fs.readdirSync(cmdFld).filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
-	const command = require(`./test/${file}`);
+	const command = require(cmdFld + "/" + file);
 	bot.commands.set(command.name, command);
 }
+
 
 const prefix = "!"
 
@@ -27,12 +29,8 @@ bot.on("message", msg => {
   if (!msg.content.startsWith(prefix) || msg.author.bot) return;
         const args = msg.content.slice(prefix.length).split(/ +/);
 	      const cmd = args.shift().toLowerCase();
-        console.log(args);
-        console.log(cmd);
         const commandName = cmd.toLowerCase();
-          console.log(commandName);
         const command = bot.commands.get(commandName) || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
-          console.log(command);
           if (!command) return;
          
           try {
