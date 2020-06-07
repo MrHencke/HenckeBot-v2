@@ -1,22 +1,7 @@
-module.exports = {
-    name: 'tictactoe',
-    description: '',
-    aliases: [''],
-    execute(bot, msg, args) {
-            msg.channel.send("Plassholder inntil videre")
-    },
-};
-
-module.exports = {
+/*module.exports = {
 			name: 'tic-tac-toe',
-			description: 'Play a game of tic-tac-toe with another user.'
-  	this.playing = new Set();
-		};
-
-	
-	
-execute(bot, msg, args) {
-	async run(msg, { opponent }) {
+			description: 'Play a game of tic-tac-toe with another user.',
+    execute(bot, msg, args) {
 		if (opponent.bot) return msg.reply('Bots may not be played against.');
 		if (opponent.id === msg.author.id) return msg.reply('You may not play against yourself.');
 		if (this.playing.has(msg.channel.id)) return msg.reply('Only one game may be occurring per channel.');
@@ -82,4 +67,7 @@ execute(bot, msg, args) {
 			|| (sides[0] === sides[4] && sides[0] === sides[8])
 			|| (sides[2] === sides[4] && sides[2] === sides[6]);
 	}
+
+   },
 };
+*/
