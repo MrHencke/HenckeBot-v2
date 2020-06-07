@@ -16,7 +16,8 @@
     "ffmpeg-static": "^4.2.2",
     "memejs": "^1.2.3",
     "scrape-youtube": "^0.1.8",
-    "ytdl-core": "^2.1.7"
+    "ytdl-core": "^2.1.7",
+    "azlyrics-scraper": "^1.0.5"
   },
   "devDependencies": {},
   "author": "Hencke",

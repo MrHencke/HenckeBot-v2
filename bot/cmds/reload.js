@@ -1,3 +1,4 @@
+/*
 const { readdirSync } = require("fs");
 const { join } = require("path");
 
@@ -13,7 +14,7 @@ module.exports = {
 	const command = bot.commands.get(commandName) || bot.commands.get(bot.aliases.get(commandName));
 	if (!command) return msg.channel.send("That command doesn't exist. Try again.");
 	readdirSync(join(__dirname, "..")).forEach(f => {
-		const files = readdirSync(join(__dirname, "..", f));
+		const files = readdirSync(join(__dirname,"..", f));
 		if (files.includes(`${commandName}.js`)) {
 			const file = `../${f}/${commandName}.js`;
 			try {
@@ -31,3 +32,4 @@ module.exports = {
 	});
     },
 };
+*/
