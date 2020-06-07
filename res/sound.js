@@ -1,4 +1,6 @@
-export function sound(url, voiceChannel, msg) {
+const Discord = require("discord.js");
+
+module.exports = function sound(url, voiceChannel, msg) {
   try{
     if(voiceChannel != null){
     voiceChannel.join().then(connection => {
