@@ -3,6 +3,6 @@ module.exports = {
     description: '',
     aliases: [''],
     execute(bot, msg, args) {
-          //sett inn her      
+          msg.channel.send("Måløy Regionale Datatjenester er: OFFLINE");     
     },
 };
