@@ -71,14 +71,14 @@ bot.on("message", async msg => {
                  msg.delete().catch(O_o => { });
                 for(var p = 0; p < msg.content.length-1; p++){
                   msg.channel.send("*I M A G I N E*");}}
-      
+    
   if (!msg.content.startsWith(prefix) || msg.author.bot) return;
         const args = msg.content.slice(prefix.length).split(/ +/);
 	      const cmd = args.shift().toLowerCase();
         const commandName = cmd.toLowerCase();
         const command = bot.commands.get(commandName) || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
           if (!command) return;
-         console.log(args.join(' '))
+  
           try {
           command.execute(bot, msg, args);
           } catch (err) {

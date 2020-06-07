@@ -1,4 +1,4 @@
-const lyrics = require("azlyrics-scraper");
+const lyrics = require("node-lyrics-api");
 
 module.exports = {
     name: 'syng',
@@ -6,9 +6,14 @@ module.exports = {
     aliases: [''],
     execute(bot, msg, args) {
       var Title = args.join(' ');
-        lyrics.getLyric( Title ).then(result => {
-    console.log(result[0]);
-    msg.channel.send(result[0],{ tts: true });
+        lyrics(Title).then(result => {
+    console.log(result.content[0].lyrics);
+    if(result.content[0].lyrics.length>1999 ){
+      var del1 = result.content[0].lyrics.substring(0,1999)
+      msg.channel.send(del1,{ tts: true });
+      var del2 = result.content[0].lyrics.substring(1999,result.content[0].lyrics.length)
+    }
+    msg.channel.send(result.content[0].lyrics,{ tts: true });
 }).catch(error => {
     msg.channel.send("Fant ikke noe sang å synge :c");
 });  
