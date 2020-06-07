@@ -7,5 +7,5 @@ const server = http.createServer((req, res) => {
 console.log("WebServer is online!");
 
 setInterval(() => {
-  http.get(`http://henckebotfunctnal.glitch.me/`);
+  http.get(`http://henckebot-test-branch.glitch.me`);
 }, 280000);
