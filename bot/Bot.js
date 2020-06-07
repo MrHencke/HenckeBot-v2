@@ -77,7 +77,7 @@ bot.on("message", async msg => {
           } catch (error) {
 	        console.error(error);
 	        msg.reply('Oops, den commanden gikk skeis');
-}
+    }
   }
   
   
