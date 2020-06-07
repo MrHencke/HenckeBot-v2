@@ -78,7 +78,7 @@ bot.on("message", async msg => {
         const commandName = cmd.toLowerCase();
         const command = bot.commands.get(commandName) || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
           if (!command) return;
-         
+         console.log(args.join(' '))
           try {
           command.execute(bot, msg, args);
           } catch (err) {
