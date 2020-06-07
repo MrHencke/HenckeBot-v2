@@ -1,4 +1,4 @@
-const { readdirSync } = require("fs");
+/*const { readdirSync } = require("fs");
 const { join } = require("path");
 
 module.exports.run = (bot, message, args) => {
@@ -34,4 +34,4 @@ module.exports.help = {
 	description: "",
 	usage: "",
 	category: "Developer",
-};
+};*/
