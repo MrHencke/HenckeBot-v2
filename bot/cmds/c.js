@@ -1,3 +1,6 @@
+var path = require("path")
+const sound = require(path.join(__dirname, '..', '..', 'res/sound.js'));
+
 /*const custom = require(".../res/customClips.json");
 const fs = require("fs")
 const sound = require(".../res/sound.js")

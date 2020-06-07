@@ -1,3 +1,5 @@
+const { meme } = require("memejs") 
+
 module.exports = {
     name: 'sub',
     description: '',
