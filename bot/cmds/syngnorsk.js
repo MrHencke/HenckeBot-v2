@@ -34,3 +34,4 @@ function sound(url, voiceChannel, msg, resultata, i) {
       msg.channel.send("Sangstemmen er ikke helt på plass i dag, sorry.")
     }}
 
+"nb-NO"
