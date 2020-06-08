@@ -2,13 +2,13 @@ const discordTTS=require("discord-tts");
 const discord = require("discord.js");
 
 module.exports = {
-    name: 'snakk',
+    name: 'snakknorsk',
     description: 'Synger en sang',
     aliases: ['sivoice'],
     execute(bot, msg, args) {
       msg.delete().catch(O_o => { });
       var snakk = args.join(' ');
-        sound(discordTTS.getVoiceStream(snakk), msg.member.voice.channel, msg) 
+        sound(discordTTS.getVoiceStream(snakk, "nb-NO"), msg.member.voice.channel, msg) 
     },
 };
 
