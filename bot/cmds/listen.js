@@ -7,16 +7,15 @@ module.exports = {
     aliases: [''],
     execute(bot, msg, args) {
    
-      bot.on("voiceStateUpdate", (oldState, newState) => {
-
+      bot.on("voiceStateUpdate", async (oldState, newState) => {
       var server = newState.guild.id;
-      var person = newState.member.id.toString();
       if (server == "612947002853949458") {
-      if (newState.channel != null) {
+          var member = newState.member
           var voiceChannel = newState.channel;
-          if ( oldState.channel != newState.channel && newState.channelID != "undefined") {
+          const memberVoiceChannel = member.voice.channel
+          //if ( oldState.channel != newState.channel && newState.channelID != "undefined") {
             
-          
+            const connection = await memberVoiceChannel.join()
             voiceChannel.on('speaking', (user, speaking) => {
             if (speaking) {
               console.log(`I'm listening to ${user.username}`)
@@ -28,7 +27,8 @@ module.exports = {
             
             
             
-          }}}})
+      //    }
+      }})
  
              }, 
             };
