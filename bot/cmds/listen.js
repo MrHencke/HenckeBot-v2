@@ -6,7 +6,7 @@ module.exports = {
     description: '',
     aliases: [''],
     execute(bot, msg, args) {
-    
+   
       bot.on("voiceStateUpdate", (oldState, newState) => {
 
       var server = newState.guild.id;
@@ -15,7 +15,20 @@ module.exports = {
       if (newState.channel != null) {
           var voiceChannel = newState.channel;
           if ( oldState.channel != newState.channel && newState.channelID != "undefined") {
-          }}}}
+            
+          
+            voiceChannel.on('speaking', (user, speaking) => {
+            if (speaking) {
+              console.log(`I'm listening to ${user.username}`)
+            } else {
+              console.log(`I stopped listening to ${user.username}`)
+            }
+            });
+            
+            
+            
+            
+          }}}})
  
-  },  //execute
-};   //export
+             }, 
+            };
