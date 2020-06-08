@@ -60,12 +60,38 @@ bot.on("voiceStateUpdate", (oldState, newState) => {
   }
 });
 
+
+
+bot.on('voiceStateUpdate', async (oldState, newState) => {
+  var server = newState.guild.id;
+  if (server == "612947002853949458") {
+  const member = newState.member
+  const presence = newState
+  const memberVoiceChannel = member.voice.channel
+
+  const connection = await memberVoiceChannel.join()
+
+  connection.on('speaking', (user, speaking) => {
+    if (speaking) {
+      console.log(`I'm listening to ${user.username}`)
+    } else {
+      console.log(`I stopped listening to ${user.username}`)
+    }
+  })
+  }
+})
+
+
+
+
+
+/*
       bot.on("voiceStateUpdate", async (oldState, newState) => {
       var server = newState.guild.id;
       if (server == "612947002853949458") {
           var member = newState.member
           var voiceChannel = newState.channel;
-          const memberVoiceChannel = member.voiceChannel;
+          var memberVoiceChannel = member.voiceChannel;
           //if ( oldState.channel != newState.channel && newState.channelID != "undefined") {
             const connection = await voiceChannel.join()
             voiceChannel.on('speaking', (user, speaking) => {
@@ -78,9 +104,7 @@ bot.on("voiceStateUpdate", (oldState, newState) => {
       //    }
       }})
 
-
-
-
+*/
 
 bot.on("message", async msg => {
   if(msg.author.bot) return;
