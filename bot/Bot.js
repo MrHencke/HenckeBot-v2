@@ -56,7 +56,7 @@ bot.on("message", async msg => {
     } else if (msg.content.toLowerCase().includes(" ein") || msg.content.toLowerCase().includes("mykje") || msg.content.toLowerCase().includes("dinna") || msg.content.toLowerCase().includes("hugleik på staur")) {
         msg.reply("Nynorsk oppdaget, gjør som resten av moderne sivilisasjon og skriv på en forståelig målform.");
     } else if (msg.content.includes("good bot")) {
-        msg.reply("Tusen takk, vi hos HenckeBot Inc Ltd. vet at vår bot er mye bedre enn TrashBOT, vennligst skriv et brev til denne søppelboten og gi 1-star review på google");
+        msg.reply("Tusen takk, vi hos HenckeBot™ Inc Ltd. vet at vår bot er mye bedre enn TrashBOT™, vennligst skriv et brev til denne søppelboten og gi 1-star review på google");
     }else if(msg.content.includes("hmm") /*&& msg.author.id != '132193704860450817'*/){
        msg.channel.send({files: ["https://media.tenor.com/images/69983541b409be168812dfd95be4bbf2/tenor.gif"]});
     }else if( msg.content.includes("reee") /*&& msg.author.id != '132193704860450817'*/){
