@@ -7,9 +7,7 @@ const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
 bot.aliases = new Discord.Collection();
 
-const commandFiles = fs
-  .readdirSync(__dirname + "/cmds")
-  .filter(file => file.endsWith(".js"));
+const commandFiles = fs.readdirSync(__dirname + "/cmds").filter(file => file.endsWith(".js"));
 
 for (const file of commandFiles) {
   const command = require(__dirname + "/cmds" + "/" + file);
@@ -25,6 +23,7 @@ bot.once("ready", () => {
     url: "https://www.twitch.tv/mrhencke"
   });
 });
+
 bot.on("voiceStateUpdate", (oldState, newState) => {
   try {
     var server = newState.guild.id;
@@ -60,51 +59,6 @@ bot.on("voiceStateUpdate", (oldState, newState) => {
   }
 });
 
-
-
-bot.on('voiceStateUpdate', async (oldState, newState) => {
-  var server = newState.guild.id;
-  if (server == "612947002853949458") {
-  const member = newState.member
-  const presence = newState
-  const memberVoiceChannel = member.voice.channel
-
-  const connection = await memberVoiceChannel.join()
-
-  connection.on('speaking', (user, speaking) => {
-    if (speaking) {
-      console.log(`I'm listening to ${user.username}`)
-    } else {
-      console.log(`I stopped listening to ${user.username}`)
-    }
-  })
-  }
-})
-
-
-
-
-
-/*
-      bot.on("voiceStateUpdate", async (oldState, newState) => {
-      var server = newState.guild.id;
-      if (server == "612947002853949458") {
-          var member = newState.member
-          var voiceChannel = newState.channel;
-          var memberVoiceChannel = member.voiceChannel;
-          //if ( oldState.channel != newState.channel && newState.channelID != "undefined") {
-            const connection = await voiceChannel.join()
-            voiceChannel.on('speaking', (user, speaking) => {
-            if (speaking) {
-              console.log(`I'm listening to ${user.username}`)
-            } else {
-              console.log(`I stopped listening to ${user.username}`)
-            }
-            });    
-      //    }
-      }})
-
-*/
 
 bot.on("message", async msg => {
   if(msg.author.bot) return;
