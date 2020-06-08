@@ -61,6 +61,7 @@ bot.on("voiceStateUpdate", (oldState, newState) => {
 });
 
 bot.on("message", async msg => {
+  if(msg.author.bot) return;
   if (msg.content.includes("bad bot")) {
     msg.reply(
       "Vi er kanskje en dårlig bot, MEN! Vi er ikke like utdatert søppel som en viss TrashBOT"
