@@ -78,6 +78,9 @@ bot.on("message", async msg => {
     msg.reply(
       "Tusen takk, vi hos HenckeBot™ Inc Ltd. vet at vår bot er mye bedre enn TrashBOT™, vennligst skriv et brev til denne søppelboten og gi 1-star review på google"
     );
+  }else if (msg.content.includes("oh no")) {
+      var url = "https://cdn.glitch.com/6b8d7e3b-a718-4c94-a496-df1ab9412724%2Fohyeah.mp3?v=1591636797558";
+      sound(url, msg.member.voice.channel, msg)
   } else if (
     msg.content.includes("hmm") /*&& msg.author.id != '132193704860450817'*/
   ) {

@@ -1,35 +1,25 @@
-/*
 const { readdirSync } = require("fs");
 const { join } = require("path");
 
 module.exports = {
     name: 'reload',
-    description: 'Reloader commands',
-    aliases: [],
-    execute(bot, msg, args) {
-	if (msg.author.id != "133671473591222273") return;
+    description: 'Reloads a command',
+    execute(message, args) {
+        if (!args.length) return message.channel.send(`You didn't pass any command to reload, ${message.author}!`);
+            const commandName = args[0].toLowerCase();
+            const command = message.client.commands.get(commandName) || message.client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
-	if (!args[0]) return msg.channel.send("Please provide a command to reload!");
-	const commandName = args[0].toLowerCase();
-	const command = bot.commands.get(commandName) || bot.commands.get(bot.aliases.get(commandName));
-	if (!command) return msg.channel.send("That command doesn't exist. Try again.");
-	readdirSync(join(__dirname, "..")).forEach(f => {
-		const files = readdirSync(join(__dirname,"..", f));
-		if (files.includes(`${commandName}.js`)) {
-			const file = `../${f}/${commandName}.js`;
-			try {
-				delete require.cache[require.resolve(file)];
-				bot.commands.delete(commandName);
-				const pull = require(file);
-				bot.commands.set(commandName, pull);
-				return msg.channel.send(`Successfully reloaded ${commandName}.js!`);
-			}
-			catch (err) {
-				msg.channel.send(`Could not reload: ${args[0].toUpperCase()}\``);
-				return console.log(err.stack || err);
-			}
-		}
-	});
+            if (!command) return message.channel.send(`There is no command with name or alias \`${commandName}\`, ${message.author}!`);
+
+            delete require.cache[require.resolve(`./${command.name}.js`)];
+
+            try {
+                const newCommand = require(`./${command.name}.js`);
+                message.client.commands.set(newCommand.name, newCommand);
+                message.channel.send(`Command \`${command.name}\` was reloaded!`);
+            } catch (error) {
+                console.log(error);
+                message.channel.send(`There was an error while reloading a command \`${command.name}\`:\n\`${error.message}\``);
+            }
     },
 };
-*/
