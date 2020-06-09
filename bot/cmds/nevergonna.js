@@ -1,6 +1,7 @@
 module.exports = {
   name: "nevergonna",
   description: "",
+  category: 'tts',
   aliases: [""],
   execute(bot, msg, args) {
     msg.channel.send(

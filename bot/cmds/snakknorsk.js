@@ -3,7 +3,7 @@ const discord = require("discord.js");
 
 module.exports = {
     name: 'snakknorsk',
-    description: 'Synger en sang',
+    description: 'Sier inputet i en voice channel, på norsk',
   category: 'meme',
     aliases: ['sivoice'],
     execute(bot, msg, args) {

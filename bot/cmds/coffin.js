@@ -4,6 +4,7 @@ const sound = require(path.join(__dirname, '..', '..', 'res/sound.js'));
 module.exports = {
     name: 'coffin',
     description: '',
+  category: 'sound',
     aliases: [''],
     execute(bot, msg, args) {
 var url =        "https://www.myinstants.com/media/sounds/hq-coffin-dance-funeral-vicetone-tony-igy-astronomia.mp3"

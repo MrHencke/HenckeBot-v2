@@ -5,6 +5,7 @@ const ytdl = require("ytdl-core");
 module.exports = {
     name: 'mix',
     description: '',
+  category: 'sound',
     aliases: [''],
     execute(bot, msg, args) {
  var link = "https://www.youtube.com/watch?v=1itSqkbXIlU";

@@ -3,7 +3,7 @@ const discord = require("discord.js");
 
 module.exports = {
     name: 'snakk',
-    description: 'Synger en sang',
+    description: 'Sier inputet i en voice channel',
   category: 'meme',
     aliases: ['sivoice'],
     execute(bot, msg, args) {

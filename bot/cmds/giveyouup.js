@@ -1,6 +1,7 @@
 module.exports = {
   name: "giveyouup",
   description: "",
+  category: 'tts',
   aliases: [""],
   execute(bot, msg, args) {
     msg.channel.send(

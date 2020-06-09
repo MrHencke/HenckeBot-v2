@@ -4,7 +4,7 @@ module.exports = {
     category: 'hjelp',
     aliases: [''],
     execute(bot, msg, args) {
-      
+                msg.reply("Sneik meg inn i DMsene dine")
         var linje = "--------------------------------------------";
                 var bruker = " Look what i can do: \n";
                 var youtube =linje +"YOUTUBE" +linje +" \n !p ----> Kan ta i mot søkeord og linker, \n"; //youtube only

@@ -4,6 +4,7 @@ const sound = require(path.join(__dirname, "..", "..", "res/sound.js"));
 module.exports = {
   name: "labruzzo",
   description: "",
+  category: 'sound',
   aliases: [""],
   execute(bot, msg, args) {
     var url =

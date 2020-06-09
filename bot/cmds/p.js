@@ -6,7 +6,7 @@ const ytdl = require("ytdl-core");
 
 module.exports = {
     name: 'p',
-    description: '',
+    description: 'Spiller musikk fra youtube ved søk eller direkte link',
   category: 'musikk',
     aliases: [''],
     execute(bot, msg, args) {

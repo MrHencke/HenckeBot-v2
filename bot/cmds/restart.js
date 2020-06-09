@@ -1,6 +1,6 @@
 module.exports = {
     name: 'restart',
-    description: '',
+    description: 'Restarter Henckebot',
   category: 'hjelpemetode',
     aliases: [''],
     execute(bot, msg, args) {

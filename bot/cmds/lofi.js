@@ -5,6 +5,7 @@ const ytdl = require("ytdl-core");
 module.exports = {
     name: 'lofi',
     description: '',
+  category: 'music',
     aliases: [''],
     execute(bot, msg, args) {
             var link = "https://www.youtube.com/watch?v=5qap5aO4i9A";

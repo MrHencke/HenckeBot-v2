@@ -1,6 +1,6 @@
 module.exports = {
     name: 'reload',
-    description: 'Reloads a command',
+    description: 'Reloader commands',
   category: 'hjelpemetode',
     execute(bot, message, args) {
       if(message.author.id == process.env.HenckeID){

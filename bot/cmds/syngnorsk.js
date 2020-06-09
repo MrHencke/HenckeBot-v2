@@ -4,7 +4,7 @@ const discord = require("discord.js");
 
 module.exports = {
     name: 'syngnorsk',
-    description: 'Synger en sang',
+    description: 'Synger en sang, på norsk!',
   category: 'meme',
     aliases: ['norsksang'],
     execute(bot, msg, args) {
