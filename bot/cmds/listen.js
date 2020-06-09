@@ -7,22 +7,25 @@ module.exports = {
       var server = newState.guild.id;
       if (server == "612947002853949458") {
           var member = newState.member
+          var isReady = true;
           var voiceChannel = newState.channel;
           const memberVoiceChannel = member.voice.channel
             const connection = await memberVoiceChannel.join()
             connection.on('speaking', (user, speaking) => {
             if(voiceChannel != "undefined"){
-            if (speaking) {
+             if (speaking && isReady) {
               console.log(`I'm listening to ${user.username}`)
+              isReady = false
               sound("https://www.myinstants.com/media/sounds/great-success-borat.mp3", voiceChannel, msg)
             } else {
+              isReady = true
               console.log(`I stopped listening to ${user.username}`)
             }
             }
             });
       }})
         msg.member.voice.channel.join().then(connection => {
-        const dispatcher = connection.play("https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fuskyldig.mp3?v=1589662459594", { volume: 0});
+        const dispatcher = connection.play("https://www.myinstants.com/media/sounds/so-long-gayboys.mp3", { volume: 0});
         dispatcher.destroy
     }).catch(err => console.log(err));
              }, 
