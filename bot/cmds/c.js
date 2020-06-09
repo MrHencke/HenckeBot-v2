@@ -2,12 +2,13 @@ var path = require("path")
 const sound = require(path.join(__dirname, '..', '..', 'res/sound.js'));
 let custom = require(path.join(__dirname, '..', '..', 'res/lists/customClips.json'));
 const customPath = path.join(__dirname, '..', '..', 'res/lists/customClips.json');
-const customPathNyFil = require(path.join(__dirname, 'sounds/custom/'));
+const customPathNyFil = path.join(__dirname, 'sounds/custom/');
 const fs = require("fs")
 
 var nyPath = "require('path')"
 var nySound = "require(path.join(__dirname, '..', '..','..',  '..', 'res/sound.js'));"
-var module
+var modul = "module.exports = {" + "\n" + "name: "
+var opptilExc = "description: 'en custom sound'," + "\n" + "category: 'customsound'," + "\n" + "aliases: ['']," + "\n" + "execute(bot, msg, args) {"
 
 
 
@@ -19,7 +20,7 @@ module.exports = {
     execute(bot, msg, args) {
       
            if(args[0] == "list"){
-                var commandFiles = fs.readdirSync(path.join(__dirname, "sounds/custom")).filter(file => file.endsWith(".js"));
+                var commandFiles = fs.readdirSync(path.join(__dirname, "sounds/custom/")).filter(file => file.endsWith(".js"));
                 var customsounds = ""
                 for (const file of commandFiles) {
                 customsounds += file + ","
@@ -29,7 +30,7 @@ module.exports = {
                   var name = args[1]
                   if(args[2].substring(0,4) == "http"){
                     var url = args[2];
-                    fs.writeFile(customPathNyFil + name + ".js", nyPath + "\n" + nySound + "\n\n" + , (err) => {
+                    fs.writeFile(customPathNyFil + name + ".js", nyPath + "\n" + nySound + "\n\n" + modul + "'" + name + "'" + ",\n" + "bruker: " + "'" + msg.author.username + "'" + ",\n" + opptilExc + "\n" + "var url = '" + url + "'" + "\n" + "sound(url,msg.member.voice.channel, msg);    },}; ", (err) => {
                     if (err) throw err;
                     console.log('The file has been saved!');
                     });
@@ -40,26 +41,7 @@ module.exports = {
                   
                   
                   }else {msg.channel.send("!c støtter bare list og add")} 
-               
-                    
-var path = require("path")
-const sound = require(path.join(__dirname, '..', '..','..',  '..', 'res/sound.js'));
 
-module.exports = {
-    name: 'placeholder',
-    description: '',
-  category: 'customsound',
-    aliases: [''],
-    execute(bot, msg, args) {
-  var url = "https://www.myinstants.com/media/sounds/hq-coffin-dance-funeral-vicetone-tony-igy-astronomia.mp3"
-                        sound(url,msg.member.voice.channel, msg);    },
-}; 
-      
-      
-      
-      
-      
-      
                    /* 
                   var obj = JSON.parse(data);
                   console.log("Ny customsound addet av: " + msg.author.username)
