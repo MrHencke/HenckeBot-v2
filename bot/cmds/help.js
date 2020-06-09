@@ -6,6 +6,7 @@ module.exports = {
   execute(bot, msg, args) {
     
     var tekst = bot.commands.filter(cmd => cmd.category = "tekst");
+    msg.channel.send(tekst)
     var tekstOut = "";
     for (var cmd of tekst) {
       tekstOut += "!" + cmd.name + "\n";
