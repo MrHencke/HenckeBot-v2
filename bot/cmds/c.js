@@ -32,7 +32,7 @@ module.exports = {
                   var name = args[1]
                   if(args[2].substring(0,4) == "http"){
                     var url = args[2];
-                    if(customPathNyFil + name + ".js"){
+                    if(fs.existsSync(customPathNyFil + name + ".js")){
                       msg.channel.send("Navnet er allerede tatt, velg et annet!")
                     return
                     }
@@ -48,12 +48,19 @@ module.exports = {
                   } 
                 }else if(args[0] == "delete"){
                     var filePath = customPathNyFil + args[1] + ".js"
-                      if(filePath && filePath.bruker ){
-                        console.log("Sletter " + args[1])
-                        console.log("Slettet " + filePath)
+                    var tag = bot.commands.get(args[1].bruker)
+                  console.log(filePath)
+                      if(fs.existsSync(filePath)){
+                        console.log(tag)
+                        console.log(msg.author.tag)
+                        if(tag = msg.author.tag){
+                         // console.log("Sletter " + args[1])
+                        //  console.log("Slettet " + filePath)
                         fs.unlinkSync(filePath)
                         delete require.cache[require.resolve(filePath)]
-                      }
+                          msg.channel.send("Commanden ble slettet.")
+                        }else{msg.channel.send("Du må ha lagt inn commanden selv for å kunne slette den.")}
+                      }else{msg.channel.send("Commanden finnes ikke")}
                   
                   }else {msg.channel.send("!c støtter bare list og add")} 
 
