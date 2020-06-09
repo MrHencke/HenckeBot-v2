@@ -9,3 +9,5 @@ module.exports = {
       
     },
 };
+
+//kategorier: nsfw, youtube, tekst, tts, sound, customsound, music, hjelpemetoder, custom
