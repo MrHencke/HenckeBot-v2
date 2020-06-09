@@ -21,18 +21,24 @@ bot.on("message", async msg => {
   
   introMsg(msg);
   
+  
   if (!msg.content.startsWith(prefix) || msg.author.bot) return;
   const args = msg.content.slice(prefix.length).split(/ +/);
   const cmd = args.shift().toLowerCase();
+  
+  if(cmd == "hjelp" && args != null){
+    bot.commands.find(cmd => cmd.description&& cmd.aliases.includes(commandName));
+  }else{
+  
   const commandName = cmd.toLowerCase();
   const command = bot.commands.get(commandName) || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
   if (!command) return;
-
   try {
     command.execute(bot, msg, args);
   } catch (err) {
     console.error(err);
     msg.reply("Oops, " + commandName + " gikk rett til helvete");
+  }
   }
 });
 

@@ -1,6 +1,6 @@
 var path = require("path")
 const sound = require(path.join(__dirname, '..', '..', 'res/sound.js'));
-const custom = require(path.join(__dirname, '..', '..', 'res/lists/customClips.json'));
+let custom = require(path.join(__dirname, '..', '..', 'res/lists/customClips.json'));
 const customPath = path.join(__dirname, '..', '..', 'res/lists/customClips.json');
 const fs = require("fs")
 
@@ -30,7 +30,7 @@ module.exports = {
                   fs.writeFile(customPath, json, 'utf8', (err) => {
                   if (err) throw err;
                   console.log('Data written to file');
-                  msg.channel.send("Skrevet til databasen, vent rundt 15 min til neste restart, så er filen tilgjengelig");
+                  msg.channel.send("Skrevet til databasen, kan brukes umiddelbart.");
                   delete require.cache[require.resolve(path.join(__dirname, '..', '..', 'res/lists/customClips.json'))]   // Deleting loaded module
                   custom = require(path.join(__dirname, '..', '..', 'res/lists/customClips.json'));
                   });}});
