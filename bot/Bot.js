@@ -7,6 +7,7 @@ const msgCmd = require(path.join(__dirname, "..", "res/util/msgCmd.js"));
 const botReady = require(path.join(__dirname, "..", "res/util/botReady.js"));
 const bot = new Discord.Client();
 
+bot.queue = new Map();
 bot.commands = new Discord.Collection();
 
 cmdSetup(bot);

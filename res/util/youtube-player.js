@@ -6,21 +6,14 @@ const embed = require(__dirname + "/youtubeEmbed.js")
 module.exports = function player(bot, msg, args) {
 var link;
 try {
-                 // var servers = {};
-                 // var server = servers[msg.guild.id];
+              const queue = msg.client.queue.get(msg.guild.id);
                   if(msg.member.voice.channel !== null){
                     if (args[0].substring(0, 6) != "https:") {
                         var search = args.join(" ");
                         yt.searchOne(search, { type: "video" }).then(results => {
                           if (results == null) return;
                             link = results.link;
-                          /*
-                              if (!servers[msg.guild.id]) server = {
-                                queue:  []
-                            }
-                          server.queue.push(link);
-                          console.log(server.queue);
-                          */
+                          
                             embed(msg, results);
                           
                             const stream = ytdl(link, { filter: "audioonly" }, { quality: "highestaudio" });
