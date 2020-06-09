@@ -1,1 +1,0 @@
-cybermanupdate.js
