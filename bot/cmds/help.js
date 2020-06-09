@@ -5,12 +5,17 @@ module.exports = {
   aliases: [""],
   execute(bot, msg, args) {
     
-    var tekst = bot.commands.filter(cmd => cmd.category = "tekst");
-    msg.channel.send(tekst)
+    var tekst = (bot.commands.filter(cmd => cmd.category == 'tekst'))
+    console.log(tekst)
     var tekstOut = "";
-    for (var cmd of tekst) {
+    for (cmd of tekst) {
       tekstOut += "!" + cmd.name + "\n";
     }
+    /*
+        for (var i = 0; i<tekst.length; i++) {
+      tekstOut += "!" + tekst[i].name + "\n";
+    }
+    */
     var nsfw = bot.commands.filter(cmd => cmd.category = "nsfw");
     var nsfwOut = "";
     for (var cmd of nsfw) {
@@ -47,7 +52,7 @@ module.exports = {
       randomOut += "!" + cmd.name + "\n";
     }
 
-    var customsound = bot.commands.filter(cmd => cmd.category = "customsound");
+    var customsound = bot.commands.filter(cmd => cmd.category = "customsound")
     var customsoundOut = "";
     for (var cmd of customsound) {
       customsoundOut += "!" + cmd.name + "\n";
@@ -60,7 +65,6 @@ module.exports = {
     }
 
     var hjelpemetoder = bot.commands.filter(cmd => cmd.category = "hjelpemetoder");
-    console.log(hjelpemetoder)
     var hjelpemetoderOut = "";
     for (var cmd of hjelpemetoder) {
       hjelpemetoderOut += "!" + cmd.name + "\n";
@@ -80,7 +84,7 @@ module.exports = {
     var outF10 = linje + "Ekstra"+ linje+ "\n" + "For ekstra hjelp, skriv !hjelp *kommandonavn* for ekstra informasjon for en gitt kommando"
     
     msg.author.send(outF0)
-    msg.author.send(outF1)
+  /*  msg.author.send(outF1)
     msg.author.send(outF2)
     msg.author.send(outF3)
     msg.author.send(outF4)
@@ -90,7 +94,7 @@ module.exports = {
     msg.author.send(outF8)
     msg.author.send(outF9)
     msg.author.send(outF10)
-    /*
+    
     var outFinal = outF0 + outF1 + outF2 + outF3 + outF4  
     var outFinal2 = outF5 + outF6 + outF7 + outF8 + outF9 + outF10
     msg.author.send(outFinal)
