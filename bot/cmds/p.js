@@ -1,4 +1,5 @@
-
+var path = require("path")
+const player = require(path.join(__dirname, '..', '..', 'res//util/youtube-player.js'));
                        
 module.exports = {
     name: 'p',
@@ -6,7 +7,7 @@ module.exports = {
     category: 'youtube',
     aliases: ['play', 'spillav'],
     execute(bot, msg, args) {
-        msg.channel.repl
+        player(bot, msg, args);
     },
 };
 

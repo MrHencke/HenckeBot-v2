@@ -1,10 +1,12 @@
 const Discord = require("discord.js");
 const yt = require("scrape-youtube").default;
 const ytdl = require("ytdl-core");
+const queue = require(__dirname + "/lists/p-queueManager.js")
 
 module.exports = function player(bot, msg, args) {
 var link;
 try {
+                  queue.push("https://www.youtube.com/watch?v=AMMOErxtahk");
                   if(msg.member.voice.channel !== null){
                     if (args[0].substring(0, 6) != "https:") {
                         var search = args.join(" ");
