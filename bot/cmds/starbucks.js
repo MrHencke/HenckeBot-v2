@@ -1,6 +1,7 @@
 module.exports = {
   name: "starbucks",
   description: "",
+  category: 'tekst',
   aliases: [""],
   execute(bot, msg, args) {
     msg.channel.send(

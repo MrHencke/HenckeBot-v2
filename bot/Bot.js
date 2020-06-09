@@ -21,7 +21,6 @@ for (const file of commandFiles) {
   bot.commands.set(command.name, command);
 }
 
-console.log(bot.commands)
 const prefix = "!";
 
 bot.once("ready", () => {

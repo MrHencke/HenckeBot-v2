@@ -1,8 +1,9 @@
-/*module.exports = {
+module.exports = {
 			name: 'tic-tac-toe',
 			description: 'Play a game of tic-tac-toe with another user.',
     execute(bot, msg, args) {
-		if (opponent.bot) return msg.reply('Bots may not be played against.');
+      msg.reply("Ikke klar enda")
+	/*	if (opponent.bot) return msg.reply('Bots may not be played against.');
 		if (opponent.id === msg.author.id) return msg.reply('You may not play against yourself.');
 		if (this.playing.has(msg.channel.id)) return msg.reply('Only one game may be occurring per channel.');
 		this.playing.add(msg.channel.id);
@@ -67,7 +68,6 @@
 			|| (sides[0] === sides[4] && sides[0] === sides[8])
 			|| (sides[2] === sides[4] && sides[2] === sides[6]);
 	}
-
+*/
    },
 };
-*/

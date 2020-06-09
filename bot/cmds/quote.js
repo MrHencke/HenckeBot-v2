@@ -5,6 +5,7 @@ const Discord = require("discord.js")
 module.exports = {
     name: 'quote',
     description: '',
+  category: 'tekst',
     aliases: [''],
     execute(bot, msg, args) {
       

@@ -4,6 +4,7 @@ const roast = require(path.join(__dirname, "..", "..", "res/roast.json"));
 module.exports = {
   name: "roast",
   description: "",
+  category: 'tekst',
   aliases: [""],
   execute(bot, msg, args) {
     var mentioned = args[0];

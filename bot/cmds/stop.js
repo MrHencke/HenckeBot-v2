@@ -1,7 +1,8 @@
 module.exports = {
     name: 'stop',
     description: '',
-    aliases: [''],
+  category: 'hjelpemetode',
+    aliases: ['stopplaying'],
     execute(bot, msg, args) {    
       try{
         var voiceChannel = msg.member.voice.channel;

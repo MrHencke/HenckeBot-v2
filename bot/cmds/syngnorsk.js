@@ -5,6 +5,7 @@ const discord = require("discord.js");
 module.exports = {
     name: 'syngnorsk',
     description: 'Synger en sang',
+  category: 'meme',
     aliases: ['norsksang'],
     execute(bot, msg, args) {
       var Title = args.join(' ');

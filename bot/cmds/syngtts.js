@@ -3,6 +3,7 @@ const lyrics = require("node-lyrics-api");
 module.exports = {
     name: 'syngtts',
     description: 'Synger en sang',
+  category: 'meme',
     aliases: [''],
     execute(bot, msg, args) {
       var Title = args.join(' ');

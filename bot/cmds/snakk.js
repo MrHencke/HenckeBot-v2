@@ -4,6 +4,7 @@ const discord = require("discord.js");
 module.exports = {
     name: 'snakk',
     description: 'Synger en sang',
+  category: 'meme',
     aliases: ['sivoice'],
     execute(bot, msg, args) {
       msg.delete().catch(O_o => { });

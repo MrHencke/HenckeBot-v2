@@ -3,6 +3,7 @@ const { meme } = require("memejs")
 module.exports = {
     name: 'sub',
     description: '',
+  category: 'meme',
     aliases: [''],
     execute(bot, msg, args) {
         var subreddit = args[0];

@@ -7,6 +7,7 @@ const ytdl = require("ytdl-core");
 module.exports = {
     name: 'p',
     description: '',
+  category: 'musikk',
     aliases: [''],
     execute(bot, msg, args) {
            var link;

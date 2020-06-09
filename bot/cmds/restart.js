@@ -1,6 +1,7 @@
 module.exports = {
     name: 'restart',
     description: '',
+  category: 'hjelpemetode',
     aliases: [''],
     execute(bot, msg, args) {
           if (msg.author.id !== process.env.HenckeID) return;

@@ -1,6 +1,7 @@
 module.exports = {
 	name: 'ping',
 	description: 'Ping!',
+  category: 'hjelpemetode',
   aliases: ['pongu'],
 	execute(bot, msg, args) {
 		                msg.channel.send({embed: {
