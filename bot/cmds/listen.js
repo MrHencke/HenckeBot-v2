@@ -1,6 +1,7 @@
 module.exports = {
   name: 'listen',
     description: '',
+  category: 'experimental',
     aliases: [''],
     execute(bot, msg, args) {
       bot.on("voiceStateUpdate", async (oldState, newState) => {

@@ -1,6 +1,7 @@
 module.exports = {
   name: "dat102",
   description: "",
+  category: 'hjelpemetode',
   aliases: [""],
   execute(bot, msg, args) {
     msg.channel.send({

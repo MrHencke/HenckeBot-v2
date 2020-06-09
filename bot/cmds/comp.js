@@ -4,6 +4,7 @@ const comp = require(path.join(__dirname, "..", "..", "res/compliments.json"));
 module.exports = {
   name: "comp",
   description: "",
+  category: 'tekst',
   aliases: [""],
   execute(bot, msg, args) {
     var mentioned = args[0];

@@ -3,6 +3,7 @@ const { meme } = require("memejs")
 module.exports = {
     name: 'tits',
     description: '',
+    category: 'nsfw',
     aliases: [''],
     execute(bot, msg, args) {
       if(!msg.channel.nsfw){

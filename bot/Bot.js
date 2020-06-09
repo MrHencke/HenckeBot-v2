@@ -13,6 +13,15 @@ for (const file of commandFiles) {
   const command = require(__dirname + "/cmds" + "/" + file);
   bot.commands.set(command.name, command);
 }
+
+ commandFiles = fs.readdirSync(__dirname + "/cmds/sounds").filter(file => file.endsWith(".js"));
+
+for (const file of commandFiles) {
+  const command = require(__dirname + "/cmds/sounds" + "/" + file);
+  bot.commands.set(command.name, command);
+}
+
+console.log(bot.commands)
 const prefix = "!";
 
 bot.once("ready", () => {

@@ -5,6 +5,7 @@ const googleSpeechClient = new googleSpeech.SpeechClient();
 module.exports = {
   name: "listen2",
   description: "",
+  category: 'experimental',
   aliases: [""],
   execute(bot, msg, args) {
     bot.on("voiceStateUpdate", async (oldState, newState) => {

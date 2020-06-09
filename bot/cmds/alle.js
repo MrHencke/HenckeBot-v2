@@ -1,6 +1,7 @@
 module.exports = {
   name: "alle",
   description: "",
+  category: 'hjelpemetode',
   aliases: [],
   execute(bot, msg, args) {
     var p;

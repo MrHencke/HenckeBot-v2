@@ -3,6 +3,7 @@ const { meme } = require("memejs")
 module.exports = {
   name: "dark",
   description: "",
+  category: 'meme',
   aliases: [""],
   execute(bot, msg, args) {
       meme('darkmeme', function(err, data) {

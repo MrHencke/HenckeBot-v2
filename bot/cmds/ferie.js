@@ -4,6 +4,7 @@ const land = require(path.join(__dirname, "..", "..", "res/countries.json"));
 module.exports = {
     name: 'ferie',
     description: '',
+    category: 'tekst',
     aliases: [''],
     execute(bot, msg, args) {
            var feindex = Math.floor(Math.random() * land.length);
