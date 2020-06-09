@@ -30,6 +30,7 @@ module.exports = {
                  msg.channel.send(customsounds) 
                 } else if(args[0]== "add") {
                   var name = args[1]
+                  if(args[2] != null){
                   if(args[2].substring(0,4) == "http"){
                     var url = args[2];
                     if(fs.existsSync(customPathNyFil + name + ".js")){
@@ -45,7 +46,8 @@ module.exports = {
                     });
                     
                     
-                  } else {msg.reply(" legg til en link da din nepe!")}
+                  } 
+                    } else {msg.reply(" legg til en link da din nepe!")}
                 }else if(args[0] == "delete"){
                     var filePath = customPathNyFil + args[1] + ".js"
                       if(fs.existsSync(filePath)){
@@ -57,7 +59,7 @@ module.exports = {
                         }else{msg.channel.send("Du må ha lagt inn commanden selv for å kunne slette den.")}
                       }else{msg.channel.send("Commanden finnes ikke")}
                   
-                  }else {msg.channel.send("!c støtter bare list og add")} 
+                  }else {msg.channel.send("!c støtter bare list, add og delete")} 
 
                    /* 
                   var obj = JSON.parse(data);
