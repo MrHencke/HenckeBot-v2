@@ -7,7 +7,7 @@ const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
 bot.aliases = new Discord.Collection();
 
-const commandFiles = fs.readdirSync(__dirname + "/cmds").filter(file => file.endsWith(".js"));
+var commandFiles = fs.readdirSync(__dirname + "/cmds").filter(file => file.endsWith(".js"));
 
 for (const file of commandFiles) {
   const command = require(__dirname + "/cmds" + "/" + file);
