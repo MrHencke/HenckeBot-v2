@@ -7,14 +7,13 @@ var commands = new Map();
 
 var commands = fs.readdirSync(__dirname).filter(file => file.endsWith(".js"));
 
-           
 for (const file of commands) {
     
-     fs.copyFile(file, __dirname + "/sounds" + file + ".js", (err) => {
-    if (err) throw err;
-    console.log('source.txt was copied to destination.txt');
-});
+      if(file.description == "sound"){
+        console.log(file)
+        console.log(file.description)
       }
   
  // const command = require(path.join(__dirname, "..",  "..",  "/bot/cmds",  "/") + file);
 
+}
