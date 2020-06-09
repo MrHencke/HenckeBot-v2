@@ -15,8 +15,14 @@ for (const file of commandFiles) {
   const command = require(path.join(__dirname, "..", "..",  "/bot/cmds/sounds", "/") + file);
   bot.commands.set(command.name, command);
 }
-  }
+ 
+commandFiles = fs.readdirSync(path.join(__dirname, "..", "..", "/bot/cmds/sounds/custom")).filter(file => file.endsWith(".js"));
 
+for (const file of commandFiles) {
+  const command = require(path.join(__dirname, "..", "..",  "/bot/cmds/sounds/custom", "/") + file);
+  bot.commands.set(command.name, command);
+}
+ }
 /*
 var commandFiles = fs.readdirSync(__dirname + "/cmds").filter(file => file.endsWith(".js"));
 
