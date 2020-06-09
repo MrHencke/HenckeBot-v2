@@ -22,9 +22,7 @@ module.exports = {
                 for (const file of commandFiles) {
                 var res = file.split(".");
                 if(!commandFiles[commandFiles.length]){
-                customsounds += res + " ,"
-                  }else{
-                  customsounds += res
+                customsounds += res + " , "
                   }
                   }
                  msg.channel.send(customsounds) 
@@ -43,9 +41,7 @@ module.exports = {
                     const command = require(path.join(__dirname, "/sounds/custom", "/") + name +".js");
                     bot.commands.set(command.name, command);
                       msg.channel.send("Commanden er lagret, kan brukes umiddelbart med !" + name)
-                    });
-                    
-                    
+                    });  
                   } 
                     } else {msg.reply(" legg til en link da din nepe!")}
                 }else if(args[0] == "delete"){
@@ -59,23 +55,7 @@ module.exports = {
                         }else{msg.channel.send("Du må ha lagt inn commanden selv for å kunne slette den.")}
                       }else{msg.channel.send("Commanden finnes ikke")}
                   
-                  }else {msg.channel.send("!c støtter bare list, add og delete")} 
-
-                   /* 
-                  var obj = JSON.parse(data);
-                  console.log("Ny customsound addet av: " + msg.author.username)
-                  obj.push({"name" : name, "url" : url, "bruker" : msg.author.username}); //add some data
-                  var json = JSON.stringify(obj); 
-                  fs.writeFile(customPath, json, 'utf8', (err) => {
-                  if (err) throw err;
-                  console.log('Data written to file');
-                  msg.channel.send("Skrevet til databasen, kan brukes umiddelbart.");
-                  
-                  delete require.cache[require.resolve(path.join(__dirname, '..', '..', 'res/lists/'+file+".js"))]   // Deleting loaded module
-                  custom = require(path.join(__dirname, '..', '..', 'res/lists/customClips.json'+file+".js"));
-                  });}});
-                  */
-                  
+                  }else {msg.channel.send("!c støtter bare list, add og delete")}                   
     },
 };
 
