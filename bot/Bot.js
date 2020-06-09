@@ -4,6 +4,7 @@ const sound = require(path.join(__dirname, "..", "res/sound.js"));
 const cmdSetup = require(path.join(__dirname, "..", "res/util/cmdSetup.js"));
 const intro = require(path.join(__dirname, "..", "res/util/introLydManager.js"));
 const msgIntro = require(path.join(__dirname, "..", "res/util/msgIntro.js"));
+const msgCmd = require(path.join(__dirname, "..", "res/util/msgCmd.js"));
 const botReady = require(path.join(__dirname, "..", "res/util/botReady.js"));
 const bot = new Discord.Client();
 const prefix = process.env.prefix;
@@ -20,7 +21,9 @@ bot.on("message", async msg => {
   
   msgIntro(msg);
   
-  msgCmd(msg)
+  msgCmd(msg, bot, prefix)
+  
+  /*
   if (!msg.content.startsWith(prefix) || msg.author.bot) return;
   const args = msg.content.slice(prefix.length).split(/ +/);
   let cmd = args.shift().toLowerCase();
@@ -38,6 +41,7 @@ bot.on("message", async msg => {
       msg.reply("Oops, " + commandName + " gikk rett til helvete");
     }
   }
+  */
   
 });
 
