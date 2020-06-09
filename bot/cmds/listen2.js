@@ -56,7 +56,7 @@ module.exports = {
                 }
                  })*/
                 sound("https://www.myinstants.com/media/sounds/great-success-borat.mp3", voiceChannel, msg)
-              } else if (transcription.indexOf("no") > -1) {
+              } else if (transcription.indexOf("stikk") > -1) {
                 memberVoiceChannel.leave();
                 recognizeStream.destroy();
               }
