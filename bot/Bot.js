@@ -19,14 +19,14 @@ intro(bot);
 bot.on("message", async msg => {
   
   msgIntro(msg);
-
+  
+  msgCmd(msg)
   if (!msg.content.startsWith(prefix) || msg.author.bot) return;
   const args = msg.content.slice(prefix.length).split(/ +/);
   let cmd = args.shift().toLowerCase();
   
-  
   if (cmd == "hjelp" && args[0] != null) {
-    var desc = msg.channel.send(bot.commands.get(args[0].toLowerCase()).description);
+    msg.channel.send(bot.commands.get(args[0].toLowerCase()).description);
   } else {
     const commandName = cmd.toLowerCase();
   const command = bot.commands.get(commandName) || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
@@ -38,6 +38,7 @@ bot.on("message", async msg => {
       msg.reply("Oops, " + commandName + " gikk rett til helvete");
     }
   }
+  
 });
 
 bot.login(process.env.token);

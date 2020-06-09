@@ -1,5 +1,5 @@
 var path = require("path")
-const sound = require(path.join(__dirname, '..', '..', 'res/sound.js'));
+const sound = require(path.join(__dirname, '..', '..', '..', 'res/sound.js'));
 
 module.exports = {
     name: 'narko2',
