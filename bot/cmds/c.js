@@ -23,19 +23,16 @@ module.exports = {
                   if (err){
                       console.log(err);
                   } else {
-                  var obj = JSON.parse(data); //now it an object
-                  //console.log(obj)
-                    console.log(msg.author.username)
+                  var obj = JSON.parse(data);
+                    console.log("Ny customsound addet av: " + msg.author.username)
                   obj.push({"name" : name, "url" : url, "bruker" : msg.author.username}); //add some data
-                  var json = JSON.stringify(obj); //convert it back to json
+                  var json = JSON.stringify(obj); 
                   fs.writeFile(customPath, json, 'utf8', (err) => {
                   if (err) throw err;
                   console.log('Data written to file');
                   msg.channel.send("Skrevet til databasen, vent rundt 15 min til neste restart, så er filen tilgjengelig");
-                    delete require.cache[require.resolve(customPath)];/*
-            try {
-                const newCommand = require(customPath);   
-            } catch (error) {}*/
+                  delete require.cache[require.resolve(path.join(__dirname, '..', '..', 'res/lists/customClips.json'))]   // Deleting loaded module
+                  custom = require(path.join(__dirname, '..', '..', 'res/lists/customClips.json'));
                   });}});
                 } else{
                 custom.find(function(item, i){
