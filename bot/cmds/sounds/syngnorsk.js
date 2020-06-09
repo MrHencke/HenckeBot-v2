@@ -1,0 +1,1 @@
+syngnorsk.js

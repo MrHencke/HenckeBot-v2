@@ -8,11 +8,8 @@ var commands = new Map();
 var commands = fs.readdirSync(__dirname).filter(file => file.endsWith(".js"));
 
 for (const file of commands) {
-    
-      if(file.description == "sound"){
-        console.log(file)
-        console.log(file.description)
-      }
+    var vpath = path.join(__dirname, "/sounds/", file)
+  fs.writeFileSync(vpath, file);
   
  // const command = require(path.join(__dirname, "..",  "..",  "/bot/cmds",  "/") + file);
 
