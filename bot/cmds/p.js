@@ -14,14 +14,19 @@ module.exports = {
                     if (args[0].substring(0, 6) != "https:") {
                         var search = args.join(" ");
                         yt.searchOne(search, { type: "video" }).then(results => {
+                          if (results == null) return;
+                          //console.log(results)
                             link = results.link;
+                            var mins = Math.floor(results.duration/60)
+                            var secs = results.duration%60;
                             const playin = new Discord.MessageEmbed()
-                                .setColor("#0099ff")
+                                .setColor("#ff0000")
                                 .setTitle("Now Playing:")
                                 .setTitle(results.title)
                                 .setURL(results.link)
                                 .setAuthor("HenckeBot Music", "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FUten%20nsdsdavn.png?v=1589758105374", "https://github.com/MrHencke")
                                 .setDescription(results.description)
+                                .addField('Duration', mins + " minutes, " + secs + " seconds" , true)
                                 .setImage(results.thumbnail)
                                 .setTimestamp()
                                 .setFooter("HenckeBot™ ©2020", "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2FUten%20nsdsdavn.png?v=1589758105374");
