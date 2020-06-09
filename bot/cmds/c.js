@@ -32,6 +32,10 @@ module.exports = {
                   var name = args[1]
                   if(args[2].substring(0,4) == "http"){
                     var url = args[2];
+                    if(customPathNyFil + name + ".js"){
+                      msg.channel.send("Navnet er allerede tatt, velg et annet!")
+                    return
+                    }
                     fs.writeFile(customPathNyFil + name + ".js", nyPath + "\n" + nySound + "\n\n" + modul + "'" + name + "'" + ",\n" + "brukernavn: " + "'" + msg.author.username + "'" + ",\n" + "bruker: " + "'" + msg.author.tag + "'" + ",\n" + opptilExc + "\n" + "var url = '" + url + "'" + "\n" + "sound(url,msg.member.voice.channel, msg);    },}; ", (err) => {
                     if (err) throw err;
                     console.log('The file has been saved!');
@@ -42,8 +46,14 @@ module.exports = {
                     
                     
                   } 
-                  
-                  
+                }else if(args[0] == "delete"){
+                    var filePath = customPathNyFil + args[1] + ".js"
+                      if(filePath && filePath.bruker ){
+                        console.log("Sletter " + args[1])
+                        console.log("Slettet " + filePath)
+                        fs.unlinkSync(filePath)
+                        delete require.cache[require.resolve(filePath)]
+                      }
                   
                   }else {msg.channel.send("!c støtter bare list og add")} 
 
