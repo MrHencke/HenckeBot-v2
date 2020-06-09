@@ -5,7 +5,7 @@ const fs = require("fs")
 var nyPath = "const path = require('path')"
 var nySound = "const sound = require(path.join(__dirname, '..', '..','..',  '..', 'res/sound.js'));"
 var modul = "module.exports = {" + "\n" + "name: "
-var opptilExc = "description: 'en custom sound'," + "\n" + "category: 'customsound'," + "\n" + "aliases: ['']," + "\n" + "execute(bot, msg, args) {"
+var opptilExc =  "category: 'customsound'," + "\n" + "aliases: ['']," + "\n" + "execute(bot, msg, args) {"
 
 
 
@@ -22,7 +22,7 @@ module.exports = {
                 for (const file of commandFiles) {
                 var res = file.split(".");
                 if(!commandFiles[commandFiles.length]){
-                customsounds += res + ","
+                customsounds += res + " ,"
                   }else{
                   customsounds += res
                   }
@@ -36,7 +36,7 @@ module.exports = {
                       msg.channel.send("Navnet er allerede tatt, velg et annet!")
                     return
                     }
-                    fs.writeFile(customPathNyFil + name + ".js", nyPath + "\n" + nySound + "\n\n" + modul + "'" + name + "'" + ",\n" + "brukernavn: " + "'" + msg.author.username + "'" + ",\n" + "bruker: " + "'" + msg.author.tag + "'" + ",\n" + opptilExc + "\n" + "var url = '" + url + "'" + "\n" + "sound(url,msg.member.voice.channel, msg);    },}; ", (err) => {
+                    fs.writeFile(customPathNyFil + name + ".js", nyPath + "\n" + nySound + "\n\n" + modul + "'" + name + "'" + ",\n" + "brukernavn: " + "'" + msg.author.username + "'" + ",\n" + "bruker: " + "'" + msg.author.tag + "'" + ",\n" + "description: " + "'" + name + " er en custom sound av'," + "\n" + opptilExc + "\n" + "var url = '" + url + "'" + "\n" + "sound(url,msg.member.voice.channel, msg);    },}; ", (err) => {
                     if (err) throw err;
                     console.log('The file has been saved!');
                     const command = require(path.join(__dirname, "/sounds/custom", "/") + name +".js");
@@ -45,20 +45,15 @@ module.exports = {
                     });
                     
                     
-                  } 
+                  } else {msg.reply(" legg til en link da din nepe!")}
                 }else if(args[0] == "delete"){
                     var filePath = customPathNyFil + args[1] + ".js"
-                    var tag = bot.commands.get(args[1].bruker)
-                  console.log(filePath)
                       if(fs.existsSync(filePath)){
-                        console.log(tag)
-                        console.log(msg.author.tag)
-                        if(tag = msg.author.tag){
-                         // console.log("Sletter " + args[1])
-                        //  console.log("Slettet " + filePath)
+                        var tag = bot.commands.get(args[1]).bruker
+                        if(tag == msg.author.tag){
                         fs.unlinkSync(filePath)
                         delete require.cache[require.resolve(filePath)]
-                          msg.channel.send("Commanden ble slettet.")
+                          msg.channel.send("Commanden" + args[1] + "ble slettet.")
                         }else{msg.channel.send("Du må ha lagt inn commanden selv for å kunne slette den.")}
                       }else{msg.channel.send("Commanden finnes ikke")}
                   
