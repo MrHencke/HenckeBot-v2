@@ -2,6 +2,7 @@ const path = require("path");
 const sound = require(path.join(__dirname, "..", "/sound.js"));
 
 module.exports = function msgIntro(msg) {
+  if (msg.author.bot) return;
   if (msg.content.includes("bad bot")) {
     msg.reply(
       "Vi er kanskje en dårlig bot, MEN! Vi er ikke like utdatert søppel som en viss TrashBOT"
