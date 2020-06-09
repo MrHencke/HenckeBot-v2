@@ -14,6 +14,7 @@ module.exports = {
           var voiceChannel = newState.channel;
           const memberVoiceChannel = member.voice.channel
             const connection = await memberVoiceChannel.join()
+            const receiver = connection.receiver
             
             
             connection.on('speaking', (user, speaking) => { //-------------- HER
@@ -62,16 +63,18 @@ module.exports = {
 
     audioStream.on('end', async () => {
       console.log('audioStream end')
-            }
+                   }) 
+                   })
                    
-            });
+                          }
+                          })
       
-            })
+          
         msg.member.voice.channel.join().then(connection => {
         const dispatcher = connection.play("https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fuskyldig.mp3?v=1589662459594", { volume: 0});
         dispatcher.destroy
     }).catch(err => console.log(err));
-      }
+      
              }, 
             };
 
@@ -115,7 +118,8 @@ class ConvertTo1ChannelStream extends Transform {
 
 
 
-/*            connection.on('speaking', (user, speaking) => {
+/*            
+            connection.on('speaking', (user, speaking) => {
             if(voiceChannel != "undefined"){
             if (speaking && isReady) {
               console.log(`I'm listening to ${user.username}`)
@@ -134,6 +138,7 @@ class ConvertTo1ChannelStream extends Transform {
     }).catch(err => console.log(err));
              }, 
             };
+            
             */
 
 
