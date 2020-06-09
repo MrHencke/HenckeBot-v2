@@ -5,6 +5,7 @@ module.exports = {
     name: 'offer',
     description: '',
   category: 'sound',
+  type: 'random',
     aliases: [''],
     execute(bot, msg, args) {
 var url =        "https://www.myinstants.com/media/sounds/godfather-5.mp3"

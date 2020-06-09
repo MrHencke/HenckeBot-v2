@@ -5,6 +5,7 @@ module.exports = {
     name: 'virgin',
     description: '',
   category: 'sound',
+  type: 'random',
     aliases: [''],
     execute(bot, msg, args) {
           var url =  "https://www.myinstants.com/media/sounds/no-dont-do-it-im-a-virgin.mp3"

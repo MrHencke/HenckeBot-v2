@@ -5,6 +5,7 @@ module.exports = {
     name: 'håvard',
     description: '',
   category: 'sound',
+  type: 'random',
     aliases: [''],
     execute(bot, msg, args) {
           var url = "https://cdn.glitch.com/2c6c8596-d523-4520-a5a7-8caa66a05edf%2Fh%C3%A5vardo.mp3?v=1590488992607"

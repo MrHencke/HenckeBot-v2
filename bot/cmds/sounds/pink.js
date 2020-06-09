@@ -5,6 +5,7 @@ module.exports = {
     name: 'pink',
     description: '',
   category: 'sound',
+  type: 'random',
     aliases: [''],
     execute(bot, msg, args) {
           var url =  "https://www.myinstants.com/media/sounds/the-pink-panther-theme-song-original-version.mp3"

@@ -5,6 +5,7 @@ module.exports = {
     name: 'bestaround',
     description: '',
   category: 'sound',
+  type: 'random',
     aliases: [''],
     execute(bot, msg, args) {
                   var url =    "https://www.myinstants.com/media/sounds/youre-the-best-around-by-joe-esposito-mp3cut.mp3"

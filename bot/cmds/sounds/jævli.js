@@ -5,6 +5,7 @@ module.exports = {
     name: 'jævli',
     description: '',
   category: 'sound',
+  type: 'pat',
     aliases: [''],
     execute(bot, msg, args) {
 var url = "https://cdn.glitch.com/2c6c8596-d523-4520-a5a7-8caa66a05edf%2F%C3%A5j%C3%A6vli.mp3?v=1589967082829"

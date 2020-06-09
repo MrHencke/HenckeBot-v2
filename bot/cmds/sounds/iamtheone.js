@@ -5,6 +5,7 @@ module.exports = {
     name: 'iamtheone',
     description: '',
   category: 'sound',
+  type: 'random',
     aliases: [''],
     execute(bot, msg, args) {
          var url =  "https://www.myinstants.com/media/sounds/ultimate-respect-button_MdJiOOn.mp3"

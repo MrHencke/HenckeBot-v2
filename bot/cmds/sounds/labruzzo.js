@@ -5,6 +5,7 @@ module.exports = {
   name: "labruzzo",
   description: "",
   category: 'sound',
+  type: 'kai',
   aliases: [""],
   execute(bot, msg, args) {
     var url =

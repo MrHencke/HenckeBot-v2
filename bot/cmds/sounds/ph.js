@@ -5,6 +5,7 @@ module.exports = {
     name: 'ph',
     description: '',
   category: 'sound',
+  type: 'random',
     aliases: [''],
     execute(bot, msg, args) {
 var url =          "https://www.myinstants.com/media/sounds/pornhub-community-intro.mp3"

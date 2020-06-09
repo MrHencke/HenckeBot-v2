@@ -5,6 +5,7 @@ module.exports = {
     name: 'mgs',
     description: '',
   category: 'sound',
+  type: 'random',
     aliases: [''],
     execute(bot, msg, args) {
 var url =       "https://www.myinstants.com/media/sounds/metalgearsolid.swf.mp3"
