@@ -1,6 +1,7 @@
 module.exports = {
 			name: 'tic-tac-toe',
 			description: 'Play a game of tic-tac-toe with another user.',
+  category: 'game',
     execute(bot, msg, args) {
       msg.reply("Ikke klar enda")
 	/*	if (opponent.bot) return msg.reply('Bots may not be played against.');
