@@ -1,3 +1,4 @@
+module.exports = function botReady(bot){
 bot.once("ready", () => {
   console.log(`Logged in as ${bot.user.tag}!`);
   console.log(`Ready to fuck shit up`);

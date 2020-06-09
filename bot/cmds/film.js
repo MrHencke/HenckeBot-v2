@@ -1,5 +1,5 @@
 const path = require("path");
-const film = require(path.join(__dirname, "..", "..", "res/movies.json"));
+const film = require(path.join(__dirname, "..", "..", "res/lists/movies.json"));
 
 module.exports = {
     name: 'film',

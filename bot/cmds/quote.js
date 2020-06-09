@@ -1,5 +1,5 @@
 const path = require("path");
-const quote = require(path.join(__dirname, "..", "..", "res/quote.json"));
+const quote = require(path.join(__dirname, "..", "..", "res/lists/quote.json"));
 const Discord = require("discord.js")
 
 module.exports = {

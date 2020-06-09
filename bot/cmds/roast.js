@@ -1,5 +1,5 @@
 var path = require("path");
-const roast = require(path.join(__dirname, "..", "..", "res/roast.json"));
+const roast = require(path.join(__dirname, "..", "..", "res/lists/roast.json"));
 
 module.exports = {
   name: "roast",

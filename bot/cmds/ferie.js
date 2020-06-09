@@ -1,5 +1,5 @@
 const path = require("path");
-const land = require(path.join(__dirname, "..", "..", "res/countries.json"));
+const land = require(path.join(__dirname, "..", "..", "res/lists/countries.json"));
 
 module.exports = {
     name: 'ferie',

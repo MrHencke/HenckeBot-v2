@@ -1,5 +1,5 @@
 const path = require("path");
-const comp = require(path.join(__dirname, "..", "..", "res/compliments.json"));
+const comp = require(path.join(__dirname, "..", "..", "res/lists/compliments.json"));
 
 module.exports = {
   name: "comp",

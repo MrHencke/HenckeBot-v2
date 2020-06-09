@@ -1,7 +1,7 @@
 var path = require("path")
 const sound = require(path.join(__dirname, '..', '..', 'res/sound.js'));
-const custom = require(path.join(__dirname, '..', '..', 'res/customClips.json'));
-const customPath = path.join(__dirname, '..', '..', 'res/customClips.json');
+const custom = require(path.join(__dirname, '..', '..', 'res/lists/customClips.json'));
+const customPath = path.join(__dirname, '..', '..', 'res/lists/customClips.json');
 const fs = require("fs")
 
 module.exports = {
@@ -32,6 +32,10 @@ module.exports = {
                   if (err) throw err;
                   console.log('Data written to file');
                   msg.channel.send("Skrevet til databasen, vent rundt 15 min til neste restart, så er filen tilgjengelig");
+                    delete require.cache[require.resolve(customPath)];/*
+            try {
+                const newCommand = require(customPath);   
+            } catch (error) {}*/
                   });}});
                 } else{
                 custom.find(function(item, i){

@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const fs = require("fs");
 const path = require("path");
 const sound = require(path.join(__dirname, "..", "res/sound.js"));
 const cmdSetup = require(path.join(__dirname, "..", "res/util/cmdSetup.js"));
@@ -14,17 +13,8 @@ bot.commands = new Discord.Collection();
 cmdSetup(bot);
 
 botReady(bot)
-bot.once("ready", () => {
-  console.log(`Logged in as ${bot.user.tag}!`);
-  console.log(`Ready to fuck shit up`);
-  bot.user.setActivity("my pp", {
-    type: "STREAMING",
-    url: "https://www.twitch.tv/mrhencke"
-  });
-});
 
 intro(bot);
-
 
 bot.on("message", async msg => {
   if(msg.author.bot) return;
@@ -35,9 +25,7 @@ bot.on("message", async msg => {
   const args = msg.content.slice(prefix.length).split(/ +/);
   const cmd = args.shift().toLowerCase();
   const commandName = cmd.toLowerCase();
-  const command =
-    bot.commands.get(commandName) ||
-    bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+  const command = bot.commands.get(commandName) || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
   if (!command) return;
 
   try {
@@ -46,7 +34,6 @@ bot.on("message", async msg => {
     console.error(err);
     msg.reply("Oops, " + commandName + " gikk rett til helvete");
   }
-  //}
 });
 
 bot.login(process.env.token);
