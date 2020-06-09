@@ -1,25 +1,14 @@
 const Discord = require("discord.js");
 const fs = require("fs");
-var path = require("path");
+const path = require("path");
 const sound = require(path.join(__dirname, "..", "res/sound.js"));
+const cmdSetup = require(path.join(__dirname, "..", "res/util/cmdSetup.js"));
 const bot = new Discord.Client();
 
 bot.commands = new Discord.Collection();
 bot.aliases = new Discord.Collection();
 
-var commandFiles = fs.readdirSync(__dirname + "/cmds").filter(file => file.endsWith(".js"));
-
-for (const file of commandFiles) {
-  const command = require(__dirname + "/cmds" + "/" + file);
-  bot.commands.set(command.name, command);
-}
-
- commandFiles = fs.readdirSync(__dirname + "/cmds/sounds").filter(file => file.endsWith(".js"));
-
-for (const file of commandFiles) {
-  const command = require(__dirname + "/cmds/sounds" + "/" + file);
-  bot.commands.set(command.name, command);
-}
+cmdSetup(bot);
 
 const prefix = "!";
 
