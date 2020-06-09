@@ -3,15 +3,17 @@ const fs = require("fs");
 const path = require("path");
 const sound = require(path.join(__dirname, "..", "res/sound.js"));
 const cmdSetup = require(path.join(__dirname, "..", "res/util/cmdSetup.js"));
+const intro = require(path.join(__dirname, "..", "res/util/introLydManager.js"));
+const introMsg = require(path.join(__dirname, "..", "res/util/msgIntro.js"));
+const botReady = require(path.join(__dirname, "..", "res/util/botReady.js"));
 const bot = new Discord.Client();
+const prefix = process.env.prefix;
 
 bot.commands = new Discord.Collection();
-bot.aliases = new Discord.Collection();
 
 cmdSetup(bot);
 
-const prefix = "!";
-
+botReady(bot)
 bot.once("ready", () => {
   console.log(`Logged in as ${bot.user.tag}!`);
   console.log(`Ready to fuck shit up`);
@@ -21,93 +23,14 @@ bot.once("ready", () => {
   });
 });
 
-bot.on("voiceStateUpdate", (oldState, newState) => {
-  try {
-    var server = newState.guild.id;
-    var person = newState.member.id.toString();
-    if (server == "612947002853949458" || person == "133671473591222273") {
-      if (newState.channel != null) {
-        var bots = newState.channel.members.filter(x => x.user.bot).size;
-        if (1 > bots) {
-          var voiceChannel = newState.channel;
-          if (
-            oldState.channel != newState.channel &&
-            newState.channelID != "undefined"
-          ) {
-            if (person == "132193704860450817") {
-              var url1 =
-                "https://cdn.glitch.com/2c6c8596-d523-4520-a5a7-8caa66a05edf%2Fh%C3%A5vardo.mp3?v=1590488992607";
-              sound(url1, voiceChannel);
-            } else if (person == "133671473591222273") {
-              var url2 =
-                "https://www.myinstants.com/media/sounds/aplausos_2.mp3";
-              sound(url2, voiceChannel);
-            } else {
-              var url3 =
-                "https://cdn.glitch.com/2c6c8596-d523-4520-a5a7-8caa66a05edf%2F%C3%A5j%C3%A6vli.mp3?v=1589967082829";
-              sound(url3, voiceChannel);
-            }
-          } else return;
-        }
-      }
-    }
-  } catch (err) {
-    console.log(err);
-  }
-});
+intro(bot);
 
 
 bot.on("message", async msg => {
   if(msg.author.bot) return;
-  if (msg.content.includes("bad bot")) {
-    msg.reply(
-      "Vi er kanskje en dårlig bot, MEN! Vi er ikke like utdatert søppel som en viss TrashBOT"
-    );
-  } else if (
-    msg.content.toLowerCase().includes(" ein") ||
-    msg.content.toLowerCase().includes("mykje") ||
-    msg.content.toLowerCase().includes("dinna") ||
-    msg.content.toLowerCase().includes("hugleik på staur")
-  ) {
-    msg.reply(
-      "Nynorsk oppdaget, gjør som resten av moderne sivilisasjon og skriv på en forståelig målform."
-    );
-  } else if (msg.content.includes("good bot")) {
-    msg.reply(
-      "Tusen takk, vi hos HenckeBot™ Inc Ltd. vet at vår bot er mye bedre enn TrashBOT™, vennligst skriv et brev til denne søppelboten og gi 1-star review på google"
-    );
-  }else if (msg.content.includes("oh no")) {
-      var url = "https://cdn.glitch.com/6b8d7e3b-a718-4c94-a496-df1ab9412724%2Fohyeah.mp3?v=1591636797558";
-      sound(url, msg.member.voice.channel, msg)
-  } else if (
-    msg.content.includes("hmm") /*&& msg.author.id != '132193704860450817'*/
-  ) {
-    msg.channel.send({
-      files: [
-        "https://media.tenor.com/images/69983541b409be168812dfd95be4bbf2/tenor.gif"
-      ]
-    });
-  } else if (
-    msg.content.includes("reee") /*&& msg.author.id != '132193704860450817'*/
-  ) {
-    msg.channel.send({
-      files: [
-        "https://cdn.glitch.com/2c6c8596-d523-4520-a5a7-8caa66a05edf%2F1b72da8a-c1d0-48e4-92df-f8b35fe2fb40.bilde.png?v=1589880897535"
-      ]
-    });
-  } else if (msg.content.includes("nuddel")) {
-    var url =
-      "https://cdn.glitch.com/05aa1396-7f5d-45a3-ab76-baf2815a144a%2Fskididdel.mp3?v=1589665443245";
-    sound(url, msg.member.voice.channel, msg);
-  } else if (msg.content.includes("F") && msg.content.length < 2) {
-    msg.channel.send("F");
-  } else if (msg.content.includes("!i") && msg.content.length < 10) {
-    msg.delete().catch(O_o => {});
-    for (var p = 0; p < msg.content.length - 1; p++) {
-      msg.channel.send("*I M A G I N E*");
-    }
-  }
-
+  
+  introMsg(msg);
+  
   if (!msg.content.startsWith(prefix) || msg.author.bot) return;
   const args = msg.content.slice(prefix.length).split(/ +/);
   const cmd = args.shift().toLowerCase();
