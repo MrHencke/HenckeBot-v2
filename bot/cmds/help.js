@@ -4,6 +4,7 @@ module.exports = {
   category: "hjelp",
   aliases: [""],
   execute(bot, msg, args) {
+    
     var tekst = bot.commands.filter(cmd => cmd.category === "tekst");
     var tekstOut = "";
     for (var cmd of tekst) {
