@@ -19,7 +19,8 @@
     "node-lyrics-api": "^1.0.1",
     "scrape-youtube": "^0.1.8",
     "ytdl-core": "^2.1.7",
-    "discord.js-tictactoe": "^1.0.1"
+    "discord.js-tictactoe": "^1.0.1",
+    "@google-cloud/speech": "^4.0.0"
   },
   "devDependencies": {},
   "author": "Hencke",
