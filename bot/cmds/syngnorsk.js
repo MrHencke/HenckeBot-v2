@@ -15,6 +15,7 @@ module.exports = {
           var resultata = resultat.match(/([\s\S]{1,199})/g);
         console.log(resultata[1])
           var i;
+          msg.channel.send("Synger nå: " + result.content[0].title)
         sound(discordTTS.getVoiceStream(resultata[0], "nb-NO"), msg.member.voice.channel, msg, resultata, i = 0)
         }    
 }).catch(error => {
