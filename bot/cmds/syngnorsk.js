@@ -30,7 +30,7 @@ function sound(url, voiceChannel, msg, resultata, i) {
     voiceChannel.join().then(connection => {
         const dispatcher = connection.play(url, { volume: 0.4});
         dispatcher.on("finish", end => sound(discordTTS.getVoiceStream(resultata[i+1], "nb-NO"),msg.member.voice.channel, msg, resultata, i = i+1));
-    }).catch(err => console.log(err));
+    }).catch(err => console.log("Det kom en feil på sang"));
     }else{
       msg.channel.send("Tada! Applaus kan taes på DMs") ;
     voiceChannel.leave();
