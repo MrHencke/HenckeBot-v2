@@ -5,6 +5,7 @@ module.exports = {
 name: 'xpe',
 brukernavn: 'Henrik',
 bruker: 'Henrik#6368',
+serveronly: '612947002853949458',
 description: 'en custom sound',
 category: 'customsound',
 aliases: [''],

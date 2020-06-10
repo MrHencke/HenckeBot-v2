@@ -12,7 +12,7 @@ var opptilExc =  "category: 'customsound'," + "\n" + "aliases: ['']," + "\n" + "
 
 module.exports = {
     name: 'c',
-    description: '',
+    description: 'Legger til egne lydklipp, brukes med !c add <navn> <link> <global>, global tagget kan droppes om du vil at commanden skal bare kunne brukes på denne serveren. !c delete <navn> for å slette og !c',
   category: 'hjelpemetode',
     aliases: [''],
     execute(bot, msg, args) {
@@ -22,27 +22,33 @@ module.exports = {
                 var customsounds = ""
                 for (const file of cmdFiles) {
                 var res = file.split(".");
-                var res2 = bot.commands.filter(u => u.name == res[0]);
-                  console.log(res2)
-                if(res2.serveronly == msg.guild.id || res2.serveronly == "global"){
+                const command = bot.commands.get(res[0])
+                if(command.serveronly == msg.guild.id || command.serveronly == "global"){
                   customsounds += res[0] + " , "
               }
                   }
                  if(customsounds !== ""){
+                   customsounds = customsounds.substring(0, customsounds.length - 1);
                    msg.channel.send(customsounds) 
                  }else{
                    msg.channel.send("Det finnes ingen custom lyder for denne serveren, legg til noen med !c add <navn> <link> da!") 
                  }
                 } else if(args[0]== "add") {
-                  var name = args[1]
+                  var name = args[1].toLowerCase();
+                  var serveronly = ""
                   if(args[2] != null){
                   if(args[2].substring(0,4) == "http"){
+                    if(args[3] != null && args[3] == 'global'){
+                      serveronly = "global"
+                    }else{
+                      serveronly = msg.guild.id
+                    }
                     var url = args[2];
                     if(fs.existsSync(customPathNyFil + name + ".js")){
                       msg.channel.send("Navnet er allerede tatt, velg et annet!")
                     return
                     }
-                    fs.writeFile(customPathNyFil + name + ".js", nyPath + "\n" + nySound + "\n\n" + modul + "'" + name + "'" + ",\n" + "brukernavn: " + "'" + msg.author.username + "'" + ",\n" + "bruker: " + "'" + msg.author.tag + "'" + ",\n"+ "serveronly: " + "'" + msg.guild.id + "'" + ",\n"  + "description: " + "'" + name + " er en custom sound av " + msg.author.username + "'," + "\n" + opptilExc + "\n" + "var url = '" + url + "'" + "\n" + "sound(url,msg.member.voice.channel, msg);    },}; ", (err) => {
+                    fs.writeFile(customPathNyFil + name + ".js", nyPath + "\n" + nySound + "\n\n" + modul + "'" + name + "'" + ",\n" + "brukernavn: " + "'" + msg.author.username + "'" + ",\n" + "bruker: " + "'" + msg.author.tag + "'" + ",\n"+ "serveronly: " + "'" + serveronly + "'" + ",\n"  + "description: " + "'" + name + " er en custom sound av " + msg.author.username + "'," + "\n" + opptilExc + "\n" + "var url = '" + url + "'" + "\n" + "sound(url,msg.member.voice.channel, msg);    },}; ", (err) => {
                     if (err) throw err;
                     console.log('The file has been saved!');
                     const command = require(path.join(__dirname, "/sounds/custom", "/") + name +".js");
