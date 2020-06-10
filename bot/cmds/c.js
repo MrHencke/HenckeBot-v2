@@ -22,9 +22,11 @@ module.exports = {
                 var customsounds = ""
                 for (const file of cmdFiles) {
                 var res = file.split(".");
-                var res2 = bot.commands.get(res);
-                if(res2.)
-                customsounds += res + " , "
+                var res2 = bot.commands.filter(u => u.name == res[0]);
+                  console.log(res2)
+                if(res2.serveronly == msg.guild.id || res2.serveronly == "global"){
+                  customsounds += res[0] + " , "
+              }
                   }
                  if(customsounds !== ""){
                    msg.channel.send(customsounds) 
