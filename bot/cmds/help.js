@@ -91,7 +91,7 @@ module.exports = {
     var outF8 = linje + "HJELPEMETODER"+ linje+ "\n" + hjelpemetoderOut + "\n\n"
     var outF9 = linje + "MEME" + linje4 + "\n" + memeOut + "\n"
     //var outF9 = linje + "NSFW"+ linje4 + "\n" + nsfwOut + "\n"
-    var outF10 = linje + "EKSTRA"+ linje6+ "\n" + "For ekstra hjelp, skriv !hjelp *kommandonavn* for ekstra informasjon for en gitt kommando"
+    var outF10 = linje + "EKSTRA"+ linje6+ "\n" + "For ekstra hjelp, skriv !hjelp **kommandonavn** for ekstra informasjon for en gitt kommando"
     
    
     var outFinal = outF0 + outF1 + outF2 + outF3 + outF4 + outF5 + outF6 + outF7 + outF8 + outF9 + outF10
