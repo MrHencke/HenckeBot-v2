@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'hjelp',
+    name: 'hjelpOutdated',
     description: 'Du vet vel hva denne gjør?',
     category: 'hjelp',
     aliases: [''],

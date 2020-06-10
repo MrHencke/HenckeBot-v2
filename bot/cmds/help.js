@@ -2,8 +2,10 @@ module.exports = {
   name: "help",
   description: "Du vet vel hva denne gjør?",
   category: "hjelp",
-  aliases: [""],
+  aliases: ["hjelp"],
   execute(bot, msg, args) {
+    
+    msg.reply(" Jeg sneik meg inn i DMsene dine med en liste av mine commands")
     
     var tekst = (bot.commands.filter(cmd => cmd.category == 'tekst')).array()
     var tekstOut = "";
@@ -64,34 +66,57 @@ module.exports = {
     for (var cmd of hjelpemetoder) {
       hjelpemetoderOut += "!" + cmd.name + "\n";
     }
-
     
+    var meme = bot.commands.filter(cmd => cmd.category == "meme").array();
+    var memeOut = "";
+    for (var cmd of meme) {
+      memeOut += "!" + cmd.name + "\n";
+    }
     
-    
-    
-    
-    var linje = "--------------------------------------------" 
-    var linje5 = "----------------------------------------------------"
-    var linje4 = "-----------------------------------------------------"
-    var linje7 = "--------------------------------------------------"
-    var linje3 = "--------------------------------------------------------"
-    var linje6 = "---------------------------------------------------"
-    var linje13 ="--------------------------------------------"
+    var linje =   "--------------------------------------------" 
+    var linje5 =  "----------------------------------------------------"
+    var linje4 =  "-----------------------------------------------------"
+    var linje7 =  "--------------------------------------------------"
+    var linje3 =  "--------------------------------------------------------"
+    var linje6 =  "-----------------------------------------------------"
     
     var outF0 = linje + "TEKST"+ linje5 + "\n" + tekstOut + "\n"
-    var outF2 = linje + "YOUTUBE"+ linje7 + "\n" + youtubeOut + "\n"var outF8 = linje + "MUSIC"+ linje5+ "\n" + musicOut + "\n"
+    var outF1 = linje + "YOUTUBE"+ linje7 + "\n" + youtubeOut + "\n"
+    var outF2 = linje + "MUSIC"+ linje5+ "\n" + musicOut + "\n"
     var outF3 = linje + "TTS"+ linje3+ "\n" + ttsOut + "\n"
     var outF4 = linje + "KAI"+ linje3+ "\n" + kaiOut + "\n"
     var outF5 = linje + "PAT"+ linje3+ "\n" + patOut + "\n" 
     var outF6 = linje + "RANDOM"+ linje6+ "\n" + randomOut + "\n"
-    var outF7 = linje + "CUSTOM SOUNDS"+ linje13+ "\n" + customsoundOut + "\n"
+    var outF7 = linje + "CUSTOM SOUNDS"+ linje+ "\n" + "Bruk !c list, for å liste alle custom commands" + "\n"
+    var outF8 = linje + "HJELPEMETODER"+ linje+ "\n" + hjelpemetoderOut + "\n"
+    var outF9 = linje + "MEME" + linje4 + "\n" + memeOut + "\n"
+    //var outF9 = linje + "NSFW"+ linje4 + "\n" + nsfwOut + "\n"
+    var outF10 = linje + "EKSTRA"+ linje6+ "\n" + "For ekstra hjelp, skriv !hjelp *kommandonavn* for ekstra informasjon for en gitt kommando"
     
-    var outF9 = linje + "HJELPEMETODER"+ linje+ "\n" + hjelpemetoderOut + "\n"
-    var outF1 = linje + "NSFW"+ linje4 + "\n" + nsfwOut + "\n"
-    
-    var outF10 = linje + "Ekstra"+ linje6+ "\n" + "For ekstra hjelp, skriv !hjelp *kommandonavn* for ekstra informasjon for en gitt kommando"
-    
-   /* 
+   
+    var outFinal = outF0 + outF1 + outF2 + outF3 + outF4 + outF5 + outF6 + outF7 + outF8 + outF9 + outF10
+    msg.author.send(outFinal)
+
+  }
+};
+
+/* 
+kategorier: 
+nsfw, 
+youtube, 
+tekst, 
+tts, 
+sound, ------- split type: kai, pat, random
+customsound, 
+music, 
+hjelpemetoder, 
+custom
+
+
+
+
+
+
     msg.author.send(outF0)
     msg.author.send(outF1)
     msg.author.send(outF2)
@@ -104,25 +129,3 @@ module.exports = {
     msg.author.send(outF9)
     msg.author.send(outF10)
    */
-    var outFinal = outF0 + outF1 + outF2 + outF3 + outF4  
-    var outFinal2 = outF5 + outF6 + outF7 + outF8 + outF9 + outF10
-    msg.author.send(outFinal + outFinal2)
-    /* msg.author.send(outFinal)
-    msg.author.send(outFinal2)
-    console.log("outF0: " + outF0.length)
-    console.log("outF1: " +outF1.length)
-    console.log("outF2: " +outF2.length)
-    console.log("outF3: " +outF3.length)
-    console.log("outF4: " +outF4.length)
-    console.log("outF5: " +outF5.length)
-    console.log("outF6: " +outF6.length)
-    console.log("outF7: " +outF7.length)
-    console.log("outF8: " +outF8.length)
-    console.log("outF9: " +outF9.length)
-    console.log("outF10: " +outF10.length)
-    */
-
-  }
-};
-
-//kategorier: nsfw, youtube, tekst, tts, sound, customsound, music, hjelpemetoder, custom

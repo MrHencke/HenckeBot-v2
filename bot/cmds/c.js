@@ -13,7 +13,7 @@ var opptilExc =  "category: 'customsound'," + "\n" + "aliases: ['']," + "\n" + "
 module.exports = {
     name: 'c',
     description: '',
-  category: 'custom',
+  category: 'hjelpemetode',
     aliases: [''],
     execute(bot, msg, args) {
       
