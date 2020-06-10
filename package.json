@@ -20,7 +20,8 @@
     "memejs": "^1.2.3",
     "node-lyrics-api": "^1.0.1",
     "scrape-youtube": "^0.1.8",
-    "ytdl-core": "^3.1.1"
+    "ytdl-core": "^3.1.1",
+    "nodemailer": "^6.4.8"
   },
   "devDependencies": {},
   "author": "Hencke",
