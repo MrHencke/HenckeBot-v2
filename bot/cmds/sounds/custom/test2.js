@@ -2,7 +2,7 @@ const path = require('path')
 const sound = require(path.join(__dirname, '..', '..','..',  '..', 'res/sound.js'));
 
 module.exports = {
-name: 'trolotest2',
+name: 'test2',
 brukernavn: 'Henrik',
 bruker: 'Henrik#6368',
 serveronly: false,
