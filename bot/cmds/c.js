@@ -23,7 +23,7 @@ module.exports = {
                 for (const file of cmdFiles) {
                 var res = file.split(".");
                 const command = bot.commands.get(res[0])
-                if(command.serveronly == msg.guild.id || command.serveronly == "global"){
+                if(command.serveronly && command.serverID == msg.guild.id || command.serveronly == false){
                   customsounds += res[0] + " , "
               }
                   }
@@ -35,20 +35,18 @@ module.exports = {
                  }
                 } else if(args[0]== "add") {
                   var name = args[1].toLowerCase();
-                  var serveronly = ""
+                  var serveronly = true
                   if(args[2] != null){
                   if(args[2].substring(0,4) == "http"){
                     if(args[3] != null && args[3] == 'global'){
-                      serveronly = "global"
-                    }else{
-                      serveronly = msg.guild.id
+                      serveronly = false
                     }
                     var url = args[2];
                     if(fs.existsSync(customPathNyFil + name + ".js")){
                       msg.channel.send("Navnet er allerede tatt, velg et annet!")
                     return
                     }
-                    fs.writeFile(customPathNyFil + name + ".js", nyPath + "\n" + nySound + "\n\n" + modul + "'" + name + "'" + ",\n" + "brukernavn: " + "'" + msg.author.username + "'" + ",\n" + "bruker: " + "'" + msg.author.tag + "'" + ",\n"+ "serveronly: " + "'" + serveronly + "'" + ",\n"  + "description: " + "'" + name + " er en custom sound av " + msg.author.username + "'," + "\n" + opptilExc + "\n" + "var url = '" + url + "'" + "\n" + "sound(url,msg.member.voice.channel, msg);    },}; ", (err) => {
+                    fs.writeFile(customPathNyFil + name + ".js", nyPath + "\n" + nySound + "\n\n" + modul + "'" + name + "'" + ",\n" + "brukernavn: " + "'" + msg.author.username + "'" + ",\n" + "bruker: " + "'" + msg.author.tag + "'" + ",\n"+ "serveronly: " + "'" + serveronly + "'" + ",\n"+ "serverID: " + "'" + msg.guild.id + "'" + ",\n"  + "description: " + "'" + name + " er en custom sound av " + msg.author.username + "'," + "\n" + opptilExc + "\n" + "var url = '" + url + "'" + "\n" + "sound(url,msg.member.voice.channel, msg);    },}; ", (err) => {
                     if (err) throw err;
                     console.log('The file has been saved!');
                     const command = require(path.join(__dirname, "/sounds/custom", "/") + name +".js");

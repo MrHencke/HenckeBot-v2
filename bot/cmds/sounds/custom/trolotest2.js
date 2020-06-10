@@ -2,12 +2,11 @@ const path = require('path')
 const sound = require(path.join(__dirname, '..', '..','..',  '..', 'res/sound.js'));
 
 module.exports = {
-name: 'trolotest',
+name: 'trolotest2',
 brukernavn: 'Henrik',
 bruker: 'Henrik#6368',
-serveronly: true,
-serverID: '710258665138946160',
-description: 'trolotest er en custom sound av Henrik',
+serveronly: '710258665138946160',
+description: 'trolotest2 er en custom sound av Henrik',
 category: 'customsound',
 aliases: [''],
 execute(bot, msg, args) {
