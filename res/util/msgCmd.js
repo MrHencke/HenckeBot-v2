@@ -4,7 +4,7 @@ module.exports = function msgIntro(msg, bot, prefix) {
   const args = msg.content.slice(prefix.length).split(/ +/);
   let cmd = args.shift().toLowerCase();
   
-  if (cmd == "hjelp" && args[0] != null) {
+  if ((cmd == "hjelp" || cmd == "help") && args[0] != null) {
     msg.channel.send(bot.commands.get(args[0].toLowerCase()).description);
   } else {
     const commandName = cmd.toLowerCase();

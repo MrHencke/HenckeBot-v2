@@ -48,7 +48,7 @@ module.exports = function msgIntro(msg) {
     msg.channel.send("F");
   } else if (msg.content.includes("!i") && msg.content.length < 10) {
     msg.delete().catch(O_o => {});
-    for (var p = 0; p < msg.content.length - 1; p++) {
+    for (var p = 0; p < (msg.content.length - 1); p++) {
       msg.channel.send("*I M A G I N E*");
     }
   }
