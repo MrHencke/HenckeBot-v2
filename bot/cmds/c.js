@@ -18,16 +18,13 @@ module.exports = {
     execute(bot, msg, args) {
       
            if(args[0] == "list"){
-                var cmdFiles = fs.readdirSync(path.join(__dirname, "sounds/custom/")).filter(file => file.endsWith(".js"));
-                var commandFilesL = (cmdFiles.filter(cmd => cmd.serveronly == msg.guild.id))).array()
-                var commandFilesG = (cmdFiles.filter(cmd => cmd.serveronly == 'global'))).array()
-                var commandFiles = commandFilesL.concat(commandFilesG)
+                var cmdFiles = fs.readdirSync(path.join(__dirname, "sounds/custom/")).filter(file => file.endsWith(".js"));            
                 var customsounds = ""
-                for (const file of commandFiles) {
+                for (const file of cmdFiles) {
                 var res = file.split(".");
-                if(!commandFiles[commandFiles.length]){
+                var res2 = bot.commands.get(res);
+                if(res2.)
                 customsounds += res + " , "
-                  }
                   }
                  if(customsounds !== ""){
                    msg.channel.send(customsounds) 
