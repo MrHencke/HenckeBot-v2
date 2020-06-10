@@ -1,6 +1,6 @@
 module.exports = {
     name: 'hjelpOutdated',
-    description: 'Du vet vel hva denne gjør?',
+    description: 'Gamle !Hjelp',
     category: 'hjelp',
     aliases: [''],
     execute(bot, msg, args) {

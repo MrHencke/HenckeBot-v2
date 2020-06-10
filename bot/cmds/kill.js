@@ -1,6 +1,6 @@
 module.exports = {
     name: 'kill',
-    description: '',
+    description: 'Dreper en bruker brutalt',
     category: 'tekst',
     aliases: [''],
     execute(bot, msg, args) {

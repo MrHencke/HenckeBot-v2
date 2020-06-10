@@ -1,6 +1,6 @@
 module.exports = {
   name: 'listen',
-    description: '',
+    description: 'Eksperimentell, ikke prøv',
   category: 'experimental',
     aliases: [''],
     execute(bot, msg, args) {

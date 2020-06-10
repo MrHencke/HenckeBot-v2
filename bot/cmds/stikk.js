@@ -1,6 +1,6 @@
 module.exports = {
     name: 'stikk',
-    description: '',
+    description: 'Fjerner boten fra Voice',
   category: 'helpemetode',
     aliases: [''],
     execute(bot, msg, args) {

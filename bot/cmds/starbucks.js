@@ -1,6 +1,6 @@
 module.exports = {
   name: "starbucks",
-  description: "",
+  description: "Gir en laaaaaaaaaaaaaaaaang quote",
   category: 'tekst',
   aliases: [""],
   execute(bot, msg, args) {

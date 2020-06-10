@@ -4,7 +4,7 @@ const Discord = require("discord.js")
 
 module.exports = {
     name: 'quote',
-    description: '',
+    description: 'Gir et inspirational quote',
   category: 'tekst',
     aliases: [''],
     execute(bot, msg, args) {

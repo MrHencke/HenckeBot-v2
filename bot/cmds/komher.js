@@ -3,9 +3,9 @@ const sound = require(path.join(__dirname, "..", "..", "res/sound.js"));
 
 module.exports = {
   name: "komher",
-  description: "",
+  description: "Caller boten til voice",
   category: "tekst",
-  aliases: [""],
+  aliases: ["kom"],
   execute(bot, msg, args) {
     msg.member.voice.channel.join();
   }

@@ -2,7 +2,7 @@ const lyrics = require("node-lyrics-api");
 
 module.exports = {
     name: 'syngtts',
-    description: 'Synger en sang',
+    description: 'Brukes ved !syngtts <tittel på sang>, Synger en sang i tekstkanal med TTS',
   category: 'meme',
     aliases: [''],
     execute(bot, msg, args) {

@@ -1,6 +1,6 @@
 module.exports = {
   name: "meow",
-  description: "",
+  description: "Mjauer i TTS",
   category: 'tts',
   aliases: [""],
   execute(bot, msg, args) {

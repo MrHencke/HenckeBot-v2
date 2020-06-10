@@ -1,6 +1,6 @@
 module.exports = {
     name: 'version',
-    description: '',
+    description: 'Gir den nåverende versjonen av HenckeBot',
   category: 'tekst',
     aliases: [''],
     execute(bot, msg, args) {

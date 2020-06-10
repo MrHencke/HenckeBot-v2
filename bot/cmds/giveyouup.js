@@ -1,6 +1,6 @@
 module.exports = {
   name: "giveyouup",
-  description: "Synger ",
+  description: "Synger andre del av never gonna give you up i TTS",
   category: 'tts',
   aliases: [""],
   execute(bot, msg, args) {

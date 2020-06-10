@@ -4,7 +4,7 @@ const googleSpeech = require("@google-cloud/speech");
 const googleSpeechClient = new googleSpeech.SpeechClient();
 module.exports = {
   name: "listen2",
-  description: "",
+  description: "Eksperimentell, ikke prøv",
   category: 'experimental',
   aliases: [""],
   execute(bot, msg, args) {

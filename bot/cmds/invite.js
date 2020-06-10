@@ -3,7 +3,7 @@ const sound = require(path.join(__dirname, '..', '..', 'res/sound.js'));
 
 module.exports = {
     name: 'invite',
-    description: '',
+    description: 'Lager en invite for boten',
     category: 'hjelpemetode',
     aliases: [''],
     execute(bot, msg, args) {

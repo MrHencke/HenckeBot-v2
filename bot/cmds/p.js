@@ -3,7 +3,7 @@ const player = require(path.join(__dirname, '..', '..', 'res//util/youtube-playe
                        
 module.exports = {
     name: 'p',
-    description: 'Spiller musikk fra youtube ved søk eller direkte link',
+    description: 'Brukes slik: !p <søkeord> eller <link>, Spiller musikk fra youtube ved søk eller direkte link',
     category: 'youtube',
     aliases: ['play', 'spillav'],
     execute(bot, msg, args) {

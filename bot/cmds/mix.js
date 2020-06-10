@@ -4,7 +4,7 @@ const ytdl = require("ytdl-core");
 
 module.exports = {
     name: 'mix',
-    description: '',
+    description: 'Spiller en mix av sanger',
   category: 'sound',
     aliases: [''],
     execute(bot, msg, args) {

@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'ping',
-	description: 'Ping!',
+	description: 'Gir botens ping',
   category: 'hjelpemetode',
   aliases: ['pongu'],
 	execute(bot, msg, args) {

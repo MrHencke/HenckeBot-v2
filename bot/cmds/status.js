@@ -1,6 +1,6 @@
 module.exports = {
     name: 'status',
-    description: '',
+    description: 'Gir statusen til Måløy Regionale Datatjenester',
   category: 'tekst',
     aliases: [''],
     execute(bot, msg, args) {

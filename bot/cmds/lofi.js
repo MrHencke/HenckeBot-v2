@@ -4,7 +4,7 @@ const ytdl = require("ytdl-core");
 
 module.exports = {
     name: 'lofi',
-    description: '',
+    description: 'Spiller Lo-Fi',
   category: 'music',
     aliases: [''],
     execute(bot, msg, args) {

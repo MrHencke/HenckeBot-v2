@@ -1,7 +1,7 @@
 module.exports = {
     name: 'saytts',
     description: '',
-  category: 'tekst',
+  category: 'tekst-personlig',
     aliases: [''],
     execute(bot, msg, args) {
           if (msg.author.id == process.env.HenckeID) {

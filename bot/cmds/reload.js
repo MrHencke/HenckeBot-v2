@@ -1,7 +1,7 @@
 module.exports = {
     name: 'reload',
     description: 'Reloader commands',
-  category: 'hjelpemetode',
+  category: 'hjelpemetode-personlig',
     execute(bot, message, args) {
       if(message.author.id == process.env.HenckeID){
         if (!args.length) return message.channel.send(`You didn't pass any command to reload, ${message.author}!`);

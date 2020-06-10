@@ -3,7 +3,7 @@ const roast = require(path.join(__dirname, "..", "..", "res/lists/roast.json"));
 
 module.exports = {
   name: "roast",
-  description: "",
+  description: "Brukes ved !roast @<person>, Roaster noen.",
   category: 'tekst',
   aliases: [""],
   execute(bot, msg, args) {

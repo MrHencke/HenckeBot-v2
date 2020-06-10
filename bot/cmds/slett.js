@@ -1,7 +1,7 @@
 module.exports = {
     name: 'slett',
     description: '',
-  category: 'hjelpemetode',
+  category: 'hjelpemetode-personlig',
     aliases: [],
     execute(bot, msg, args) {
           if (msg.author.id == process.env.HenckeID || msg.author.id == "152019710949588992") {

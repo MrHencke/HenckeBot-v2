@@ -1,6 +1,6 @@
 module.exports = {
     name: 'stream',
-    description: '',
+    description: 'Gir verdens beste stream',
   category: 'tekst',
     aliases: [''],
     execute(bot, msg, args) {

@@ -1,6 +1,6 @@
 module.exports = {
     name: 'stats',
-    description: '',
+    description: 'Gir stats om boten',
   category: 'tekst',
     aliases: [''],
     execute(bot, msg, args) {

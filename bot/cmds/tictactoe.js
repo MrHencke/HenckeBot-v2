@@ -1,9 +1,9 @@
 module.exports = {
 			name: 'tic-tac-toe',
 			description: 'Play a game of tic-tac-toe with another user.',
-  category: 'game',
+  category: 'meme',
     execute(bot, msg, args) {
-      msg.reply("Ikke klar enda")
+      msg.reply("Funksjonen er ikke klar enda")
 	/*	if (opponent.bot) return msg.reply('Bots may not be played against.');
 		if (opponent.id === msg.author.id) return msg.reply('You may not play against yourself.');
 		if (this.playing.has(msg.channel.id)) return msg.reply('Only one game may be occurring per channel.');
