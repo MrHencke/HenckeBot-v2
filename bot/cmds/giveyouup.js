@@ -1,6 +1,6 @@
 module.exports = {
   name: "giveyouup",
-  description: "",
+  description: "Synger ",
   category: 'tts',
   aliases: [""],
   execute(bot, msg, args) {

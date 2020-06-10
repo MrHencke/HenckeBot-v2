@@ -2,7 +2,7 @@ const { meme } = require("memejs")
 
 module.exports = {
     name: 'tits',
-    description: '',
+    description: 'Hvordan fant du denne?!',
     category: 'nsfw',
     aliases: [''],
     execute(bot, msg, args) {

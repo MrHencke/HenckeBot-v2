@@ -1,6 +1,6 @@
 module.exports = {
   name: "at",
-  description: "",
+  description: "Brukes ved !at @<person>, Skriver @<person> 5 ganger for ekstra plagsom effekt",
   category: 'hjelpemetode',
   aliases: [],
   execute(bot, msg, args) {

@@ -3,7 +3,7 @@ const land = require(path.join(__dirname, "..", "..", "res/lists/countries.json"
 
 module.exports = {
     name: 'ferie',
-    description: '',
+    description: 'Gir deg et forslag på et feriested',
     category: 'tekst',
     aliases: [''],
     execute(bot, msg, args) {

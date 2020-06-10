@@ -1,6 +1,6 @@
 module.exports = {
   name: "dat102",
-  description: "",
+  description: "Lærebok DAT102",
   category: 'hjelpemetode',
   aliases: [""],
   execute(bot, msg, args) {

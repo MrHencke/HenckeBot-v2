@@ -10,8 +10,7 @@ module.exports = function msgIntro(msg, bot, prefix) {
     const commandName = cmd.toLowerCase();
   const command = bot.commands.get(commandName) || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
     if (!command) return;
-    console.log(command.serveronly)
-    if (command.serveronly && command.server != msg.guild.id){
+    if (command.serveronly && command.serverID != msg.guild.id){
       msg.channel.send("Denne commanden er begrenset til en annen server")
             return;
     }

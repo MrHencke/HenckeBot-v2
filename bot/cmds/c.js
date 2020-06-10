@@ -28,7 +28,7 @@ module.exports = {
               }
                   }
                  if(customsounds !== ""){
-                   customsounds = customsounds.substring(0, customsounds.length - 1);
+                   customsounds = customsounds.substring(0, customsounds.length - 2);
                    msg.channel.send(customsounds) 
                  }else{
                    msg.channel.send("Det finnes ingen custom lyder for denne serveren, legg til noen med !c add <navn> <link> da!") 

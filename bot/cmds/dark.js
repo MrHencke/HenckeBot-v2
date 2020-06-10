@@ -2,7 +2,7 @@ const { meme } = require("memejs")
 
 module.exports = {
   name: "dark",
-  description: "",
+  description: "Gir dark memes",
   category: 'meme',
   aliases: [""],
   execute(bot, msg, args) {

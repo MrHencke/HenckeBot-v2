@@ -1,6 +1,6 @@
 module.exports = {
     name: 'båt',
-    description: '',
+    description: 'Synger Boten Anna i TTS',
   category: 'tts',
     aliases: [''],
     execute(bot, msg, args) {

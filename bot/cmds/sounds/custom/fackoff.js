@@ -11,7 +11,8 @@ const sound = require(path.join(
 module.exports = {
   name: "fackoff",
   bruker: "Henrik",
-serveronly: '612947002853949458',
+  serveronly: true,
+  serverID: '612947002853949458',
   description: "en custom sound",
   category: "customsound",
   aliases: [""],

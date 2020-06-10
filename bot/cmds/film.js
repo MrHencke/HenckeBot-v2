@@ -3,7 +3,7 @@ const film = require(path.join(__dirname, "..", "..", "res/lists/movies.json"));
 
 module.exports = {
     name: 'film',
-    description: '',
+    description: 'Gir deg et filmforslag',
     category: 'tekst',
     aliases: [''],
     execute(bot, msg, args) {

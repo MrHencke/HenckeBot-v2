@@ -3,7 +3,7 @@ const comp = require(path.join(__dirname, "..", "..", "res/lists/compliments.jso
 
 module.exports = {
   name: "comp",
-  description: "",
+  description: "Brukes ved !comp @<person>, gir komplimenter",
   category: 'tekst',
   aliases: [""],
   execute(bot, msg, args) {

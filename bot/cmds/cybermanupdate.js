@@ -1,6 +1,6 @@
 module.exports = {
     name: 'cybermanupdate',
-    description: '',
+    description: 'Gir updates på cyberman',
   category: 'tekst',
     aliases: [''],
     execute(bot, msg, args) {
