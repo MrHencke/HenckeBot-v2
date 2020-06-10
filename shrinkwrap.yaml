@@ -8,6 +8,7 @@ dependencies:
   ffmpeg-static: 4.2.2
   memejs: 1.2.3
   node-lyrics-api: 1.0.1
+  nodemailer: 6.4.8
   scrape-youtube: 0.1.8
   ytdl-core: 3.1.1
 packages:
@@ -1185,6 +1186,13 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-TwWAOZb0j7e9eGaf9esRx3ZcLaE5tQ2lvYy1pb5IAaG1a2e2Kv5Lms1Y4hpj+ciXJRofIxxlt5haeQ/2ANeE0Q==
+  /nodemailer/6.4.8:
+    dev: false
+    engines:
+      node: '>=6.0.0'
+    requiresBuild: true
+    resolution:
+      integrity: sha512-UbJD0+g5e2H20bWv7Rpj3B+N3TMMJ0MLoLwaGVJ0k3Vo8upq0UltwHJ5BJfrpST1vFa91JQ8cf7cICK5DSIo1Q==
   /nopt/4.0.3:
     dependencies:
       abbrev: 1.1.1
@@ -1782,5 +1790,6 @@ specifiers:
   ffmpeg-static: ^4.2.2
   memejs: ^1.2.3
   node-lyrics-api: ^1.0.1
+  nodemailer: ^6.4.8
   scrape-youtube: ^0.1.8
   ytdl-core: ^3.1.1
