@@ -2,12 +2,26 @@ const nodemailer = require("nodemailer")
 
 module.exports = function sendMail(toMail, subject, text){
   
-  var fromMail = "HenckeBot@outlook.com"
+  var fromMail = '"HenckeBot" <HenckeBot@outlook.com>'
     
+  /*
   const transporter = nodemailer.createTransport({
-    service: 'outlook',
+    host: "smtp-mail.outlook.com", // hostname
+    secureConnection: false, // TLS requires secureConnection to be false
+    port: 587, // port for secure SMTP
+    tls: {
+       ciphers:'SSLv3'
+    },
     auth: {
         user: 'HenckeBot@outlook.com',
+        pass: process.env.mailPass
+    }
+});
+  */
+  var transporter = nodemailer.createTransport({
+    service: "hotmail",
+    auth: {
+        user: "henckebot@outlook.com",
         pass: process.env.mailPass
     }
 });

@@ -8,18 +8,14 @@ module.exports = {
     aliases: ['email'],
     execute(bot, msg, args) {
           if (msg.author.id == process.env.HenckeID) {
-                  var toMail
-                  var subject
-                  var text
-                  console.log(args)    
+                  var toMail = args[0]
                   args.shift()
-                  console.log(args)    
+                  var subject = args[0]
                   args.shift()
-                  console.log(args)    
-                  args.shift()
-                  console.log(args)    
-                  args.shift()
-                //sendMail(toMail, subject, text)
+                  var text = args.join(" ")
+
+                  sendMail(toMail, subject, text)
+                  msg.channel.send("Mail sendt.")
                 } else {
                   msg.channel.send("Hadde vært litt broken  å la deg bruke dette.");
                     return;
