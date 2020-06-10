@@ -2,22 +2,8 @@ const nodemailer = require("nodemailer")
 
 module.exports = function sendMail(toMail, subject, text){
   
-  var fromMail = '"HenckeBot" <HenckeBot@outlook.com>'
+  var fromMail = '"HenckeBot AS" <henckebot@outlook.com>'
     
-  /*
-  const transporter = nodemailer.createTransport({
-    host: "smtp-mail.outlook.com", // hostname
-    secureConnection: false, // TLS requires secureConnection to be false
-    port: 587, // port for secure SMTP
-    tls: {
-       ciphers:'SSLv3'
-    },
-    auth: {
-        user: 'HenckeBot@outlook.com',
-        pass: process.env.mailPass
-    }
-});
-  */
   var transporter = nodemailer.createTransport({
     service: "hotmail",
     auth: {
@@ -37,7 +23,8 @@ module.exports = function sendMail(toMail, subject, text){
     if (error) {
         console.log(error);
     }
-    console.log(response)
+    //console.log(respone)
+    console.log("Mailen funket!")
 });
     
 }
