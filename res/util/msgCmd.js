@@ -10,6 +10,10 @@ module.exports = function msgIntro(msg, bot, prefix) {
     const commandName = cmd.toLowerCase();
   const command = bot.commands.get(commandName) || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
     if (!command) return;
+    if (command.serveronly){
+      msg.channel.send("Denne commanden er begrenset til en annen server")
+      return;
+    }
     try {
       command.execute(bot, msg, args);
     } catch (err) {

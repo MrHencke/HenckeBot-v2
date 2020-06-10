@@ -18,7 +18,10 @@ module.exports = {
     execute(bot, msg, args) {
       
            if(args[0] == "list"){
-                var commandFiles = fs.readdirSync(path.join(__dirname, "sounds/custom/")).filter(file => file.endsWith(".js"));
+                var cmdFiles = fs.readdirSync(path.join(__dirname, "sounds/custom/")).filter(file => file.endsWith(".js"));
+                var commandFilesL = (cmdFiles.filter(cmd => cmd.serveronly == msg.guild.id))).array()
+                var commandFilesG = (cmdFiles.filter(cmd => cmd.serveronly == 'global'))).array()
+                var commandFiles = commandFilesL.concat(commandFilesG)
                 var customsounds = ""
                 for (const file of commandFiles) {
                 var res = file.split(".");
@@ -26,7 +29,11 @@ module.exports = {
                 customsounds += res + " , "
                   }
                   }
-                 msg.channel.send(customsounds) 
+                 if(customsounds !== ""){
+                   msg.channel.send(customsounds) 
+                 }else{
+                   msg.channel.send("Det finnes ingen custom lyder for denne serveren, legg til noen med !c add <navn> <link> da!") 
+                 }
                 } else if(args[0]== "add") {
                   var name = args[1]
                   if(args[2] != null){
@@ -36,7 +43,7 @@ module.exports = {
                       msg.channel.send("Navnet er allerede tatt, velg et annet!")
                     return
                     }
-                    fs.writeFile(customPathNyFil + name + ".js", nyPath + "\n" + nySound + "\n\n" + modul + "'" + name + "'" + ",\n" + "brukernavn: " + "'" + msg.author.username + "'" + ",\n" + "bruker: " + "'" + msg.author.tag + "'" + ",\n" + "description: " + "'" + name + " er en custom sound av " + msg.author.username + "'," + "\n" + opptilExc + "\n" + "var url = '" + url + "'" + "\n" + "sound(url,msg.member.voice.channel, msg);    },}; ", (err) => {
+                    fs.writeFile(customPathNyFil + name + ".js", nyPath + "\n" + nySound + "\n\n" + modul + "'" + name + "'" + ",\n" + "brukernavn: " + "'" + msg.author.username + "'" + ",\n" + "bruker: " + "'" + msg.author.tag + "'" + ",\n"+ "serveronly: " + "'" + msg.guild.id + "'" + ",\n"  + "description: " + "'" + name + " er en custom sound av " + msg.author.username + "'," + "\n" + opptilExc + "\n" + "var url = '" + url + "'" + "\n" + "sound(url,msg.member.voice.channel, msg);    },}; ", (err) => {
                     if (err) throw err;
                     console.log('The file has been saved!');
                     const command = require(path.join(__dirname, "/sounds/custom", "/") + name +".js");

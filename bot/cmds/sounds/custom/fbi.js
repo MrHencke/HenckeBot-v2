@@ -5,6 +5,7 @@ module.exports = {
 name: 'fbi',
 brukernavn: 'Henrik',
 bruker: 'Henrik#6368',
+serveronly: 'global',
 description: 'en custom sound',
 category: 'customsound',
 aliases: [''],
