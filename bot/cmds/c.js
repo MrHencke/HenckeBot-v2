@@ -12,7 +12,7 @@ var opptilExc =  "category: 'customsound'," + "\n" + "aliases: ['']," + "\n" + "
 
 module.exports = {
     name: 'c',
-    description: 'Legger til egne lydklipp, brukes med !c add <navn> <link> <global>, global tagget kan droppes om du vil at commanden skal bare kunne brukes på denne serveren. !c delete <navn> for å slette og !c',
+    description: 'Legger til egne lydklipp, brukes med !c add <navn> <link> <global>, global tagget kan droppes om du vil at commanden skal bare kunne brukes på denne serveren. !c delete <navn> for å slette og !c list for å liste alle commands.',
   category: 'hjelpemetode',
     aliases: [''],
     execute(bot, msg, args) {
@@ -57,6 +57,7 @@ module.exports = {
                     });  
                   } 
                     } else {msg.reply(" legg til en link da din nepe!")}
+                  
                 }else if(args[0] == "delete"){
                     var filePath = customPathNyFil + args[1] + ".js"
                       if(fs.existsSync(filePath)){
