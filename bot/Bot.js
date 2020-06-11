@@ -13,14 +13,14 @@ bot.commands = new Discord.Collection();
 bot.introSound = new Discord.Collection();
 
 bot.once("ready", () => {
-    cmdSetup(bot);
-    introSetup(bot);
     botReady(bot); 
   });
 
+  cmdSetup(bot);
+  introSetup(bot);
+
 introExp(bot)
 //intro(bot);
-
 bot.on("message", async msg => {
   
   msgIntro(msg);
