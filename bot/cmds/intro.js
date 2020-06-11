@@ -33,6 +33,10 @@ module.exports = {
                       case 'toggle':
                       if(fs.existsSync(usersPath + name + ".js")){
                       var intro = require(path.join(usersPath + name +".js"))
+                        if(intro.toggled){
+                          
+                          
+                        }
                         intro.toggled = !intro.toggled
                         var io = ""
                         switch(intro.toggled){
