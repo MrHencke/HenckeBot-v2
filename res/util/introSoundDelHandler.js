@@ -8,7 +8,7 @@ module.exports = function introSoundDel(bot, msg){
           fs.unlinkSync(usersPath + name + ".js")
             
   
-            const intro = bot.introSound.get(msg.author.id)
+            const intro = bot.introSound.get(msg.author.tag)
        
             if (!intro) return
            

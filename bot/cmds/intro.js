@@ -37,12 +37,11 @@ module.exports = {
                       var intro = require(path.join(usersPath + name +".js"))
                         if(intro.toggled){
                       introSoundDel(bot, msg);
-                      introSoundAdd(bot, msg, name, url, false)
+                      introSoundAdd(bot, msg, name, intro.url, false)
                         }else{
                       introSoundDel(bot, msg);
-                      introSoundAdd(bot, msg, name, url, true)
+                      introSoundAdd(bot, msg, name, intro.url, true)
                         }
-                        intro.toggled = !intro.toggled
                         var io = ""
                         switch(intro.toggled){
                             case'true':
