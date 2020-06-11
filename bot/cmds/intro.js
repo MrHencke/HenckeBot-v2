@@ -14,6 +14,7 @@ module.exports = {
     execute(bot, msg, args) {
                     var name = msg.author.tag
                     switch(args[0]){
+                        
                     case 'add':
                     var url = args[1]
                     if(fs.existsSync(usersPath + name + ".js")){
@@ -35,22 +36,17 @@ module.exports = {
                       case 'toggle':
                       if(fs.existsSync(usersPath + name + ".js")){
                       var intro = require(path.join(usersPath + name +".js"))
+                      var io = ""
+                        var url = intro.url
                         if(intro.toggled){
+                      io = "av"
                       introSoundDel(bot, msg);
-                      introSoundAdd(bot, msg, name, intro.url, false)
+                      introSoundAdd(bot, msg, name, url, false)
                         }else{
+                        io = "på"
                       introSoundDel(bot, msg);
-                      introSoundAdd(bot, msg, name, intro.url, true)
-                        }
-                        var io = ""
-                        switch(intro.toggled){
-                            case'true':
-                            io = "på"
-                            break;
-                            
-                            case'false':
-                            io = "av"
-                            break;
+                      introSoundAdd(bot, msg, name, url, true)
+                          
                         }
                         msg.reply("Introlyden din er nå skrudd " + io)
                       }
