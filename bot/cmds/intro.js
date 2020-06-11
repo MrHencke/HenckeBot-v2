@@ -23,10 +23,10 @@ module.exports = {
                     return
                     }else{
                       introSoundDel(bot, msg);
-                      introSoundAdd(bot, msg, name, url)
+                      introSoundAdd(bot, msg, name, url, true)
                     }
                     }else{
-                      introSoundAdd(bot, msg, name, url)
+                      introSoundAdd(bot, msg, name, url, true)
                     }
                       break;
                         
@@ -34,8 +34,11 @@ module.exports = {
                       if(fs.existsSync(usersPath + name + ".js")){
                       var intro = require(path.join(usersPath + name +".js"))
                         if(intro.toggled){
-                          
-                          
+                      introSoundDel(bot, msg);
+                      introSoundAdd(bot, msg, name, url, false)
+                        }else{
+                      introSoundDel(bot, msg);
+                      introSoundAdd(bot, msg, name, url, true)
                         }
                         intro.toggled = !intro.toggled
                         var io = ""

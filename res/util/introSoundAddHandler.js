@@ -3,9 +3,9 @@ const fs = require("fs")
 const usersPath = (path.join(__dirname, '..', 'users/'));
 const modul = "module.exports = {" + "\n" + "name: "
 
-module.exports = function introSoundAdd(bot, msg, name, url){
+module.exports = function introSoundAdd(bot, msg, name, url, bool){
                     
-                    fs.writeFile(usersPath + name + ".js", modul + "'" + name + "'" + ",\n" + "id: " + "'" + msg.author.id + "'" + ",\n" + "description: " + "'" +"Customsound"+"'" + ",\n"+ "toggled: " + true + ",\n"+ "url: " + "'" + url + "'" + ",\n" + "}; ", (err) => {
+                    fs.writeFile(usersPath + name + ".js", modul + "'" + name + "'" + ",\n" + "id: " + "'" + msg.author.id + "'" + ",\n" + "description: " + "'" +"Customsound"+"'" + ",\n"+ "toggled: " + bool + ",\n"+ "url: " + "'" + url + "'" + ",\n" + "}; ", (err) => {
                     if (err) throw err;
                    
                     console.log('The user has been saved!');
