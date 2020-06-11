@@ -10,24 +10,23 @@ module.exports = {
     aliases: ['introsound'],
     execute(bot, msg, args) {
           
-                 
-      
-                  var name = msg.author.username
-                
+                    var name = msg.author.username
+                    var url
                     if(fs.existsSync(usersPath + name + ".js")){
                     return
                     }
                     
-                    fs.writeFile(usersPath + name + ".js", modul + "'" + name + "'" + ",\n" + "id: " + "'" + msg.author.id + "'" + ",\n" + "description: " + "Customsound" + ",\n"+ "toggled: " + true + ",\n"+ "url: " + "'" + url + "'" + ",\n"  + "description: " + "'" + name + " er en custom sound av " + msg.author.username + "'," + "\n" + "},}; ", (err) => {
+                    fs.writeFile(usersPath + name + ".js", modul + "'" + name + "'" + ",\n" + "id: " + "'" + msg.author.id + "'" + ",\n" + "description: " + "Customsound" + ",\n"+ "toggled: " + true + ",\n"+ "url: " + "'" + url + "'" + ",\n" + "},}; ", (err) => {
                     if (err) throw err;
+                   
                     console.log('The user has been saved!');
                     
-                    var intro = require(path.join(usersPath + name +".js");
+                    var intro = require(path.join(usersPath + name +".js"))
                     
-                    bot.introSound.set(intro.name, intro);
-                      msg.channel.send("Introsounden er lagret, kan brukes umiddelbart, kan snart toggles med !intro toggle)
-                    });  
-                   
+                      bot.introSound.set(intro.name, intro);
+                      msg.channel.send("Introsounden er lagret, kan brukes umiddelbart, kan snart toggles med !intro toggle")
+                      
+                      })
       
                  
       
