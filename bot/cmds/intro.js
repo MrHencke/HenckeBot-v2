@@ -9,26 +9,39 @@ module.exports = {
     category: 'hjelpemetode',
     aliases: ['introsound'],
     execute(bot, msg, args) {
-          
+                    
+                    switch(args[0]){
+                    case 'add':
                     var name = msg.author.username
-                    var url
+                    var url = args[1]
                     if(fs.existsSync(usersPath + name + ".js")){
                     return
                     }
                     
-                    fs.writeFile(usersPath + name + ".js", modul + "'" + name + "'" + ",\n" + "id: " + "'" + msg.author.id + "'" + ",\n" + "description: " + "Customsound" + ",\n"+ "toggled: " + true + ",\n"+ "url: " + "'" + url + "'" + ",\n" + "},}; ", (err) => {
+                    fs.writeFile(usersPath + name + ".js", modul + "'" + name + "'" + ",\n" + "id: " + "'" + msg.author.id + "'" + ",\n" + "description: " + "'" +"Customsound"+"'" + ",\n"+ "toggled: " + true + ",\n"+ "url: " + "'" + url + "'" + ",\n" + "}; ", (err) => {
                     if (err) throw err;
                    
                     console.log('The user has been saved!');
                     
                     var intro = require(path.join(usersPath + name +".js"))
                     
-                      bot.introSound.set(intro.name, intro);
+                      bot.introSound.set(intro.id, intro);
                       msg.channel.send("Introsounden er lagret, kan brukes umiddelbart, kan snart toggles med !intro toggle")
                       
                       })
+                      break;
+                        
+                        
+                      case 'edit':
+                        
+                      break
+                        
+                        
+                      case 'toggle':
+                        
+                      break
       
                  
-      
+      }
     },
 };
