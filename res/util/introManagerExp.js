@@ -16,9 +16,7 @@ bot.on("voiceStateUpdate", (oldState, newState) => {
             oldState.channel != newState.channel &&
             newState.channelID != "undefined"
           ) {
-            console.log(person)
-            console.log(person2)
-            var intro = bot.commands.get(person)
+            var intro = bot.introSound.get(person)
             console.log(intro)
             if(!intro) return
             if(intro.toggled){
