@@ -15,7 +15,11 @@ module.exports = {
                     var name = msg.author.username
                     var url = args[1]
                     if(fs.existsSync(usersPath + name + ".js")){
+                    var intro = require(path.join(usersPath + name +".js"))
+                    if( intro.id !== msg.author.id ){
+                    msg.channel.send("Du kan ikke endre andres introsound.")
                     return
+                    }
                     }
                     
                     fs.writeFile(usersPath + name + ".js", modul + "'" + name + "'" + ",\n" + "id: " + "'" + msg.author.id + "'" + ",\n" + "description: " + "'" +"Customsound"+"'" + ",\n"+ "toggled: " + true + ",\n"+ "url: " + "'" + url + "'" + ",\n" + "}; ", (err) => {
