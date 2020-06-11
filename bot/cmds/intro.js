@@ -23,7 +23,7 @@ module.exports = {
                     msg.channel.send("Du kan ikke endre andres introsound.")
                     return
                     }else{
-                      
+                      introSoundDel(bot, msg);
                       introSoundAdd(bot, msg, name, url)
                     }
                     }else{
