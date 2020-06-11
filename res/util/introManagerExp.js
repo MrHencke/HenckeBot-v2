@@ -1,5 +1,6 @@
 const path = require("path");
 const sound = require(path.join(__dirname, "..", "/sound.js"));
+const discordTTS=require("discord-tts");
 
 module.exports = function lyd(bot){
 bot.on("voiceStateUpdate", (oldState, newState) => {
