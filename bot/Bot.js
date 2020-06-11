@@ -17,7 +17,6 @@ bot.once("ready", () => {
 
   cmdSetup(bot);
   introSetup(bot);
-
 introExp(bot)
 bot.on("message", async msg => {
   

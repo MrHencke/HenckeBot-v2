@@ -1,5 +1,5 @@
 module.exports = {
-name: 'Trash.',
+name: 'Trash.#8640',
 id: '227520275132973056',
 description: 'Customsound',
 toggled: true,

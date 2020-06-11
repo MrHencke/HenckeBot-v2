@@ -12,10 +12,9 @@ module.exports = {
     category: 'hjelpemetode',
     aliases: ['introsound'],
     execute(bot, msg, args) {
-                    
+                    var name = msg.author.tag
                     switch(args[0]){
                     case 'add':
-                    var name = msg.author.tag
                     var url = args[1]
                     if(fs.existsSync(usersPath + name + ".js")){
                     var intro = require(path.join(usersPath + name +".js"))
@@ -29,24 +28,21 @@ module.exports = {
                     }else{
                       introSoundAdd(bot, msg, name, url)
                     }
-                    
                       break;
                         
-                        
-                      case 'edit':
-                         var name = msg.author.tag
-                    var url = args[1]
-                    if(fs.existsSync(usersPath + name + ".js")){
-                      
-                      
-                    }
-                        
-                        
+                      case 'toggle':
+                      if(fs.existsSync(usersPath + msg.author.tag + ".js")){
+                      var intro = require(path.join(usersPath + msg.author.tag +".js"))
+                        intro.toggled = !intro.toggled
+                        msg.reply("Toggled til: " + intro.toggled)
+                      }
                       break
                         
-                        
-                      case 'toggle':
-                        
+                      case 'delete':
+                        if(fs.existsSync(usersPath + msg.author.tag + ".js")){
+                        introSoundDel(bot, msg);
+                        }
+                        msg.reply("Intro Sounden er fjernet fra databasen.")
                       break
       
                  

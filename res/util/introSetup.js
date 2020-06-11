@@ -8,7 +8,6 @@ var introFiles = fs.readdirSync(path.join(__dirname, "..", "/users")).filter(fil
 for (const file of introFiles) {
   const introSound = require(path.join(__dirname, "..", "/users",  "/") + file);
   bot.introSound.set(introSound.id, introSound);
-  //console.log(introSound)
 }
   
 }
