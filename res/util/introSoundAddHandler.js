@@ -13,7 +13,6 @@ module.exports = function introSoundAdd(bot, msg, name, url, bool){
                     var intro = require(path.join(usersPath + name +".js"))
                     
                     bot.introSound.set(intro.id, intro);
-                    msg.channel.send("Introsounden er lagret, kan brukes umiddelbart, kan snart toggles med !intro toggle")
                       
                       })
   }

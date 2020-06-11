@@ -24,9 +24,11 @@ module.exports = {
                     }else{
                       introSoundDel(bot, msg);
                       introSoundAdd(bot, msg, name, url, true)
+                      msg.channel.send("Introsounden er lagret, kan brukes umiddelbart")
                     }
                     }else{
                       introSoundAdd(bot, msg, name, url, true)
+                      msg.channel.send("Introsounden er lagret, kan brukes umiddelbart")
                     }
                       break;
                         
