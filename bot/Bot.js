@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 const path = require("path");
 const cmdSetup = require(path.join(__dirname, "..", "res/util/cmdSetup.js"));
-const intro = require(path.join(__dirname, "..", "res/util/introLydManager.js"));
 const introExp = require(path.join(__dirname, "..", "res/util/introManagerExp.js"));
 const introSetup = require(path.join(__dirname, "..", "res/util/introSetup.js"));
 const msgIntro = require(path.join(__dirname, "..", "res/util/msgIntro.js"));
@@ -20,7 +19,6 @@ bot.once("ready", () => {
   introSetup(bot);
 
 introExp(bot)
-//intro(bot);
 bot.on("message", async msg => {
   
   msgIntro(msg);
