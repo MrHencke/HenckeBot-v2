@@ -2,8 +2,8 @@ const discordTTS=require("discord-tts");
 const discord = require("discord.js");
 
 module.exports = function snakk(msg, beskjed){
-        sound(discordTTS.getVoiceStream(beskjed), msg.member.voice.channel, msg) 
-    },
+        sound(discordTTS.getVoiceStream(beskjed, "nb-NO"), msg.member.voice.channel, msg) 
+    
 };
 
 function sound(url, voiceChannel, msg) {
@@ -16,4 +16,3 @@ function sound(url, voiceChannel, msg) {
     }catch(err){
       msg.channel.send("Sorry det gikk til helvete.")
     }}
-}
