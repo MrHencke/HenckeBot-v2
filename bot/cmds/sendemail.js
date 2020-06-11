@@ -17,7 +17,7 @@ module.exports = {
                   sendMail(toMail, subject, text)
                   msg.channel.send("Mail sendt.")
                 } else {
-                  msg.channel.send("Hadde vært litt broken  å la deg bruke dette.");
+                  msg.reply(" Det hadde vært litt broken å la deg bruke dette.");
                     return;
                 }     
     },
