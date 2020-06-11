@@ -8,7 +8,7 @@ const modul = "module.exports = {" + "\n" + "name: "
 
 module.exports = {
     name: 'intro',
-    description: 'Gir deg en egen introSound når du entrer en kanal',
+    description: 'Gir deg en egen introSound når du entrer en kanal, støtter add <link>, toggle og delete',
     category: 'hjelpemetode',
     aliases: ['introsound'],
     execute(bot, msg, args) {
@@ -31,22 +31,29 @@ module.exports = {
                       break;
                         
                       case 'toggle':
-                      if(fs.existsSync(usersPath + msg.author.tag + ".js")){
-                      var intro = require(path.join(usersPath + msg.author.tag +".js"))
+                      if(fs.existsSync(usersPath + name + ".js")){
+                      var intro = require(path.join(usersPath + name +".js"))
                         intro.toggled = !intro.toggled
-                        msg.reply("Toggled til: " + intro.toggled)
+                        var io = ""
+                        switch(intro.toggled){
+                            case'true':
+                            io = "på"
+                            break;
+                            
+                            case'false':
+                            io = "av"
+                            break;
+                        }
+                        msg.reply("Introlyden din er nå skrudd " + io)
                       }
                       break
                         
                       case 'delete':
-                        if(fs.existsSync(usersPath + msg.author.tag + ".js")){
+                        if(fs.existsSync(usersPath + name + ".js")){
                         introSoundDel(bot, msg);
                         }
                         msg.reply("Intro Sounden er fjernet fra databasen.")
                       break
-      
-                 
-                        //introSoundAdd(bot, msg, name, url)
       }
     },
 };
