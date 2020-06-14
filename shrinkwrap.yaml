@@ -5,7 +5,7 @@ dependencies:
   discord-tts: 1.0.0
   discord.js: 12.2.0
   dotenv: 8.2.0
-  ffmpeg-static: 4.2.2
+  ffmpeg-static: 4.2.3
   memejs: 1.2.3
   node-lyrics-api: 1.0.1
   nodemailer: 6.4.8
@@ -174,7 +174,7 @@ packages:
       integrity: sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==
   /@types/duplexify/3.6.0:
     dependencies:
-      '@types/node': 14.0.12
+      '@types/node': 14.0.13
     dev: false
     resolution:
       integrity: sha512-5zOA53RUlzN74bvrSGwjudssD9F3a797sDZQkiYpUOxW+WHaXTCPz4/d5Dgi6FKnOqZ2CpaTo0DhgIfsXAOE/A==
@@ -182,22 +182,22 @@ packages:
     dev: false
     resolution:
       integrity: sha512-5tXH6Bx/kNGd3MgffdmP4dy2Z+G4eaXw0SE81Tq3BNadtnMR5/ySMzX4SLEzHJzSmPNn4HIdpQsBvXMUykr58w==
-  /@types/node/10.17.25:
+  /@types/node/10.17.26:
     dev: false
     resolution:
-      integrity: sha512-EWPw3jDB0jip4HafDkoezNOwG00TtVZ1TOe74MaxIBWgpyM60UF/LXzFVx9+8AdSYNNOPgx7TuJoRmgnhHZ/7g==
-  /@types/node/13.13.11:
+      integrity: sha512-myMwkO2Cr82kirHY8uknNRHEVtn0wV3DTQfkrjx17jmkstDRZ24gNUdl8AHXVyVclTYI/bNjgTPTAWvWLqXqkw==
+  /@types/node/13.13.12:
     dev: false
     resolution:
-      integrity: sha512-FX7mIFKfnGCfq10DGWNhfCNxhACEeqH5uulT6wRRA1KEt7zgLe0HdrAd9/QQkObDqp2Z0KEV3OAmNgs0lTx5tQ==
-  /@types/node/14.0.12:
+      integrity: sha512-zWz/8NEPxoXNT9YyF2osqyA9WjssZukYpgI4UYZpOjcyqwIUqWGkcCionaEb9Ki+FULyPyvNFpg/329Kd2/pbw==
+  /@types/node/14.0.13:
     dev: false
     resolution:
-      integrity: sha512-/sjzehvjkkpvLpYtN6/2dv5kg41otMGuHQUt9T2aiAuIfleCQRQHXXzF1eAw/qkZTj5Kcf4JSTf7EIizHocy6Q==
+      integrity: sha512-rouEWBImiRaSJsVA+ITTFM6ZxibuAlTuNOCyxVbwreu6k6+ujs7DfnU9o+PShFhET78pMBl3eH+AGSI5eOTkPA==
   /@types/pumpify/1.4.1:
     dependencies:
       '@types/duplexify': 3.6.0
-      '@types/node': 14.0.12
+      '@types/node': 14.0.13
     dev: false
     resolution:
       integrity: sha512-l7u/Dnh1OG9T7VH6TvulR0g8oE8hgIW5409mSUKi8Vxw2+JV18aTa06Sv5bvNjrD0zbsB/cuZ/iTFQgFNfzIuw==
@@ -634,7 +634,7 @@ packages:
     dev: false
     resolution:
       integrity: sha512-5rQdinSsycpzvAoHga2EDn+LRX1d5xLFsuNG0Kg61JrAT/tASXcLL0nf/33v+sAxlQcfYmWbTURa1mmAf55jGw==
-  /ffmpeg-static/4.2.2:
+  /ffmpeg-static/4.2.3:
     dependencies:
       '@derhuerst/http-basic': 8.2.0
       env-paths: 2.2.0
@@ -645,7 +645,7 @@ packages:
       node: '>=10'
     requiresBuild: true
     resolution:
-      integrity: sha512-0m07Lb7Wz91xw2g3vBzcrwhcm9D9kWWA/ZheWt6dOhIJrxanFVw1XUe9ewxF9RGBkcdt43UksrpJkL2gvl00Ew==
+      integrity: sha512-zL2YkWdRFsPZvtmEM6t1Dw7VMIE+9Moy+WlbdoLbqB+Y52BPwANJIGMJ+/kdyxWULPa4UxFPBNJW5SSxi/ex/A==
   /forever-agent/0.6.1:
     dev: false
     resolution:
@@ -839,7 +839,7 @@ packages:
       integrity: sha512-k0zdNgqWTGA6aeIRVpvfVob4fL52dTfaehylg0Y4UvSySvOq/Y+BOyPrgpUrA7HylqvU8vIZGsRuXmspskV0Tg==
   /http-response-object/3.0.2:
     dependencies:
-      '@types/node': 10.17.25
+      '@types/node': 10.17.26
     dev: false
     resolution:
       integrity: sha512-bqX0XTF6fnXSQcEJ2Iuyr75yVakyjIDCqroJQ/aHfSdlM743Cwqoi2nDYMzLGWUcuTWGWy8AAvOKXTfiv6q9RA==
@@ -1281,7 +1281,7 @@ packages:
       integrity: sha1-juqz5U+laSD+Fro493+iGqzC104=
   /parse5/3.0.3:
     dependencies:
-      '@types/node': 14.0.12
+      '@types/node': 14.0.13
     dev: false
     resolution:
       integrity: sha512-rgO9Zg5LLLkfJF9E6CCmXlSE4UVceloys8JrFqCcHloC3usd/kJCyPDwH2SOlzix2j3xaP9sUX3e8+kvkuleAA==
@@ -1327,7 +1327,7 @@ packages:
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
       '@types/long': 4.0.1
-      '@types/node': 13.13.11
+      '@types/node': 13.13.12
       long: 4.0.0
     dev: false
     hasBin: true
@@ -1787,7 +1787,7 @@ specifiers:
   discord-tts: ^1.0.0
   discord.js: ^12.2.0
   dotenv: ^8.2.0
-  ffmpeg-static: ^4.2.2
+  ffmpeg-static: ^4.2.3
   memejs: ^1.2.3
   node-lyrics-api: ^1.0.1
   nodemailer: ^6.4.8
