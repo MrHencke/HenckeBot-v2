@@ -16,7 +16,7 @@
     "discord-tts": "^1.0.0",
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
-    "ffmpeg-static": "^4.2.2",
+    "ffmpeg-static": "^4.2.3",
     "memejs": "^1.2.3",
     "node-lyrics-api": "^1.0.1",
     "scrape-youtube": "^0.1.8",
