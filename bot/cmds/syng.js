@@ -36,6 +36,6 @@ function sound(url, voiceChannel, msg, resultata, i) {
     voiceChannel.leave();
     } 
     }catch(err){
-      msg.channel.send("Sangstemmen er ikke helt på plass i dag, sorry.")
+      msg.reply("Sangstemmen er ikke helt på plass i dag, sorry.")
     }}
 

@@ -73,15 +73,13 @@ module.exports = {
       memeOut += "!" + cmd.name + "\n";
     }
     
-    if(msg.author.id == process.env.HenckeID){
+  
     var personlig = bot.commands.filter(cmd => cmd.category == "meme").array();
     var personligOut = "";
     for (var cmd of personlig) {
       personligOut += "!" + cmd.name + "\n";
     }
-    }else{
-      personligOut = ""
-    }
+    
     var linje =   "--------------------------------------------" 
     var linje5 =  "----------------------------------------------------"
     var linje4 =  "-----------------------------------------------------"
@@ -90,7 +88,7 @@ module.exports = {
     var linje6 =  "-----------------------------------------------------"
     var linje13 = "-------------------------------"
     
-    var outF0 = linje + "TEKST"+ linje5 + "\n" + tekstOut + "\n"
+    var outF0 = linje + "TEKST" + linje.substring(0, linje.length-"Tekst".length) + "\n" + tekstOut + "\n"
     var outF1 = linje + "YOUTUBE"+ linje7 + "\n" + youtubeOut + "\n"
     var outF2 = linje + "MUSIC"+ linje5+ "\n" + musicOut + "\n"
     var outF3 = linje + "TTS"+ linje3+ "\n" + ttsOut + "\n"
@@ -100,8 +98,19 @@ module.exports = {
     var outF7 = linje + "CUSTOM SOUNDS"+ linje + "\n" + "Bruk !c list, for å liste alle custom commands" + "\n" + "\n"
     var outF8 = linje + "HJELPEMETODER"+ linje + "\n" + hjelpemetoderOut + "\n\n"
     var outF9 = linje + "MEME" + linje4 + "\n" + memeOut + "\n" 
-    var outF10 = linje + "PERSONLIG, BARE FOR HENCKE" + linje13 + "\n" + personligOut + "\n"
-    //var outF9 = linje + "NSFW"+ linje4 + "\n" + nsfwOut + "\n"
+    
+    if(msg.author.id == process.env.HenckeID){
+      var outF10 = linje + "PERSONLIG, BARE FOR HENCKE" + linje13 + "\n" + personligOut + "\n"
+    }else{
+     var outF10 = ""
+    }
+    
+    if(msg.channel.nsfw){
+    var outF9 = linje + "NSFW"+ linje4 + "\n" + nsfwOut + "\n"
+    }else{
+    var outF9 = ""
+    }
+    
     var outF11 = linje + "EKSTRA"+ linje6+ "\n" + "For ekstra hjelp, skriv !hjelp **kommandonavn** for ekstra informasjon for en gitt kommando"
     
    
@@ -110,33 +119,3 @@ module.exports = {
 
   }
 };
-
-/* 
-kategorier: 
-nsfw, 
-youtube, 
-tekst, 
-tts, 
-sound, ------- split type: kai, pat, random
-customsound, 
-music, 
-hjelpemetoder, 
-custom
-
-
-
-
-
-
-    msg.author.send(outF0)
-    msg.author.send(outF1)
-    msg.author.send(outF2)
-    msg.author.send(outF3)
-    msg.author.send(outF4)
-    msg.author.send(outF5)
-    msg.author.send(outF6)
-    msg.author.send(outF7)
-    msg.author.send(outF8)
-    msg.author.send(outF9)
-    msg.author.send(outF10)
-   */

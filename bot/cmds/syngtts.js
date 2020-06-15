@@ -16,7 +16,7 @@ module.exports = {
     msg.channel.send(result.content[0].lyrics,{ tts: true });
       }
 }).catch(error => {
-    msg.channel.send("Fant ikke noe sang å synge :c");
+    msg.reply("Jeg fant ikke noe sang å synge :c");
 });  
     },
 };
