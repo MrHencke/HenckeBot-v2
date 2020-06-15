@@ -9,5 +9,6 @@ module.exports = {
       meme('darkmeme', function(err, data) {
             if (err) return console.error(err);
             msg.channel.send(data.url);
-              });  }
+              });  
+  }
 };

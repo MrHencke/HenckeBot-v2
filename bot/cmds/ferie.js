@@ -8,7 +8,8 @@ module.exports = {
     aliases: [''],
     execute(bot, msg, args) {
            var feindex = Math.floor(Math.random() * land.length);
-            var landnavn = (land[feindex].name).replace("_", " ")
             var wikinavn = land[feindex].name
+            var landnavn = wikinavn.replace("_", " ")
+            
                 msg.reply(" du burde prøve å reise til: " + landnavn + "\n" + "https://en.wikipedia.org/wiki/" + wikinavn)    },
 };

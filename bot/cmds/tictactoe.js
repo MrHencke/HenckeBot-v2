@@ -1,6 +1,6 @@
 module.exports = {
 			name: 'tic-tac-toe',
-			description: 'Play a game of tic-tac-toe with another user.',
+			description: 'Spill tic-tac-toe med en kompis.',
   category: 'meme',
     execute(bot, msg, args) {
       msg.reply("Funksjonen er ikke klar enda")

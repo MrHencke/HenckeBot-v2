@@ -1,6 +1,6 @@
 module.exports = {
     name: 'toggleblockon',
-    description: '',
+    description: 'Secret',
   category: 'hjelpemetode-personlig',
     aliases: [''],
     execute(bot, msg, args) {

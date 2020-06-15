@@ -12,7 +12,7 @@ module.exports = {
     for (cmd of tekst) {
       tekstOut += "!" + cmd.name + "\n";
     }
-
+    
     var nsfw = bot.commands.filter(cmd => cmd.category == "nsfw").array();
     var nsfwOut = "";
     for (var cmd of nsfw) {
@@ -73,12 +73,22 @@ module.exports = {
       memeOut += "!" + cmd.name + "\n";
     }
     
+    if(msg.author.id == process.env.HenckeID){
+    var personlig = bot.commands.filter(cmd => cmd.category == "meme").array();
+    var personligOut = "";
+    for (var cmd of personlig) {
+      personligOut += "!" + cmd.name + "\n";
+    }
+    }else{
+      personligOut = ""
+    }
     var linje =   "--------------------------------------------" 
     var linje5 =  "----------------------------------------------------"
     var linje4 =  "-----------------------------------------------------"
     var linje7 =  "--------------------------------------------------"
     var linje3 =  "--------------------------------------------------------"
     var linje6 =  "-----------------------------------------------------"
+    var linje13 = "-------------------------------"
     
     var outF0 = linje + "TEKST"+ linje5 + "\n" + tekstOut + "\n"
     var outF1 = linje + "YOUTUBE"+ linje7 + "\n" + youtubeOut + "\n"
@@ -87,14 +97,15 @@ module.exports = {
     var outF4 = linje + "KAI"+ linje3+ "\n" + kaiOut + "\n"
     var outF5 = linje + "PAT"+ linje3+ "\n" + patOut + "\n" 
     var outF6 = linje + "RANDOM"+ linje6+ "\n" + randomOut + "\n"
-    var outF7 = linje + "CUSTOM SOUNDS"+ linje+ "\n" + "Bruk !c list, for å liste alle custom commands" + "\n"
-    var outF8 = linje + "HJELPEMETODER"+ linje+ "\n" + hjelpemetoderOut + "\n\n"
-    var outF9 = linje + "MEME" + linje4 + "\n" + memeOut + "\n"
+    var outF7 = linje + "CUSTOM SOUNDS"+ linje + "\n" + "Bruk !c list, for å liste alle custom commands" + "\n" + "\n"
+    var outF8 = linje + "HJELPEMETODER"+ linje + "\n" + hjelpemetoderOut + "\n\n"
+    var outF9 = linje + "MEME" + linje4 + "\n" + memeOut + "\n" 
+    var outF10 = linje + "PERSONLIG, BARE FOR HENCKE" + linje13 + "\n" + personligOut + "\n"
     //var outF9 = linje + "NSFW"+ linje4 + "\n" + nsfwOut + "\n"
-    var outF10 = linje + "EKSTRA"+ linje6+ "\n" + "For ekstra hjelp, skriv !hjelp **kommandonavn** for ekstra informasjon for en gitt kommando"
+    var outF11 = linje + "EKSTRA"+ linje6+ "\n" + "For ekstra hjelp, skriv !hjelp **kommandonavn** for ekstra informasjon for en gitt kommando"
     
    
-    var outFinal = outF0 + outF1 + outF2 + outF3 + outF4 + outF5 + outF6 + outF7 + outF8 + outF9 + outF10
+    var outFinal = outF0 + outF1 + outF2 + outF3 + outF4 + outF5 + outF6 + outF7 + outF8 + outF9 + outF10 + outF11
     msg.author.send(outFinal)
 
   }
