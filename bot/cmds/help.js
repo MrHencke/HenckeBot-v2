@@ -1,7 +1,7 @@
 module.exports = {
   name: "help",
   description: "Du vet vel hva denne gjør?",
-  category: "hjelp",
+  category: "help",
   aliases: ["hjelp"],
   execute(bot, msg, args) {
     
@@ -74,47 +74,42 @@ module.exports = {
     }
     
   
-    var personlig = bot.commands.filter(cmd => cmd.category == "meme").array();
+    var personlig = bot.commands.filter(cmd => cmd.category.includes("personlig")).array();
     var personligOut = "";
     for (var cmd of personlig) {
       personligOut += "!" + cmd.name + "\n";
     }
     
-    var linje =   "--------------------------------------------" 
-    var linje5 =  "----------------------------------------------------"
-    var linje4 =  "-----------------------------------------------------"
-    var linje7 =  "--------------------------------------------------"
-    var linje3 =  "--------------------------------------------------------"
-    var linje6 =  "-----------------------------------------------------"
-    var linje13 = "-------------------------------"
+    var linje =   "-----------------------------------------------" 
     
-    var outF0 = linje + "TEKST" + linje.substring(0, linje.length-"Tekst".length) + "\n" + tekstOut + "\n"
-    var outF1 = linje + "YOUTUBE"+ linje7 + "\n" + youtubeOut + "\n"
-    var outF2 = linje + "MUSIC"+ linje5+ "\n" + musicOut + "\n"
-    var outF3 = linje + "TTS"+ linje3+ "\n" + ttsOut + "\n"
-    var outF4 = linje + "KAI"+ linje3+ "\n" + kaiOut + "\n"
-    var outF5 = linje + "PAT"+ linje3+ "\n" + patOut + "\n" 
-    var outF6 = linje + "RANDOM"+ linje6+ "\n" + randomOut + "\n"
-    var outF7 = linje + "CUSTOM SOUNDS"+ linje + "\n" + "Bruk !c list, for å liste alle custom commands" + "\n" + "\n"
-    var outF8 = linje + "HJELPEMETODER"+ linje + "\n" + hjelpemetoderOut + "\n\n"
-    var outF9 = linje + "MEME" + linje4 + "\n" + memeOut + "\n" 
+    var outF0 = linje + "TEKST" + linje.substring(0, linje.length-"TEKST".length) + "\n" + tekstOut + "\n"
+    var outF1 = linje + "YOUTUBE"+ linje.substring(0, linje.length-"YOUTUBE".length) + "\n" + youtubeOut + "\n"
+    var outF2 = linje + "MUSIC"+ linje.substring(0, linje.length-"MUSIC".length) + "\n" + musicOut + "\n"
+    var outF3 = linje + "TTS"+ linje.substring(0, linje.length-"TTS".length)+ "\n" + ttsOut + "\n"
+    var outF4 = linje + "KAI"+ linje.substring(0, linje.length-"KAI".length)+ "\n" + kaiOut + "\n"
+    var outF5 = linje + "PAT"+ linje.substring(0, linje.length-"PAT".length)+ "\n" + patOut + "\n" 
+    var outF6 = linje + "RANDOM"+ linje.substring(0, linje.length-"RANDOM".length)+ "\n" + randomOut + "\n"
+    var outF7 = linje + "CUSTOM SOUNDS"+ linje.substring(0, linje.length-"CUSTOM SOUNDS".length) + "\n" + "Bruk !c list, for å liste alle custom commands" + "\n" + "\n"
+    var outF8 = linje + "HJELPEMETODER"+ linje.substring(0, linje.length-"HJELPEMETODER".length) + "\n" + hjelpemetoderOut + "\n"
+    var outF9 = linje + "MEME" + linje.substring(0, linje.length-"MEME".length) + "\n" + memeOut + "\n" 
     
     if(msg.author.id == process.env.HenckeID){
-      var outF10 = linje + "PERSONLIG, BARE FOR HENCKE" + linje13 + "\n" + personligOut + "\n"
+      var outF10 = linje + "PERSONLIG, BARE FOR HENCKE" + linje.substring(0, linje.length-"PERSONLIG, BARE FOR HENCKE".length) + "\n" + personligOut + "\n"
     }else{
      var outF10 = ""
     }
     
     if(msg.channel.nsfw){
-    var outF9 = linje + "NSFW"+ linje4 + "\n" + nsfwOut + "\n"
+    var outF9 = linje + "NSFW"+ linje.substring(0, linje.length-"NSFW".length) + "\n" + nsfwOut + "\n"
     }else{
     var outF9 = ""
     }
     
-    var outF11 = linje + "EKSTRA"+ linje6+ "\n" + "For ekstra hjelp, skriv !hjelp **kommandonavn** for ekstra informasjon for en gitt kommando"
+    var outF11 = linje + "EKSTRA"+ linje.substring(0, linje.length-"EKSTRA".length)+ "\n" + "For ekstra hjelp, skriv !hjelp **kommandonavn** for ekstra informasjon for en gitt kommando" + "\n\n"
+    var outF12 = "\n" + "Det var egentlig alt"
     
    
-    var outFinal = outF0 + outF1 + outF2 + outF3 + outF4 + outF5 + outF6 + outF7 + outF8 + outF9 + outF10 + outF11
+    var outFinal = outF0 + outF1 + outF2 + outF3 + outF4 + outF5 + outF6 + outF7 + outF8 + outF9 + outF10 + outF11 + outF12
     msg.author.send(outFinal)
 
   }
