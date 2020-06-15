@@ -1,5 +1,5 @@
 var path = require("path")
-const player = require(path.join(__dirname, '..', '..', 'res//util/youtube-player.js'));
+const player = require(path.join(__dirname, '..', '..', 'res/util/youtube-player.js'));
                        
 module.exports = {
     name: 'p',

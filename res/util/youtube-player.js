@@ -7,6 +7,7 @@ module.exports = function player(bot, msg, args) {
 var link;
 try {
               const queue = msg.client.queue.get(msg.guild.id);
+  
                   if(msg.member.voice.channel !== null){
                     if (args[0].substring(0, 6) != "https:") {
                         var search = args.join(" ");
