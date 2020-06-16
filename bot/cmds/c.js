@@ -63,7 +63,7 @@ module.exports = {
                         if(tag == msg.author.tag){
                         fs.unlinkSync(filePath)
                         delete require.cache[require.resolve(filePath)]
-                          msg.channel.send("Commanden" + args[1] + "ble slettet.")
+                          msg.channel.send("Commanden " + args[1] + " ble slettet.")
                         }else{msg.channel.send("Du må ha lagt inn commanden selv for å kunne slette den.")}
                       }else{msg.channel.send("Commanden finnes ikke")}
                   
