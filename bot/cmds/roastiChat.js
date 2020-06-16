@@ -1,6 +1,6 @@
 var path = require("path");
 const roastlist = require(path.join(__dirname, "..", "..", "res/lists/roast.json"));
-const snakk = require(path.join(__dirname, "..", "..", "res/util/snakkiVoice.js"));
+const snakk = require(path.join(__dirname, "..", "..", "res/util/talkInVoice.js"));
 
 module.exports = {
   name: "roastichat",
