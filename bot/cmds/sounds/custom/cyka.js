@@ -12,4 +12,6 @@ category: 'customsound',
 aliases: [''],
 execute(bot, msg, args) {
 var url = 'https://www.myinstants.com/media/sounds/cyka-blyat.mp3'
-sound(url,msg.member.voice.channel, msg);    },}; 
+sound(url,msg.member.voice.channel, msg);    
+                        },
+                  };   
