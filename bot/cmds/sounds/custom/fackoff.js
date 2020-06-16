@@ -19,5 +19,5 @@ module.exports = {
   execute(bot, msg, args) {
     var url = "https://www.myinstants.com/media/sounds/fuckoff.mp3";
     sound(url, msg.member.voice.channel, msg);
-  }
-};
+                          }
+                  };
