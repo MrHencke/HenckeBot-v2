@@ -2,13 +2,13 @@ dependencies:
   '@discordjs/opus': 0.3.2
   '@google-cloud/speech': 4.0.0
   canvas: 2.6.1
-  discord-tts: 1.0.0
+  discord-tts: 1.0.1
   discord.js: 12.2.0
   dotenv: 8.2.0
   ffmpeg-static: 4.2.3
   memejs: 1.2.3
   node-lyrics-api: 1.0.1
-  nodemailer: 6.4.8
+  nodemailer: 6.4.10
   scrape-youtube: 0.1.8
   ytdl-core: 3.1.1
 packages:
@@ -463,12 +463,12 @@ packages:
     hasBin: true
     resolution:
       integrity: sha1-+hN8S9aY7fVc1c0CrFWfkaTEups=
-  /discord-tts/1.0.0:
+  /discord-tts/1.0.1:
     dependencies:
       google-tts-api: 0.0.4
     dev: false
     resolution:
-      integrity: sha512-vbQkCVmEhaeCmDCdLUpYypDTswJmDj4I4FSdjTajFPBf2WJv31MUHQvhsfwTH5UUz/3mYxs5BpYLrwQFbMt2iA==
+      integrity: sha512-8XnpY0Vt5bEubL08PefA2pk7FcGpaSMTET86wmkO/sZXFI/it+a+abrEjeHs61UfFG5qkFWuDG/8gyPoTrV9Sw==
   /discord.js/12.2.0:
     dependencies:
       '@discordjs/collection': 0.1.5
@@ -1186,13 +1186,13 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-TwWAOZb0j7e9eGaf9esRx3ZcLaE5tQ2lvYy1pb5IAaG1a2e2Kv5Lms1Y4hpj+ciXJRofIxxlt5haeQ/2ANeE0Q==
-  /nodemailer/6.4.8:
+  /nodemailer/6.4.10:
     dev: false
     engines:
       node: '>=6.0.0'
     requiresBuild: true
     resolution:
-      integrity: sha512-UbJD0+g5e2H20bWv7Rpj3B+N3TMMJ0MLoLwaGVJ0k3Vo8upq0UltwHJ5BJfrpST1vFa91JQ8cf7cICK5DSIo1Q==
+      integrity: sha512-j+pS9CURhPgk6r0ENr7dji+As2xZiHSvZeVnzKniLOw1eRAyM/7flP0u65tCnsapV8JFu+t0l/5VeHsCZEeh9g==
   /nopt/4.0.3:
     dependencies:
       abbrev: 1.1.1
@@ -1784,12 +1784,12 @@ specifiers:
   '@discordjs/opus': ^0.3.2
   '@google-cloud/speech': ^4.0.0
   canvas: ^2.6.1
-  discord-tts: ^1.0.0
+  discord-tts: ^1.0.1
   discord.js: ^12.2.0
   dotenv: ^8.2.0
   ffmpeg-static: ^4.2.3
   memejs: ^1.2.3
   node-lyrics-api: ^1.0.1
-  nodemailer: ^6.4.8
+  nodemailer: ^6.4.10
   scrape-youtube: ^0.1.8
   ytdl-core: ^3.1.1
