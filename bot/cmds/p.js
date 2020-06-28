@@ -5,7 +5,7 @@ module.exports = {
     name: 'p',
     description: 'Brukes slik: !p <søkeord> eller <link>, Spiller musikk fra youtube ved søk eller direkte link',
     category: 'youtube',
-    aliases: ['play', 'spillav'],
+    aliases: ['play', 'spillav', 'y'],
     execute(bot, msg, args) {
         player(bot, msg, args);
     },
